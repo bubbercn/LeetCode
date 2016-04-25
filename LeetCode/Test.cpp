@@ -1,6 +1,7 @@
 #include "011_ContainerWithMostWater.h"
 
-void main()
+int main()
 {
 	Test();
+    return 0;
 }
