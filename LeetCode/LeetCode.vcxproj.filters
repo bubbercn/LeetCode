@@ -56,5 +56,8 @@
     <ClInclude Include="011_ContainerWithMostWater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="012_IntegerToRoman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

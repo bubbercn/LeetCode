@@ -132,6 +132,7 @@
     <ClInclude Include="009_PalindromeNumber.h" />
     <ClInclude Include="010_RegularExpressionMatchingHeader.h" />
     <ClInclude Include="011_ContainerWithMostWater.h" />
+    <ClInclude Include="012_IntegerToRoman.h" />
     <ClInclude Include="Common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
