@@ -133,6 +133,17 @@
     <ClInclude Include="010_RegularExpressionMatchingHeader.h" />
     <ClInclude Include="011_ContainerWithMostWater.h" />
     <ClInclude Include="012_IntegerToRoman.h" />
+    <ClInclude Include="013_RomanToInteger.h" />
+    <ClInclude Include="014_LongestCommonPrefix.h" />
+    <ClInclude Include="015_3Sum.h" />
+    <ClInclude Include="016_3SumClosest.h" />
+    <ClInclude Include="017_LetterCombinationsOfAPhoneNumber.h" />
+    <ClInclude Include="018_4Sum.h" />
+    <ClInclude Include="019_RemoveNthNodeFromEndofList.h" />
+    <ClInclude Include="020_Valid_Parentheses.h" />
+    <ClInclude Include="021_MergeTwoSortedLists.h" />
+    <ClInclude Include="022_GenerateParentheses.h" />
+    <ClInclude Include="023_MergeKSortedLists.h" />
     <ClInclude Include="Common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
