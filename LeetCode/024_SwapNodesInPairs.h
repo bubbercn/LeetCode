@@ -16,7 +16,26 @@ class Solution
 public:
 	ListNode* swapPairs(ListNode* head)
 	{
-		return nullptr;
+		if (head)
+		{
+			if (head->next)
+			{
+				ListNode* lSubHead = swapPairs(head->next->next);
+				ListNode* lReturn = nullptr;
+				lReturn = head->next;
+				head->next->next = head;
+				head->next = lSubHead;
+				return lReturn;
+			}
+			else
+			{
+				return head;
+			}
+		}
+		else
+		{
+			return nullptr;
+		}
 	}
 };
 
