@@ -8,7 +8,7 @@ public:
 	{
 		auto i = binary_search(nums.begin(), nums.end(), target);
 		
-		int result = i - nums.begin();
+		auto result = i - nums.begin();
 		
 		if (target > *i && i != nums.end())
 			result ++;
