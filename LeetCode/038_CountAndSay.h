@@ -3,8 +3,8 @@
 
 class Solution {
 public:
-    void solveSudoku(vector<vector<char>>& board) {
-        
+    string countAndSay(int n) {
+        return "";
     }
 };
 

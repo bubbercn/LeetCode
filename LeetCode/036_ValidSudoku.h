@@ -129,8 +129,8 @@ void Test()
         {'.','.','.','.','8','.','.','7','9'}
     };
     
-    Solution lSolution;
+    Solution solution;
  
-    assert(lSolution.isValidSudoku(input1));
-    assert(!lSolution.isValidSudoku(input2));
+    assert(solution.isValidSudoku(input1));
+    assert(!solution.isValidSudoku(input2));
 }
