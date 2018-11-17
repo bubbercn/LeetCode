@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-    int firstMissingPositive(vector<int>& nums) {
+    int trap(vector<int>& height) {
         return 0;
     }
 };

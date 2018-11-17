@@ -23,49 +23,50 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = LeetCode/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
-		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = LeetCode/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
-		B964FC98218E8CA3004D2DBF /* 038_CountAndSay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 038_CountAndSay.h; path = LeetCode/038_CountAndSay.h; sourceTree = SOURCE_ROOT; };
-		B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 040_CombinationSumII.h; path = LeetCode/040_CombinationSumII.h; sourceTree = SOURCE_ROOT; };
-		B99AE32521986A8E007D7D96 /* 041_FirstMissingPositive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 041_FirstMissingPositive.h; path = LeetCode/041_FirstMissingPositive.h; sourceTree = SOURCE_ROOT; };
-		B9B1D6052177687F00763EA5 /* 034_SearchForARange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 034_SearchForARange.h; path = ../../LeetCode/LeetCode/034_SearchForARange.h; sourceTree = "<group>"; };
-		B9B1D6062177687F00763EA5 /* 026._RemoveDuplicatesFromSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 026._RemoveDuplicatesFromSortedArray.h; path = ../../LeetCode/LeetCode/026._RemoveDuplicatesFromSortedArray.h; sourceTree = "<group>"; };
-		B9B1D6072177687F00763EA5 /* 011_ContainerWithMostWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 011_ContainerWithMostWater.h; path = ../../LeetCode/LeetCode/011_ContainerWithMostWater.h; sourceTree = "<group>"; };
+		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = Leetcode/Solved/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
+		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = LeetCode/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
+		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = Leetcode/Solved/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
+		B964FC98218E8CA3004D2DBF /* 038_CountAndSay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 038_CountAndSay.h; path = Leetcode/Solved/038_CountAndSay.h; sourceTree = SOURCE_ROOT; };
+		B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 040_CombinationSumII.h; path = Leetcode/Solved/040_CombinationSumII.h; sourceTree = SOURCE_ROOT; };
+		B99AE32521986A8E007D7D96 /* 041_FirstMissingPositive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 041_FirstMissingPositive.h; path = Leetcode/Solved/041_FirstMissingPositive.h; sourceTree = SOURCE_ROOT; };
+		B9B1D6052177687F00763EA5 /* 034_SearchForARange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 034_SearchForARange.h; sourceTree = "<group>"; };
+		B9B1D6062177687F00763EA5 /* 026._RemoveDuplicatesFromSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 026._RemoveDuplicatesFromSortedArray.h; sourceTree = "<group>"; };
+		B9B1D6072177687F00763EA5 /* 011_ContainerWithMostWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 011_ContainerWithMostWater.h; sourceTree = "<group>"; };
 		B9B1D6082177687F00763EA5 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = ../../LeetCode/LeetCode/Common.h; sourceTree = "<group>"; };
-		B9B1D6092177687F00763EA5 /* 008_StringToInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 008_StringToInteger.h; path = ../../LeetCode/LeetCode/008_StringToInteger.h; sourceTree = "<group>"; };
-		B9B1D60A2177687F00763EA5 /* 012_IntegerToRoman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 012_IntegerToRoman.h; path = ../../LeetCode/LeetCode/012_IntegerToRoman.h; sourceTree = "<group>"; };
-		B9B1D60B2177687F00763EA5 /* 017_LetterCombinationsOfAPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 017_LetterCombinationsOfAPhoneNumber.h; path = ../../LeetCode/LeetCode/017_LetterCombinationsOfAPhoneNumber.h; sourceTree = "<group>"; };
-		B9B1D60C2177687F00763EA5 /* 027_RemoveElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 027_RemoveElement.h; path = ../../LeetCode/LeetCode/027_RemoveElement.h; sourceTree = "<group>"; };
-		B9B1D60D2177687F00763EA5 /* 029_DivideTwoIntegers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 029_DivideTwoIntegers.h; path = ../../LeetCode/LeetCode/029_DivideTwoIntegers.h; sourceTree = "<group>"; };
-		B9B1D60E2177687F00763EA5 /* 010_RegularExpressionMatchingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 010_RegularExpressionMatchingHeader.h; path = ../../LeetCode/LeetCode/010_RegularExpressionMatchingHeader.h; sourceTree = "<group>"; };
-		B9B1D60F2177687F00763EA5 /* 015_3Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 015_3Sum.h; path = ../../LeetCode/LeetCode/015_3Sum.h; sourceTree = "<group>"; };
-		B9B1D6102177687F00763EA5 /* 004_MedianofTwoSortedArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 004_MedianofTwoSortedArrays.h; path = ../../LeetCode/LeetCode/004_MedianofTwoSortedArrays.h; sourceTree = "<group>"; };
-		B9B1D6112177687F00763EA5 /* 014_LongestCommonPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 014_LongestCommonPrefix.h; path = ../../LeetCode/LeetCode/014_LongestCommonPrefix.h; sourceTree = "<group>"; };
-		B9B1D6122177687F00763EA5 /* 007_ReverseInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 007_ReverseInteger.h; path = ../../LeetCode/LeetCode/007_ReverseInteger.h; sourceTree = "<group>"; };
-		B9B1D6132177687F00763EA5 /* 030_SubstringWithConcatenationOfAllWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 030_SubstringWithConcatenationOfAllWords.h; path = ../../LeetCode/LeetCode/030_SubstringWithConcatenationOfAllWords.h; sourceTree = "<group>"; };
-		B9B1D6142177687F00763EA5 /* 020_ValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 020_ValidParentheses.h; path = ../../LeetCode/LeetCode/020_ValidParentheses.h; sourceTree = "<group>"; };
-		B9B1D6152177687F00763EA5 /* 001_TwoSum .h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "001_TwoSum .h"; path = "../../LeetCode/LeetCode/001_TwoSum .h"; sourceTree = "<group>"; };
-		B9B1D6162177687F00763EA5 /* 018_4Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 018_4Sum.h; path = ../../LeetCode/LeetCode/018_4Sum.h; sourceTree = "<group>"; };
-		B9B1D6172177688000763EA5 /* 028_ImplementStrStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 028_ImplementStrStr.h; path = ../../LeetCode/LeetCode/028_ImplementStrStr.h; sourceTree = "<group>"; };
-		B9B1D6182177688000763EA5 /* 036_ValidSudoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 036_ValidSudoku.h; path = ../../LeetCode/LeetCode/036_ValidSudoku.h; sourceTree = "<group>"; };
+		B9B1D6092177687F00763EA5 /* 008_StringToInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 008_StringToInteger.h; sourceTree = "<group>"; };
+		B9B1D60A2177687F00763EA5 /* 012_IntegerToRoman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 012_IntegerToRoman.h; sourceTree = "<group>"; };
+		B9B1D60B2177687F00763EA5 /* 017_LetterCombinationsOfAPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 017_LetterCombinationsOfAPhoneNumber.h; sourceTree = "<group>"; };
+		B9B1D60C2177687F00763EA5 /* 027_RemoveElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 027_RemoveElement.h; sourceTree = "<group>"; };
+		B9B1D60D2177687F00763EA5 /* 029_DivideTwoIntegers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 029_DivideTwoIntegers.h; sourceTree = "<group>"; };
+		B9B1D60E2177687F00763EA5 /* 010_RegularExpressionMatchingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 010_RegularExpressionMatchingHeader.h; sourceTree = "<group>"; };
+		B9B1D60F2177687F00763EA5 /* 015_3Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 015_3Sum.h; sourceTree = "<group>"; };
+		B9B1D6102177687F00763EA5 /* 004_MedianofTwoSortedArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 004_MedianofTwoSortedArrays.h; sourceTree = "<group>"; };
+		B9B1D6112177687F00763EA5 /* 014_LongestCommonPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 014_LongestCommonPrefix.h; sourceTree = "<group>"; };
+		B9B1D6122177687F00763EA5 /* 007_ReverseInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 007_ReverseInteger.h; sourceTree = "<group>"; };
+		B9B1D6132177687F00763EA5 /* 030_SubstringWithConcatenationOfAllWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 030_SubstringWithConcatenationOfAllWords.h; sourceTree = "<group>"; };
+		B9B1D6142177687F00763EA5 /* 020_ValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 020_ValidParentheses.h; sourceTree = "<group>"; };
+		B9B1D6152177687F00763EA5 /* 001_TwoSum .h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "001_TwoSum .h"; sourceTree = "<group>"; };
+		B9B1D6162177687F00763EA5 /* 018_4Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 018_4Sum.h; sourceTree = "<group>"; };
+		B9B1D6172177688000763EA5 /* 028_ImplementStrStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 028_ImplementStrStr.h; sourceTree = "<group>"; };
+		B9B1D6182177688000763EA5 /* 036_ValidSudoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 036_ValidSudoku.h; sourceTree = "<group>"; };
 		B9B1D6192177688000763EA5 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = ../../LeetCode/LeetCode/Test.cpp; sourceTree = "<group>"; };
-		B9B1D61A2177688000763EA5 /* 003_LongestSubstringWithoutRepeatingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 003_LongestSubstringWithoutRepeatingCharacters.h; path = ../../LeetCode/LeetCode/003_LongestSubstringWithoutRepeatingCharacters.h; sourceTree = "<group>"; };
-		B9B1D61B2177688000763EA5 /* 002_AddTwoNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 002_AddTwoNumbers.h; path = ../../LeetCode/LeetCode/002_AddTwoNumbers.h; sourceTree = "<group>"; };
-		B9B1D61C2177688000763EA5 /* 009_PalindromeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 009_PalindromeNumber.h; path = ../../LeetCode/LeetCode/009_PalindromeNumber.h; sourceTree = "<group>"; };
-		B9B1D61D2177688000763EA5 /* 021_MergeTwoSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 021_MergeTwoSortedLists.h; path = ../../LeetCode/LeetCode/021_MergeTwoSortedLists.h; sourceTree = "<group>"; };
-		B9B1D61E2177688000763EA5 /* 005_LongestPalindromicSubstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 005_LongestPalindromicSubstring.h; path = ../../LeetCode/LeetCode/005_LongestPalindromicSubstring.h; sourceTree = "<group>"; };
-		B9B1D61F2177688000763EA5 /* 024_SwapNodesInPairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 024_SwapNodesInPairs.h; path = ../../LeetCode/LeetCode/024_SwapNodesInPairs.h; sourceTree = "<group>"; };
-		B9B1D6202177688000763EA5 /* 006_ZigZagConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 006_ZigZagConversion.h; path = ../../LeetCode/LeetCode/006_ZigZagConversion.h; sourceTree = "<group>"; };
-		B9B1D6212177688000763EA5 /* 016_3SumClosest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 016_3SumClosest.h; path = ../../LeetCode/LeetCode/016_3SumClosest.h; sourceTree = "<group>"; };
-		B9B1D6222177688000763EA5 /* 013_RomanToInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 013_RomanToInteger.h; path = ../../LeetCode/LeetCode/013_RomanToInteger.h; sourceTree = "<group>"; };
-		B9B1D6232177688100763EA5 /* 025_ReverseNodesInKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 025_ReverseNodesInKGroup.h; path = ../../LeetCode/LeetCode/025_ReverseNodesInKGroup.h; sourceTree = "<group>"; };
-		B9B1D6242177688100763EA5 /* 035_SearchInsertPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 035_SearchInsertPosition.h; path = ../../LeetCode/LeetCode/035_SearchInsertPosition.h; sourceTree = "<group>"; };
-		B9B1D6252177688100763EA5 /* 033_SearchInRotatedSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 033_SearchInRotatedSortedArray.h; path = ../../LeetCode/LeetCode/033_SearchInRotatedSortedArray.h; sourceTree = "<group>"; };
-		B9B1D6262177688100763EA5 /* 022_GenerateParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 022_GenerateParentheses.h; path = ../../LeetCode/LeetCode/022_GenerateParentheses.h; sourceTree = "<group>"; };
-		B9B1D6272177688100763EA5 /* 019_RemoveNthNodeFromEndofList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 019_RemoveNthNodeFromEndofList.h; path = ../../LeetCode/LeetCode/019_RemoveNthNodeFromEndofList.h; sourceTree = "<group>"; };
-		B9B1D6282177688100763EA5 /* 031_NextPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 031_NextPermutation.h; path = ../../LeetCode/LeetCode/031_NextPermutation.h; sourceTree = "<group>"; };
-		B9B1D6292177688100763EA5 /* 023_MergeKSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 023_MergeKSortedLists.h; path = ../../LeetCode/LeetCode/023_MergeKSortedLists.h; sourceTree = "<group>"; };
-		B9B1D62A2177688100763EA5 /* 032_LongestValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 032_LongestValidParentheses.h; path = ../../LeetCode/LeetCode/032_LongestValidParentheses.h; sourceTree = "<group>"; };
+		B9B1D61A2177688000763EA5 /* 003_LongestSubstringWithoutRepeatingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 003_LongestSubstringWithoutRepeatingCharacters.h; sourceTree = "<group>"; };
+		B9B1D61B2177688000763EA5 /* 002_AddTwoNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 002_AddTwoNumbers.h; sourceTree = "<group>"; };
+		B9B1D61C2177688000763EA5 /* 009_PalindromeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 009_PalindromeNumber.h; sourceTree = "<group>"; };
+		B9B1D61D2177688000763EA5 /* 021_MergeTwoSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 021_MergeTwoSortedLists.h; sourceTree = "<group>"; };
+		B9B1D61E2177688000763EA5 /* 005_LongestPalindromicSubstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 005_LongestPalindromicSubstring.h; sourceTree = "<group>"; };
+		B9B1D61F2177688000763EA5 /* 024_SwapNodesInPairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 024_SwapNodesInPairs.h; sourceTree = "<group>"; };
+		B9B1D6202177688000763EA5 /* 006_ZigZagConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 006_ZigZagConversion.h; sourceTree = "<group>"; };
+		B9B1D6212177688000763EA5 /* 016_3SumClosest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 016_3SumClosest.h; sourceTree = "<group>"; };
+		B9B1D6222177688000763EA5 /* 013_RomanToInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 013_RomanToInteger.h; sourceTree = "<group>"; };
+		B9B1D6232177688100763EA5 /* 025_ReverseNodesInKGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 025_ReverseNodesInKGroup.h; sourceTree = "<group>"; };
+		B9B1D6242177688100763EA5 /* 035_SearchInsertPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 035_SearchInsertPosition.h; sourceTree = "<group>"; };
+		B9B1D6252177688100763EA5 /* 033_SearchInRotatedSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 033_SearchInRotatedSortedArray.h; sourceTree = "<group>"; };
+		B9B1D6262177688100763EA5 /* 022_GenerateParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 022_GenerateParentheses.h; sourceTree = "<group>"; };
+		B9B1D6272177688100763EA5 /* 019_RemoveNthNodeFromEndofList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 019_RemoveNthNodeFromEndofList.h; sourceTree = "<group>"; };
+		B9B1D6282177688100763EA5 /* 031_NextPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 031_NextPermutation.h; sourceTree = "<group>"; };
+		B9B1D6292177688100763EA5 /* 023_MergeKSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 023_MergeKSortedLists.h; sourceTree = "<group>"; };
+		B9B1D62A2177688100763EA5 /* 032_LongestValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 032_LongestValidParentheses.h; sourceTree = "<group>"; };
 		B9D14290217767B800B93D5D /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,23 +81,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B9D14287217767B800B93D5D = {
-			isa = PBXGroup;
-			children = (
-				B9D14292217767B800B93D5D /* Leetcode */,
-				B9D14291217767B800B93D5D /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		B9D14291217767B800B93D5D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B9D14290217767B800B93D5D /* Leetcode */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B9D14292217767B800B93D5D /* Leetcode */ = {
+		B90B5233219FF15D00312434 /* Solved */ = {
 			isa = PBXGroup;
 			children = (
 				B9B1D6152177687F00763EA5 /* 001_TwoSum .h */,
@@ -140,8 +125,33 @@
 				53C616A8219302AF00A9E106 /* 039_CombinationSum.h */,
 				B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */,
 				B99AE32521986A8E007D7D96 /* 041_FirstMissingPositive.h */,
+			);
+			path = Solved;
+			sourceTree = "<group>";
+		};
+		B9D14287217767B800B93D5D = {
+			isa = PBXGroup;
+			children = (
+				B9D14292217767B800B93D5D /* Leetcode */,
+				B9D14291217767B800B93D5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9D14291217767B800B93D5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9D14290217767B800B93D5D /* Leetcode */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9D14292217767B800B93D5D /* Leetcode */ = {
+			isa = PBXGroup;
+			children = (
+				B90B5233219FF15D00312434 /* Solved */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
+				B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
