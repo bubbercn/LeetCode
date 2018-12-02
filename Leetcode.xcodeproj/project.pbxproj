@@ -68,6 +68,7 @@
 		B9B1D6282177688100763EA5 /* 031_NextPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 031_NextPermutation.h; sourceTree = "<group>"; };
 		B9B1D6292177688100763EA5 /* 023_MergeKSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 023_MergeKSortedLists.h; sourceTree = "<group>"; };
 		B9B1D62A2177688100763EA5 /* 032_LongestValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 032_LongestValidParentheses.h; sourceTree = "<group>"; };
+		B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 044_WildcardMatching.h; path = LeetCode/044_WildcardMatching.h; sourceTree = SOURCE_ROOT; };
 		B9D14290217767B800B93D5D /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +155,7 @@
 				B9B1D6192177688000763EA5 /* Test.cpp */,
 				B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */,
 				B90B523421A1708400312434 /* 043_MultiplyStrings.h */,
+				B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
