@@ -41,6 +41,6 @@ void Test()
     vector<int> input3 = {7, 8, 9, 11, 12};
     assert(solution.firstMissingPositive(input3) == 1);
     
-    vector<int> input = {-1,4,2,1,9,10};
+    vector<int> input = {-1, 4, 2, 1, 9, 10};
     assert(solution.firstMissingPositive(input) == 3);
 }
