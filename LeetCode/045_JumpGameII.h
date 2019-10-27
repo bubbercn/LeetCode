@@ -3,8 +3,8 @@
 
 class Solution {
 public:
-    bool isMatch(string s, string p) {
-        return false;
+    int jump(vector<int>& nums) {
+        return 0;
     }
 };
 
@@ -12,3 +12,4 @@ void Test()
 {
     
 }
+

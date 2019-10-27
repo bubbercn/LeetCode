@@ -24,8 +24,9 @@
 
 /* Begin PBXFileReference section */
 		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = Leetcode/Solved/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
-		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = LeetCode/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
-		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = LeetCode/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
+		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = Leetcode/Solved/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
+		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = Leetcode/Solved/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
+		B92B7B8A236545A200044946 /* 045_JumpGameII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
 		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = Leetcode/Solved/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
 		B964FC98218E8CA3004D2DBF /* 038_CountAndSay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 038_CountAndSay.h; path = Leetcode/Solved/038_CountAndSay.h; sourceTree = SOURCE_ROOT; };
 		B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 040_CombinationSumII.h; path = Leetcode/Solved/040_CombinationSumII.h; sourceTree = SOURCE_ROOT; };
@@ -68,7 +69,7 @@
 		B9B1D6282177688100763EA5 /* 031_NextPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 031_NextPermutation.h; sourceTree = "<group>"; };
 		B9B1D6292177688100763EA5 /* 023_MergeKSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 023_MergeKSortedLists.h; sourceTree = "<group>"; };
 		B9B1D62A2177688100763EA5 /* 032_LongestValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 032_LongestValidParentheses.h; sourceTree = "<group>"; };
-		B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 044_WildcardMatching.h; path = LeetCode/044_WildcardMatching.h; sourceTree = SOURCE_ROOT; };
+		B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 044_WildcardMatching.h; path = Leetcode/Solved/044_WildcardMatching.h; sourceTree = SOURCE_ROOT; };
 		B9D14290217767B800B93D5D /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +128,9 @@
 				53C616A8219302AF00A9E106 /* 039_CombinationSum.h */,
 				B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */,
 				B99AE32521986A8E007D7D96 /* 041_FirstMissingPositive.h */,
+				B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */,
+				B90B523421A1708400312434 /* 043_MultiplyStrings.h */,
+				B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */,
 			);
 			path = Solved;
 			sourceTree = "<group>";
@@ -153,9 +157,7 @@
 				B90B5233219FF15D00312434 /* Solved */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
-				B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */,
-				B90B523421A1708400312434 /* 043_MultiplyStrings.h */,
-				B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */,
+				B92B7B8A236545A200044946 /* 045_JumpGameII.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B9D14287217767B800B93D5D;
 			productRefGroup = B9D14291217767B800B93D5D /* Products */;
