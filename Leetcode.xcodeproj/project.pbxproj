@@ -23,7 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = LeetCode/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
+		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = Leetcode/Solved/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
+		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = LeetCode/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
 		5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/Solved/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
 		5385EC83236F10FC007B17B6 /* 046_Permutations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 046_Permutations.h; path = Leetcode/Solved/046_Permutations.h; sourceTree = SOURCE_ROOT; };
 		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = Leetcode/Solved/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
@@ -135,6 +136,7 @@
 				B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */,
 				5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */,
 				5385EC83236F10FC007B17B6 /* 046_Permutations.h */,
+				537142C9237658E10073DDD9 /* 047_PermutationsII.h */,
 			);
 			path = Solved;
 			sourceTree = "<group>";
@@ -161,7 +163,7 @@
 				B90B5233219FF15D00312434 /* Solved */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
-				537142C9237658E10073DDD9 /* 047_PermutationsII.h */,
+				537142CA237707390073DDD9 /* 048_RotateImage.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
