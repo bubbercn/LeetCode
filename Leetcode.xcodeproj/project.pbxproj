@@ -23,10 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = LeetCode/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
+		5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/Solved/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
+		5385EC83236F10FC007B17B6 /* 046_Permutations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 046_Permutations.h; path = Leetcode/Solved/046_Permutations.h; sourceTree = SOURCE_ROOT; };
 		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = Leetcode/Solved/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
 		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = Leetcode/Solved/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
 		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = Leetcode/Solved/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
-		B92B7B8A236545A200044946 /* 045_JumpGameII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
 		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = Leetcode/Solved/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
 		B964FC98218E8CA3004D2DBF /* 038_CountAndSay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 038_CountAndSay.h; path = Leetcode/Solved/038_CountAndSay.h; sourceTree = SOURCE_ROOT; };
 		B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 040_CombinationSumII.h; path = Leetcode/Solved/040_CombinationSumII.h; sourceTree = SOURCE_ROOT; };
@@ -131,6 +133,8 @@
 				B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */,
 				B90B523421A1708400312434 /* 043_MultiplyStrings.h */,
 				B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */,
+				5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */,
+				5385EC83236F10FC007B17B6 /* 046_Permutations.h */,
 			);
 			path = Solved;
 			sourceTree = "<group>";
@@ -155,9 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				B90B5233219FF15D00312434 /* Solved */,
-				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
-				B92B7B8A236545A200044946 /* 045_JumpGameII.h */,
+				B9B1D6082177687F00763EA5 /* Common.h */,
+				537142C9237658E10073DDD9 /* 047_PermutationsII.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";

@@ -3,12 +3,11 @@
 
 class Solution {
 public:
-    vector<vector<int>> permute(vector<int>& nums) {
-        
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        return {};
     }
 };
 
 void Test()
 {
-    
 }
