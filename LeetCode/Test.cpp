@@ -1,4 +1,4 @@
-#include "048_RotateImage.h"
+#include "050_Pow.h"
 int main()
 {
 	Test();
