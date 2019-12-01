@@ -1,4 +1,4 @@
-#include "050_Pow.h"
+#include "051_NQueens.h"
 int main()
 {
 	Test();

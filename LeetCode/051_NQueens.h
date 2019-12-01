@@ -3,8 +3,8 @@
 
 class Solution {
 public:
-    double myPow(double x, int n) {
-        return 0;
+    vector<vector<string>> solveNQueens(int n) {
+        return {};
     }
 };
 
@@ -12,3 +12,4 @@ void Test()
 {
     
 }
+
