@@ -4,7 +4,7 @@
 class Solution
 {
 public:
-    vector<vector<string>> solveNQueens(int n)
+    int totalNQueens(int n)
     {
         Init(n);
         Process();
@@ -13,14 +13,14 @@ public:
 private:
     vector<vector<int>> mChessBoard;
     int mQueens;
-    vector<vector<string>> mResult;
+    int mResult;
     int N;
     
     void Init(int n)
     {
         mChessBoard = vector<vector<int>>(n, vector<int>(n, 0));
         mQueens = 0;
-        mResult = {};
+        mResult = 0;
         N = n;
     }
     
@@ -104,30 +104,13 @@ private:
     
     void AddResult()
     {
-        vector<string> result;
-        for (int i = 0; i < N; i++)
-        {
-            string temp;
-            for (int j = 0; j < N; j++)
-            {
-                if (mChessBoard[i][j] == -1)
-                {
-                    temp += 'Q';
-                }
-                else
-                {
-                    temp += '.';
-                }
-            }
-            result.emplace_back(temp);
-        }
-        mResult.emplace_back(result);
+        mResult++;
     }
 };
 
 void Test()
 {
     Solution solution;
-    solution.solveNQueens(4);
+    cout << solution.totalNQueens(8) << endl;
 }
 

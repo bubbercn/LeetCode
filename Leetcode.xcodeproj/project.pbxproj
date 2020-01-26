@@ -27,6 +27,8 @@
 		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = Leetcode/Solved/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
 		5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/Solved/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
 		5385EC83236F10FC007B17B6 /* 046_Permutations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 046_Permutations.h; path = Leetcode/Solved/046_Permutations.h; sourceTree = SOURCE_ROOT; };
+		53BB2D8D23DDE33B005E5A70 /* 052_NQueensII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 052_NQueensII.h; path = Leetcode/052_NQueensII.h; sourceTree = SOURCE_ROOT; };
+		53BB2D8E23DDE596005E5A70 /* 053_MaximumSubarray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 053_MaximumSubarray.h; path = LeetCode/053_MaximumSubarray.h; sourceTree = SOURCE_ROOT; };
 		53C616A8219302AF00A9E106 /* 039_CombinationSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 039_CombinationSum.h; path = Leetcode/Solved/039_CombinationSum.h; sourceTree = SOURCE_ROOT; };
 		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = Leetcode/Solved/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
 		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = Leetcode/Solved/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
@@ -170,6 +172,8 @@
 				B9B1D6192177688000763EA5 /* Test.cpp */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9FB9EEC2393611B00984B77 /* 051_NQueens.h */,
+				53BB2D8D23DDE33B005E5A70 /* 052_NQueensII.h */,
+				53BB2D8E23DDE596005E5A70 /* 053_MaximumSubarray.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
