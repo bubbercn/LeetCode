@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = Leetcode/Solved/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
 		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = Leetcode/Solved/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
+		537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 054_SpiralMatrix.h; path = LeetCode/054_SpiralMatrix.h; sourceTree = SOURCE_ROOT; };
 		5385EC82236F10E1007B17B6 /* 045_JumpGameII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 045_JumpGameII.h; path = LeetCode/Solved/045_JumpGameII.h; sourceTree = SOURCE_ROOT; };
 		5385EC83236F10FC007B17B6 /* 046_Permutations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 046_Permutations.h; path = Leetcode/Solved/046_Permutations.h; sourceTree = SOURCE_ROOT; };
 		53BB2D8D23DDE33B005E5A70 /* 052_NQueensII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 052_NQueensII.h; path = Leetcode/052_NQueensII.h; sourceTree = SOURCE_ROOT; };
@@ -174,6 +175,7 @@
 				B9FB9EEC2393611B00984B77 /* 051_NQueens.h */,
 				53BB2D8D23DDE33B005E5A70 /* 052_NQueensII.h */,
 				53BB2D8E23DDE596005E5A70 /* 053_MaximumSubarray.h */,
+				537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
