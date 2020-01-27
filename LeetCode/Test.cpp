@@ -1,4 +1,4 @@
-#include "055_JumpGame.h"
+#include "056_MergeIntervals.h"
 int main()
 {
 	Test();
