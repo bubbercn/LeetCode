@@ -75,6 +75,7 @@
 		B9B1D6282177688100763EA5 /* 031_NextPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 031_NextPermutation.h; sourceTree = "<group>"; };
 		B9B1D6292177688100763EA5 /* 023_MergeKSortedLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 023_MergeKSortedLists.h; sourceTree = "<group>"; };
 		B9B1D62A2177688100763EA5 /* 032_LongestValidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 032_LongestValidParentheses.h; sourceTree = "<group>"; };
+		B9C5EC2223DEC4A700A7035E /* 055_JumpGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 055_JumpGame.h; path = LeetCode/055_JumpGame.h; sourceTree = SOURCE_ROOT; };
 		B9C6577421B414B300F6FF49 /* 044_WildcardMatching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 044_WildcardMatching.h; path = Leetcode/Solved/044_WildcardMatching.h; sourceTree = SOURCE_ROOT; };
 		B9D14290217767B800B93D5D /* Leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FB9EEA2392CC4B00984B77 /* 049_GroupAnagrams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 049_GroupAnagrams.h; path = Leetcode/Solved/049_GroupAnagrams.h; sourceTree = SOURCE_ROOT; };
@@ -176,6 +177,7 @@
 				53BB2D8D23DDE33B005E5A70 /* 052_NQueensII.h */,
 				53BB2D8E23DDE596005E5A70 /* 053_MaximumSubarray.h */,
 				537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */,
+				B9C5EC2223DEC4A700A7035E /* 055_JumpGame.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";

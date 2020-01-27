@@ -7,12 +7,18 @@ public:
     {
         vector<int> result;
         size_t top = 0, left = 0;
-        size_t bottom = matrix.size(), right = matrix.begin()->size();
+        size_t bottom = matrix.size();
+        if (bottom == 0)
+        {
+            return {};
+        }
+        size_t right = matrix.begin()->size();
         size_t x = 0, y = 0;
         size_t direction = 0;
         while (top < bottom && left < right)
         {
-            switch (direction % 4) {
+            switch (direction % 4)
+            {
                 case 0:
                 {
                     while (y >= left && y < right)
@@ -64,6 +70,7 @@ public:
                 default:
                     break;
             }
+            direction++;
         }
         return result;
     }
@@ -79,5 +86,12 @@ void Test()
     };
     vector<int> output1 = {1,2,3,6,9,8,7,4,5};
     assert(solution.spiralOrder(input1) == output1);
-    
+ 
+    vector<vector<int>> input2 = {
+        { 1, 2, 3, 4 },
+        { 5, 6, 7, 8},
+        { 9, 10, 11, 12}
+    };
+    vector<int> output2 = {1,2,3,4,8,12,11,10,9,5,6,7};
+    assert(solution.spiralOrder(input2) == output2);
 }
