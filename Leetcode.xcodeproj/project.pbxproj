@@ -28,6 +28,8 @@
 		530DE33023E2D16600A14DC7 /* 059_SpiralMatrixII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 059_SpiralMatrixII.h; path = Leetcode/Solved/059_SpiralMatrixII.h; sourceTree = SOURCE_ROOT; };
 		530DE33123E2D44F00A14DC7 /* 060_PermutationSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 060_PermutationSequence.h; path = Leetcode/Solved/060_PermutationSequence.h; sourceTree = SOURCE_ROOT; };
 		533F510523E6FD52003B027A /* 061_RotateList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 061_RotateList.h; path = LeetCode/061_RotateList.h; sourceTree = SOURCE_ROOT; };
+		535EBF1723F0136A0095C30B /* 063_UniquePathsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 063_UniquePathsII.h; path = LeetCode/063_UniquePathsII.h; sourceTree = SOURCE_ROOT; };
+		535EBF1823F023DD0095C30B /* 064_MinimumPathSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 064_MinimumPathSum.h; path = LeetCode/064_MinimumPathSum.h; sourceTree = SOURCE_ROOT; };
 		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = Leetcode/Solved/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
 		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = Leetcode/Solved/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
 		537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 054_SpiralMatrix.h; path = Leetcode/Solved/054_SpiralMatrix.h; sourceTree = SOURCE_ROOT; };
@@ -192,6 +194,8 @@
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				533F510523E6FD52003B027A /* 061_RotateList.h */,
 				53C9096923EFF71000862C07 /* 062_UniquePaths.h */,
+				535EBF1723F0136A0095C30B /* 063_UniquePathsII.h */,
+				535EBF1823F023DD0095C30B /* 064_MinimumPathSum.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
