@@ -1,4 +1,4 @@
-#include "069_SqrtX.h"
+#include "071_SimplifyPath.h"
 int main()
 {
 	Test();

@@ -28,6 +28,8 @@
 		530DE33023E2D16600A14DC7 /* 059_SpiralMatrixII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 059_SpiralMatrixII.h; path = Leetcode/Solved/059_SpiralMatrixII.h; sourceTree = SOURCE_ROOT; };
 		530DE33123E2D44F00A14DC7 /* 060_PermutationSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 060_PermutationSequence.h; path = Leetcode/Solved/060_PermutationSequence.h; sourceTree = SOURCE_ROOT; };
 		5310A5B923F8F882005F34D6 /* 069_SqrtX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 069_SqrtX.h; path = LeetCode/069_SqrtX.h; sourceTree = SOURCE_ROOT; };
+		5310A5BA23F9826A005F34D6 /* 070_ClimbingStairs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 070_ClimbingStairs.h; path = LeetCode/070_ClimbingStairs.h; sourceTree = SOURCE_ROOT; };
+		5310A5BB23F985A5005F34D6 /* 071_SimplifyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 071_SimplifyPath.h; path = LeetCode/071_SimplifyPath.h; sourceTree = SOURCE_ROOT; };
 		533F510523E6FD52003B027A /* 061_RotateList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 061_RotateList.h; path = LeetCode/061_RotateList.h; sourceTree = SOURCE_ROOT; };
 		535EBF1723F0136A0095C30B /* 063_UniquePathsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 063_UniquePathsII.h; path = LeetCode/063_UniquePathsII.h; sourceTree = SOURCE_ROOT; };
 		535EBF1823F023DD0095C30B /* 064_MinimumPathSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 064_MinimumPathSum.h; path = LeetCode/064_MinimumPathSum.h; sourceTree = SOURCE_ROOT; };
@@ -206,6 +208,8 @@
 				53E7B19A23F803E6003C3F6A /* 067_AddBinary.h */,
 				53E7B19B23F83778003C3F6A /* 068_TextJustification.h */,
 				5310A5B923F8F882005F34D6 /* 069_SqrtX.h */,
+				5310A5BA23F9826A005F34D6 /* 070_ClimbingStairs.h */,
+				5310A5BB23F985A5005F34D6 /* 071_SimplifyPath.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
