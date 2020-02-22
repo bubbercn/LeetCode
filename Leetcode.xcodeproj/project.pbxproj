@@ -49,6 +49,7 @@
 		53ED82A824001EEE0074BF8D /* 072_EditDistance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 072_EditDistance.h; path = LeetCode/072_EditDistance.h; sourceTree = SOURCE_ROOT; };
 		53ED82A924014BE40074BF8D /* 073_SetMatrixZeroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 073_SetMatrixZeroes.h; path = LeetCode/073_SetMatrixZeroes.h; sourceTree = SOURCE_ROOT; };
 		53ED82AA240160CA0074BF8D /* 074_SearchA2DMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 074_SearchA2DMatrix.h; path = LeetCode/074_SearchA2DMatrix.h; sourceTree = SOURCE_ROOT; };
+		53ED82AB24016EA80074BF8D /* 075_SortColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 075_SortColors.h; path = LeetCode/075_SortColors.h; sourceTree = SOURCE_ROOT; };
 		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = Leetcode/Solved/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
 		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = Leetcode/Solved/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
 		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = Leetcode/Solved/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
@@ -216,6 +217,7 @@
 				53ED82A824001EEE0074BF8D /* 072_EditDistance.h */,
 				53ED82A924014BE40074BF8D /* 073_SetMatrixZeroes.h */,
 				53ED82AA240160CA0074BF8D /* 074_SearchA2DMatrix.h */,
+				53ED82AB24016EA80074BF8D /* 075_SortColors.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
