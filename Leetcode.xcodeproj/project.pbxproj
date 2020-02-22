@@ -47,6 +47,7 @@
 		53E7B19A23F803E6003C3F6A /* 067_AddBinary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 067_AddBinary.h; path = Leetcode/Solved/067_AddBinary.h; sourceTree = SOURCE_ROOT; };
 		53E7B19B23F83778003C3F6A /* 068_TextJustification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 068_TextJustification.h; path = Leetcode/Solved/068_TextJustification.h; sourceTree = SOURCE_ROOT; };
 		53ED82A824001EEE0074BF8D /* 072_EditDistance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 072_EditDistance.h; path = LeetCode/072_EditDistance.h; sourceTree = SOURCE_ROOT; };
+		53ED82A924014BE40074BF8D /* 073_SetMatrixZeroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 073_SetMatrixZeroes.h; path = LeetCode/073_SetMatrixZeroes.h; sourceTree = SOURCE_ROOT; };
 		B90B5232219FF0DC00312434 /* 042_TrappingRainWater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 042_TrappingRainWater.h; path = Leetcode/Solved/042_TrappingRainWater.h; sourceTree = SOURCE_ROOT; };
 		B90B523421A1708400312434 /* 043_MultiplyStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 043_MultiplyStrings.h; path = Leetcode/Solved/043_MultiplyStrings.h; sourceTree = SOURCE_ROOT; };
 		B964FC97218E2372004D2DBF /* 037_SudokuSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 037_SudokuSolver.h; path = Leetcode/Solved/037_SudokuSolver.h; sourceTree = SOURCE_ROOT; };
@@ -212,6 +213,7 @@
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				5310A5BB23F985A5005F34D6 /* 071_SimplifyPath.h */,
 				53ED82A824001EEE0074BF8D /* 072_EditDistance.h */,
+				53ED82A924014BE40074BF8D /* 073_SetMatrixZeroes.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
