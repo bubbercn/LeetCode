@@ -21,7 +21,7 @@ public:
 private:
     int binarySearch1(vector<vector<int>>& matrix, int target)
     {
-        int left = 0, right = matrix.size() - 1;
+        int left = 0, right = static_cast<int>(matrix.size() - 1);
         while (left <= right)
         {
             int middle = (left + right) / 2;
@@ -43,7 +43,7 @@ private:
     
     bool binarySearch2(vector<int> matrix, int target)
     {
-        int left = 0, right = matrix.size();
+        int left = 0, right = static_cast<int>(matrix.size());
         while (left <= right)
         {
             int middle = (left + right) / 2;
