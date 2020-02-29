@@ -35,6 +35,7 @@
 		535EBF1823F023DD0095C30B /* 064_MinimumPathSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 064_MinimumPathSum.h; path = Leetcode/Solved/064_MinimumPathSum.h; sourceTree = SOURCE_ROOT; };
 		5366519A23F03A9D00C188CC /* 065_ValidNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 065_ValidNumber.h; path = Leetcode/Solved/065_ValidNumber.h; sourceTree = SOURCE_ROOT; };
 		536F6DAD240A3176002F4348 /* 077_Combinations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 077_Combinations.h; path = LeetCode/077_Combinations.h; sourceTree = SOURCE_ROOT; };
+		536F6DAE240A7F69002F4348 /* 078_Subsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 078_Subsets.h; path = LeetCode/078_Subsets.h; sourceTree = SOURCE_ROOT; };
 		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = Leetcode/Solved/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
 		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = Leetcode/Solved/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
 		537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 054_SpiralMatrix.h; path = Leetcode/Solved/054_SpiralMatrix.h; sourceTree = SOURCE_ROOT; };
@@ -222,6 +223,7 @@
 				53ED82AB24016EA80074BF8D /* 075_SortColors.h */,
 				53ED82AC240288870074BF8D /* 076_MinimumWindowSubstring.h */,
 				536F6DAD240A3176002F4348 /* 077_Combinations.h */,
+				536F6DAE240A7F69002F4348 /* 078_Subsets.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
