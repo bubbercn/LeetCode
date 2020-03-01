@@ -3,8 +3,8 @@
 
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-        return 0;
+    bool search(vector<int>& nums, int target) {
+        return false;
     }
 };
 
