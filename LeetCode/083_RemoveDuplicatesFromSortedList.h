@@ -8,25 +8,21 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-class Solution 
-{
+class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head)
     {
-        ListNode fakeHead(0);
-        fakeHead.next = head;  
-        ListNode* begin = &fakeHead;
         ListNode* current = head;
         ListNode* previous = nullptr;
         int currentValue = 0;
         bool first = true;
-        bool toDelete = false;
 
         while (current)
         {
             if (first)
             {
                 currentValue = current->val;
+                previous = current;
                 first = false;
             }
             else
@@ -34,33 +30,25 @@ public:
                 if (current->val != currentValue)
                 {
                     currentValue = current->val;
-                    if (toDelete)
-                    {
-                        begin->next = current;
-                        toDelete = false;
-                    }
-                    else
-                    {
-                        begin = previous;
-                    }
+                    previous = current;
                 }
                 else
                 {
-                    toDelete = true;
+                    previous->next = current->next;
+                    current = previous;
                 }
             }
-            previous = current;
             current = current->next;
         }
 
-        return fakeHead.next;
+        return head;
     }
 };
 
 void Test()
 {
     Solution solution;
-    vector<int> values = {1,2,3,3,4,4,5};
+    vector<int> values = {1,1,2};
     vector<unique_ptr<ListNode>> nodes;
     for (auto i = values.begin(); i != values.end(); i++)
     {
