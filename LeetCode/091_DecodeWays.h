@@ -3,9 +3,8 @@
 
 class Solution {
 public:
-    vector<int> grayCode(int n) 
-    {
-        return {};
+    int numDecodings(string s) {
+        return 0;
     }
 };
 
