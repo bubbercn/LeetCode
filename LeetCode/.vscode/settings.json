@@ -3,6 +3,8 @@
         "vector": "cpp",
         "xutility": "cpp",
         "algorithm": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "xstring": "cpp",
+        "cstddef": "cpp"
     }
 }
