@@ -31,6 +31,23 @@
 		5310A5BA23F9826A005F34D6 /* 070_ClimbingStairs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 070_ClimbingStairs.h; path = Leetcode/Solved/070_ClimbingStairs.h; sourceTree = SOURCE_ROOT; };
 		5310A5BB23F985A5005F34D6 /* 071_SimplifyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 071_SimplifyPath.h; path = Leetcode/Solved/071_SimplifyPath.h; sourceTree = SOURCE_ROOT; };
 		533F510523E6FD52003B027A /* 061_RotateList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 061_RotateList.h; path = Leetcode/Solved/061_RotateList.h; sourceTree = SOURCE_ROOT; };
+		535888FD2436325D002981C4 /* 096_UniqueBinarySearchTrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 096_UniqueBinarySearchTrees.h; path = LeetCode/096_UniqueBinarySearchTrees.h; sourceTree = SOURCE_ROOT; };
+		535888FE2436325D002981C4 /* 091_DecodeWays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 091_DecodeWays.h; path = LeetCode/091_DecodeWays.h; sourceTree = SOURCE_ROOT; };
+		535888FF2436325D002981C4 /* 092_ReverseLinkedListII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 092_ReverseLinkedListII.h; path = LeetCode/092_ReverseLinkedListII.h; sourceTree = SOURCE_ROOT; };
+		535889002436325D002981C4 /* 094_BinaryTreeInorderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 094_BinaryTreeInorderTraversal.h; path = LeetCode/094_BinaryTreeInorderTraversal.h; sourceTree = SOURCE_ROOT; };
+		535889012436325D002981C4 /* 093_RestoreIPAddresses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 093_RestoreIPAddresses.h; path = LeetCode/093_RestoreIPAddresses.h; sourceTree = SOURCE_ROOT; };
+		535889022436325D002981C4 /* 095_UniqueBinarySearchTreesII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 095_UniqueBinarySearchTreesII.h; path = LeetCode/095_UniqueBinarySearchTreesII.h; sourceTree = SOURCE_ROOT; };
+		535889032436325D002981C4 /* 097_InterleavingString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 097_InterleavingString.h; path = LeetCode/097_InterleavingString.h; sourceTree = SOURCE_ROOT; };
+		535889042436327E002981C4 /* 089_GrayCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 089_GrayCode.h; path = LeetCode/Solved/089_GrayCode.h; sourceTree = SOURCE_ROOT; };
+		535889052436327E002981C4 /* 084_LargestRectangleInHistogram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 084_LargestRectangleInHistogram.h; path = LeetCode/Solved/084_LargestRectangleInHistogram.h; sourceTree = SOURCE_ROOT; };
+		535889062436327E002981C4 /* 081_SearchInRotatedSortedArrayII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 081_SearchInRotatedSortedArrayII.h; path = LeetCode/Solved/081_SearchInRotatedSortedArrayII.h; sourceTree = SOURCE_ROOT; };
+		535889072436327E002981C4 /* 085_MaximalRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 085_MaximalRectangle.h; path = LeetCode/Solved/085_MaximalRectangle.h; sourceTree = SOURCE_ROOT; };
+		535889082436327E002981C4 /* 082_RemoveDuplicatesFromSortedListII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 082_RemoveDuplicatesFromSortedListII.h; path = LeetCode/Solved/082_RemoveDuplicatesFromSortedListII.h; sourceTree = SOURCE_ROOT; };
+		535889092436327E002981C4 /* 087_ScrambleString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 087_ScrambleString.h; path = LeetCode/Solved/087_ScrambleString.h; sourceTree = SOURCE_ROOT; };
+		5358890A2436327E002981C4 /* 086_PartitionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 086_PartitionList.h; path = LeetCode/Solved/086_PartitionList.h; sourceTree = SOURCE_ROOT; };
+		5358890B2436327E002981C4 /* 088_MergeSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 088_MergeSortedArray.h; path = LeetCode/Solved/088_MergeSortedArray.h; sourceTree = SOURCE_ROOT; };
+		5358890C2436327E002981C4 /* 090_SubsetsII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 090_SubsetsII.h; path = LeetCode/Solved/090_SubsetsII.h; sourceTree = SOURCE_ROOT; };
+		5358890D2436327E002981C4 /* 083_RemoveDuplicatesFromSortedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 083_RemoveDuplicatesFromSortedList.h; path = LeetCode/Solved/083_RemoveDuplicatesFromSortedList.h; sourceTree = SOURCE_ROOT; };
 		535EBF1723F0136A0095C30B /* 063_UniquePathsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 063_UniquePathsII.h; path = Leetcode/Solved/063_UniquePathsII.h; sourceTree = SOURCE_ROOT; };
 		535EBF1823F023DD0095C30B /* 064_MinimumPathSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 064_MinimumPathSum.h; path = Leetcode/Solved/064_MinimumPathSum.h; sourceTree = SOURCE_ROOT; };
 		5366519A23F03A9D00C188CC /* 065_ValidNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 065_ValidNumber.h; path = Leetcode/Solved/065_ValidNumber.h; sourceTree = SOURCE_ROOT; };
@@ -38,7 +55,6 @@
 		536F6DAE240A7F69002F4348 /* 078_Subsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 078_Subsets.h; path = Leetcode/Solved/078_Subsets.h; sourceTree = SOURCE_ROOT; };
 		536F6DAF240ABF9D002F4348 /* 079_WordSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 079_WordSearch.h; path = Leetcode/Solved/079_WordSearch.h; sourceTree = SOURCE_ROOT; };
 		536F6DB0240BADAA002F4348 /* 080_RemoveDuplicatesFromSortedArrayII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 080_RemoveDuplicatesFromSortedArrayII.h; path = Leetcode/Solved/080_RemoveDuplicatesFromSortedArrayII.h; sourceTree = SOURCE_ROOT; };
-		536F6DB1240BC1B5002F4348 /* 081_SearchInRotatedSortedArrayII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 081_SearchInRotatedSortedArrayII.h; path = LeetCode/081_SearchInRotatedSortedArrayII.h; sourceTree = SOURCE_ROOT; };
 		537142C9237658E10073DDD9 /* 047_PermutationsII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 047_PermutationsII.h; path = Leetcode/Solved/047_PermutationsII.h; sourceTree = SOURCE_ROOT; };
 		537142CA237707390073DDD9 /* 048_RotateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 048_RotateImage.h; path = Leetcode/Solved/048_RotateImage.h; sourceTree = SOURCE_ROOT; };
 		537FFFAA23DDF14F00C58EEB /* 054_SpiralMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 054_SpiralMatrix.h; path = Leetcode/Solved/054_SpiralMatrix.h; sourceTree = SOURCE_ROOT; };
@@ -203,6 +219,16 @@
 				536F6DAE240A7F69002F4348 /* 078_Subsets.h */,
 				536F6DAF240ABF9D002F4348 /* 079_WordSearch.h */,
 				536F6DB0240BADAA002F4348 /* 080_RemoveDuplicatesFromSortedArrayII.h */,
+				535889062436327E002981C4 /* 081_SearchInRotatedSortedArrayII.h */,
+				535889082436327E002981C4 /* 082_RemoveDuplicatesFromSortedListII.h */,
+				5358890D2436327E002981C4 /* 083_RemoveDuplicatesFromSortedList.h */,
+				535889052436327E002981C4 /* 084_LargestRectangleInHistogram.h */,
+				535889072436327E002981C4 /* 085_MaximalRectangle.h */,
+				5358890A2436327E002981C4 /* 086_PartitionList.h */,
+				535889092436327E002981C4 /* 087_ScrambleString.h */,
+				5358890B2436327E002981C4 /* 088_MergeSortedArray.h */,
+				535889042436327E002981C4 /* 089_GrayCode.h */,
+				5358890C2436327E002981C4 /* 090_SubsetsII.h */,
 			);
 			path = Solved;
 			sourceTree = "<group>";
@@ -227,9 +253,15 @@
 			isa = PBXGroup;
 			children = (
 				B90B5233219FF15D00312434 /* Solved */,
-				B9B1D6192177688000763EA5 /* Test.cpp */,
+				535888FE2436325D002981C4 /* 091_DecodeWays.h */,
+				535888FF2436325D002981C4 /* 092_ReverseLinkedListII.h */,
+				535889012436325D002981C4 /* 093_RestoreIPAddresses.h */,
+				535889002436325D002981C4 /* 094_BinaryTreeInorderTraversal.h */,
+				535889022436325D002981C4 /* 095_UniqueBinarySearchTreesII.h */,
+				535888FD2436325D002981C4 /* 096_UniqueBinarySearchTrees.h */,
+				535889032436325D002981C4 /* 097_InterleavingString.h */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
-				536F6DB1240BC1B5002F4348 /* 081_SearchInRotatedSortedArrayII.h */,
+				B9B1D6192177688000763EA5 /* Test.cpp */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
