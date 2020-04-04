@@ -13,9 +13,15 @@ struct TreeNode
 class Solution
 {
 public:
-    void recoverTree(TreeNode* root)
+    bool isSameTree(TreeNode* p, TreeNode* q)
     {
+        if (p == nullptr)
+            return q == nullptr;
         
+        if (q == nullptr)
+            return p == nullptr;
+        
+        return p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
     }
 };
 
