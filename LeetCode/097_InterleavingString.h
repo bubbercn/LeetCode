@@ -12,50 +12,38 @@ public:
         if (s2.empty())
             return s1 == s3;
         
-        if (s1.length() + s2.length() != s3.length())
+        size_t m = s1.length();
+        size_t n = s2.length();
+        
+        if (m + n != s3.length())
             return false;
         
-        int i = 0;
-        int match1= 0;
-        int match2 = 0;
-        stack<tuple<int, int, int>> state;
-        while (i < s3.length())
+        vector<bool> result(n + 1, false);
+        
+        for (int i = 0; i <= m; i++)
         {
-            if (s3[i] == s1[match1])
+            for (int j = 0; j <= n; j++)
             {
-                if (s3[i] == s2[match2])
+                if (i == 0 && j == 0)
                 {
-                    state.emplace(i + 1, match1, match2 + 1);
+                    result[j] = true;
                 }
-                match1++;
-                i++;
-            }
-            else if (s3[i] == s2[match2])
-            {
-                if (s3[i] == s1[match1])
+                else if (i == 0)
                 {
-                    state.emplace(i + 1, match1 + 1, match2);
+                    result[j] = result[j - 1] && s2[j - 1] == s3[i + j - 1];
                 }
-                match2++;
-                i++;
-            }
-            else
-            {
-                if (state.empty())
+                else if (j == 0)
                 {
-                    return false;
+                    result[j] = result[j] && s1[i - 1] == s3[i + j - 1];
                 }
                 else
                 {
-                    i = get<0>(state.top());
-                    match1 = get<1>(state.top());
-                    match2 = get<2>(state.top());
-                    state.pop();
+                    result[j] = (result[j - 1] && s2[j - 1] == s3[i + j - 1]) || (result[j] && s1[i - 1] == s3[i + j - 1]);
                 }
             }
         }
         
-        return true;
+        return result[n];
     }
 };
 
@@ -66,8 +54,7 @@ void Test()
     assert(!solution.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
     assert(!solution.isInterleave("a", "b", "a"));
     assert(solution.isInterleave("aa", "ab", "aaba"));
-    
-//    assert(!solution.isInterleave("bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa",
-//                                  "babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab",
-//                                  "babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"));
+    assert(!solution.isInterleave("bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa",
+                                  "babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab",
+                                  "babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"));
 }
