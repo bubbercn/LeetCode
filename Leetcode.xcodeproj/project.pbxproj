@@ -79,6 +79,7 @@
 		B99AE3242198615C007D7D96 /* 040_CombinationSumII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 040_CombinationSumII.h; path = Leetcode/Solved/040_CombinationSumII.h; sourceTree = SOURCE_ROOT; };
 		B99AE32521986A8E007D7D96 /* 041_FirstMissingPositive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 041_FirstMissingPositive.h; path = Leetcode/Solved/041_FirstMissingPositive.h; sourceTree = SOURCE_ROOT; };
 		B99F266A24388D0200D01427 /* 098_ValidateBinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 098_ValidateBinarySearchTree.h; path = LeetCode/098_ValidateBinarySearchTree.h; sourceTree = SOURCE_ROOT; };
+		B99F266B2438937F00D01427 /* 099_RecoverBinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 099_RecoverBinarySearchTree.h; path = LeetCode/099_RecoverBinarySearchTree.h; sourceTree = SOURCE_ROOT; };
 		B9B1D6052177687F00763EA5 /* 034_SearchForARange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 034_SearchForARange.h; sourceTree = "<group>"; };
 		B9B1D6062177687F00763EA5 /* 026._RemoveDuplicatesFromSortedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 026._RemoveDuplicatesFromSortedArray.h; sourceTree = "<group>"; };
 		B9B1D6072177687F00763EA5 /* 011_ContainerWithMostWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 011_ContainerWithMostWater.h; sourceTree = "<group>"; };
@@ -262,6 +263,7 @@
 				535888FD2436325D002981C4 /* 096_UniqueBinarySearchTrees.h */,
 				535889032436325D002981C4 /* 097_InterleavingString.h */,
 				B99F266A24388D0200D01427 /* 098_ValidateBinarySearchTree.h */,
+				B99F266B2438937F00D01427 /* 099_RecoverBinarySearchTree.h */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
 			);
