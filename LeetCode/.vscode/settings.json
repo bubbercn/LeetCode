@@ -5,6 +5,7 @@
         "algorithm": "cpp",
         "unordered_map": "cpp",
         "xstring": "cpp",
-        "cstddef": "cpp"
+        "cstddef": "cpp",
+        "list": "cpp"
     }
 }
