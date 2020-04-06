@@ -1,4 +1,4 @@
-#include "105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h"
+#include "106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h"
 
 int main()
 {

@@ -23,6 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		530A6AA4243AC5A6003700BD /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h; path = LeetCode/105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h; sourceTree = SOURCE_ROOT; };
+		530A6AA5243AC5A6003700BD /* 103_BinaryTreeZigzagLevelOrderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 103_BinaryTreeZigzagLevelOrderTraversal.h; path = LeetCode/103_BinaryTreeZigzagLevelOrderTraversal.h; sourceTree = SOURCE_ROOT; };
+		530A6AA6243AC5A6003700BD /* 104_MaximumDepthOfBinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 104_MaximumDepthOfBinaryTree.h; path = LeetCode/104_MaximumDepthOfBinaryTree.h; sourceTree = SOURCE_ROOT; };
+		530A6AA7243AC5A6003700BD /* 102_BinaryTreeLevelOrderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 102_BinaryTreeLevelOrderTraversal.h; path = LeetCode/102_BinaryTreeLevelOrderTraversal.h; sourceTree = SOURCE_ROOT; };
 		530DE32E23E2A7D800A14DC7 /* 057_InsertInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 057_InsertInterval.h; path = Leetcode/Solved/057_InsertInterval.h; sourceTree = SOURCE_ROOT; };
 		530DE32F23E2CEBA00A14DC7 /* 058_LengthOfLastWord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 058_LengthOfLastWord.h; path = Leetcode/Solved/058_LengthOfLastWord.h; sourceTree = SOURCE_ROOT; };
 		530DE33023E2D16600A14DC7 /* 059_SpiralMatrixII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 059_SpiralMatrixII.h; path = Leetcode/Solved/059_SpiralMatrixII.h; sourceTree = SOURCE_ROOT; };
@@ -31,6 +35,7 @@
 		5310A5BA23F9826A005F34D6 /* 070_ClimbingStairs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 070_ClimbingStairs.h; path = Leetcode/Solved/070_ClimbingStairs.h; sourceTree = SOURCE_ROOT; };
 		5310A5BB23F985A5005F34D6 /* 071_SimplifyPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 071_SimplifyPath.h; path = Leetcode/Solved/071_SimplifyPath.h; sourceTree = SOURCE_ROOT; };
 		533F510523E6FD52003B027A /* 061_RotateList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 061_RotateList.h; path = Leetcode/Solved/061_RotateList.h; sourceTree = SOURCE_ROOT; };
+		534AE15E243ADD7400F85CB5 /* 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h; path = LeetCode/106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h; sourceTree = SOURCE_ROOT; };
 		535888FD2436325D002981C4 /* 096_UniqueBinarySearchTrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 096_UniqueBinarySearchTrees.h; path = Leetcode/Solved/096_UniqueBinarySearchTrees.h; sourceTree = SOURCE_ROOT; };
 		535888FE2436325D002981C4 /* 091_DecodeWays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 091_DecodeWays.h; path = Leetcode/Solved/091_DecodeWays.h; sourceTree = SOURCE_ROOT; };
 		535888FF2436325D002981C4 /* 092_ReverseLinkedListII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 092_ReverseLinkedListII.h; path = Leetcode/Solved/092_ReverseLinkedListII.h; sourceTree = SOURCE_ROOT; };
@@ -267,9 +272,14 @@
 			isa = PBXGroup;
 			children = (
 				B90B5233219FF15D00312434 /* Solved */,
+				B99F266D2438E6BE00D01427 /* 101_SymmetricTree.h */,
+				530A6AA7243AC5A6003700BD /* 102_BinaryTreeLevelOrderTraversal.h */,
+				530A6AA5243AC5A6003700BD /* 103_BinaryTreeZigzagLevelOrderTraversal.h */,
+				530A6AA6243AC5A6003700BD /* 104_MaximumDepthOfBinaryTree.h */,
+				530A6AA4243AC5A6003700BD /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h */,
+				534AE15E243ADD7400F85CB5 /* 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h */,
 				B9B1D6082177687F00763EA5 /* Common.h */,
 				B9B1D6192177688000763EA5 /* Test.cpp */,
-				B99F266D2438E6BE00D01427 /* 101_SymmetricTree.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
