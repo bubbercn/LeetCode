@@ -24,18 +24,10 @@
 
 /* Begin PBXFileReference section */
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
-		5354383D243B493D00A7BD1F /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h; sourceTree = "<group>"; };
-		5354383E243B493E00A7BD1F /* 102_BinaryTreeLevelOrderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 102_BinaryTreeLevelOrderTraversal.h; sourceTree = "<group>"; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		53543840243B493E00A7BD1F /* 104_MaximumDepthOfBinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 104_MaximumDepthOfBinaryTree.h; sourceTree = "<group>"; };
-		53543841243B493E00A7BD1F /* 103_BinaryTreeZigzagLevelOrderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 103_BinaryTreeZigzagLevelOrderTraversal.h; sourceTree = "<group>"; };
-		53543842243B493E00A7BD1F /* 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
-		53543844243B493E00A7BD1F /* 101_SymmetricTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 101_SymmetricTree.h; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		535438AC243B4B4100A7BD1F /* 107_BinaryTreeLevelOrderTraversalII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 107_BinaryTreeLevelOrderTraversalII.h; sourceTree = "<group>"; };
-		535438AD243B545600A7BD1F /* 108_ConvertSortedArrayToBinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 108_ConvertSortedArrayToBinarySearchTree.h; sourceTree = "<group>"; };
-		535438AE243B5AD900A7BD1F /* 109_ConvertSortedListToBinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 109_ConvertSortedListToBinarySearchTree.h; sourceTree = "<group>"; };
+		535438B0243B754C00A7BD1F /* 111_MinimumDepthOfBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 111_MinimumDepthOfBinaryTree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,15 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
-				53543844243B493E00A7BD1F /* 101_SymmetricTree.h */,
-				5354383E243B493E00A7BD1F /* 102_BinaryTreeLevelOrderTraversal.h */,
-				53543841243B493E00A7BD1F /* 103_BinaryTreeZigzagLevelOrderTraversal.h */,
-				53543840243B493E00A7BD1F /* 104_MaximumDepthOfBinaryTree.h */,
-				5354383D243B493D00A7BD1F /* 105_ConstructBinaryTreeFromPreorderAndInorderTraversal.h */,
-				53543842243B493E00A7BD1F /* 106_ConstructBinaryTreeFromInorderAndPostorderTraversal.h */,
-				535438AC243B4B4100A7BD1F /* 107_BinaryTreeLevelOrderTraversalII.h */,
-				535438AD243B545600A7BD1F /* 108_ConvertSortedArrayToBinarySearchTree.h */,
-				535438AE243B5AD900A7BD1F /* 109_ConvertSortedListToBinarySearchTree.h */,
+				535438B0243B754C00A7BD1F /* 111_MinimumDepthOfBinaryTree.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 			);

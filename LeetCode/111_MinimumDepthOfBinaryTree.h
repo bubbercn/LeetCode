@@ -1,14 +1,6 @@
 #pragma once
 #include "Common.h"
 
-//  Definition for singly-linked list.
-struct ListNode
-{
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
 //  Definition for a binary tree node.
 struct TreeNode
 {
@@ -21,9 +13,9 @@ struct TreeNode
 class Solution
 {
 public:
-    TreeNode* sortedListToBST(ListNode* head)
+    int minDepth(TreeNode* root)
     {
-        return nullptr;
+        return 0;
     }
 };
 
