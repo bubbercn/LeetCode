@@ -6,3 +6,7 @@ UserInterfaceState.xcuserstate
 project.xcworkspace/
 xcuserdata/
 UserInterface.xcuserstate
+*.exe
+*.ilk
+*.obj
+*.pdb
