@@ -27,12 +27,7 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		535438B0243B754C00A7BD1F /* 111_MinimumDepthOfBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 111_MinimumDepthOfBinaryTree.h; sourceTree = "<group>"; };
-		53CBBEBC244A9E4C0097B0C2 /* 115_DistinctSubsequences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 115_DistinctSubsequences.h; sourceTree = "<group>"; };
-		53CBBEBD244A9E4C0097B0C2 /* 114_FlattenBinaryTreeToLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 114_FlattenBinaryTreeToLinkedList.h; sourceTree = "<group>"; };
-		53CBBEBE244A9E4C0097B0C2 /* 113_PathSumII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 113_PathSumII.h; sourceTree = "<group>"; };
-		53CBBEBF244A9E4C0097B0C2 /* 112_PathSum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 112_PathSum.h; sourceTree = "<group>"; };
-		53CBBEC0244AB70F0097B0C2 /* 116_PopulatingNextRightPointersInEachNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 116_PopulatingNextRightPointersInEachNode.h; sourceTree = "<group>"; };
+		B9A7AF51244B48F7002A4B71 /* 121_BestTimeToBuyAndSellStock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 121_BestTimeToBuyAndSellStock.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +62,7 @@
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
-				535438B0243B754C00A7BD1F /* 111_MinimumDepthOfBinaryTree.h */,
-				53CBBEBF244A9E4C0097B0C2 /* 112_PathSum.h */,
-				53CBBEBE244A9E4C0097B0C2 /* 113_PathSumII.h */,
-				53CBBEBD244A9E4C0097B0C2 /* 114_FlattenBinaryTreeToLinkedList.h */,
-				53CBBEBC244A9E4C0097B0C2 /* 115_DistinctSubsequences.h */,
-				53CBBEC0244AB70F0097B0C2 /* 116_PopulatingNextRightPointersInEachNode.h */,
+				B9A7AF51244B48F7002A4B71 /* 121_BestTimeToBuyAndSellStock.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
@@ -112,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,7 +260,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
