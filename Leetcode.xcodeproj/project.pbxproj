@@ -28,6 +28,8 @@
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
 		B9A7AF51244B48F7002A4B71 /* 121_BestTimeToBuyAndSellStock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 121_BestTimeToBuyAndSellStock.h; sourceTree = "<group>"; };
+		B9A7AF52244B4FF0002A4B71 /* 122_BestTimeToBuyAndSellStockII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 122_BestTimeToBuyAndSellStockII.h; sourceTree = "<group>"; };
+		B9A7AF53244B56C6002A4B71 /* 123_BestTimeToBuyAndSellStockIII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 123_BestTimeToBuyAndSellStockIII.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,8 @@
 				535438AB243B499E00A7BD1F /* Solved */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				B9A7AF51244B48F7002A4B71 /* 121_BestTimeToBuyAndSellStock.h */,
+				B9A7AF52244B4FF0002A4B71 /* 122_BestTimeToBuyAndSellStockII.h */,
+				B9A7AF53244B56C6002A4B71 /* 123_BestTimeToBuyAndSellStockIII.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
