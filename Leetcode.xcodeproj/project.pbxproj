@@ -33,6 +33,8 @@
 		B9A7AF52244B4FF0002A4B71 /* 122_BestTimeToBuyAndSellStockII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 122_BestTimeToBuyAndSellStockII.h; sourceTree = "<group>"; };
 		B9A7AF53244B56C6002A4B71 /* 123_BestTimeToBuyAndSellStockIII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 123_BestTimeToBuyAndSellStockIII.h; sourceTree = "<group>"; };
 		B9DAE25F244C88C300C2DD63 /* 124_BinaryTreeMaximumPathSum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 124_BinaryTreeMaximumPathSum.h; sourceTree = "<group>"; };
+		B9EE62DD24527C5D009992AE /* 127_WordLadder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 127_WordLadder.h; sourceTree = "<group>"; };
+		B9EE62DE245319BF009992AE /* 128_LongestConsecutiveSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 128_LongestConsecutiveSequence.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,8 @@
 				B9DAE25F244C88C300C2DD63 /* 124_BinaryTreeMaximumPathSum.h */,
 				53CBBEC1244CAA530097B0C2 /* 125_ValidPalindrome.h */,
 				53CBBEC2244CB42C0097B0C2 /* 126_WordLadderII.h */,
+				B9EE62DD24527C5D009992AE /* 127_WordLadder.h */,
+				B9EE62DE245319BF009992AE /* 128_LongestConsecutiveSequence.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
@@ -112,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,7 +274,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
