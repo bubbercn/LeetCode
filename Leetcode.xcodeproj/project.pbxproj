@@ -30,6 +30,7 @@
 		53CBBEC1244CAA530097B0C2 /* 125_ValidPalindrome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 125_ValidPalindrome.h; sourceTree = "<group>"; };
 		53CBBEC2244CB42C0097B0C2 /* 126_WordLadderII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 126_WordLadderII.h; sourceTree = "<group>"; };
 		B98C99D524533128006D382C /* 129_SumRootToLeafNumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 129_SumRootToLeafNumbers.h; sourceTree = "<group>"; };
+		B98C99D624534EC6006D382C /* 130_SurroundedRegions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 130_SurroundedRegions.h; sourceTree = "<group>"; };
 		B9A7AF51244B48F7002A4B71 /* 121_BestTimeToBuyAndSellStock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 121_BestTimeToBuyAndSellStock.h; sourceTree = "<group>"; };
 		B9A7AF52244B4FF0002A4B71 /* 122_BestTimeToBuyAndSellStockII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 122_BestTimeToBuyAndSellStockII.h; sourceTree = "<group>"; };
 		B9A7AF53244B56C6002A4B71 /* 123_BestTimeToBuyAndSellStockIII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 123_BestTimeToBuyAndSellStockIII.h; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 				B9EE62DD24527C5D009992AE /* 127_WordLadder.h */,
 				B9EE62DE245319BF009992AE /* 128_LongestConsecutiveSequence.h */,
 				B98C99D524533128006D382C /* 129_SumRootToLeafNumbers.h */,
+				B98C99D624534EC6006D382C /* 130_SurroundedRegions.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
