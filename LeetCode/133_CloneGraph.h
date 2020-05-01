@@ -23,11 +23,34 @@ public:
     }
 };
 
-class Solution {
+class Solution
+{
 public:
-    Node* cloneGraph(Node* node) {
-        
+    Node* cloneGraph(Node* node)
+    {
+        if (node == nullptr)
+            return nullptr;
+        return visit(node);
     }
+private:
+    Node* visit(Node* node)
+    {
+        auto it = visitedNodes.find(node);
+        if (it != visitedNodes.end())
+        {
+            return it->second;
+        }
+        
+        Node* result = new Node(node->val);
+        visitedNodes.emplace(node, result);
+        for (auto i : node->neighbors)
+        {
+            result->neighbors.emplace_back(visit(i));
+        }
+        
+        return result;
+    }
+    map<Node*, Node*> visitedNodes;
 };
 
 void Test()

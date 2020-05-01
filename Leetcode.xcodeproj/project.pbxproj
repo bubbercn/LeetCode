@@ -30,6 +30,7 @@
 		53CB123D245997CE008F5625 /* 131_PalindromePartitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 131_PalindromePartitioning.h; sourceTree = "<group>"; };
 		53CB123E245997CE008F5625 /* 132_PalindromePartitioningII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 132_PalindromePartitioningII.h; sourceTree = "<group>"; };
 		53CB123F245997CE008F5625 /* 133_CloneGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 133_CloneGraph.h; sourceTree = "<group>"; };
+		53CB1240245BCCDA008F5625 /* 134_GasStation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 134_GasStation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				53CB123D245997CE008F5625 /* 131_PalindromePartitioning.h */,
 				53CB123E245997CE008F5625 /* 132_PalindromePartitioningII.h */,
 				53CB123F245997CE008F5625 /* 133_CloneGraph.h */,
+				53CB1240245BCCDA008F5625 /* 134_GasStation.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
