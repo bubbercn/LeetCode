@@ -35,6 +35,7 @@
 		53CB1242245D2694008F5625 /* 136_SingleNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 136_SingleNumber.h; sourceTree = "<group>"; };
 		53CB1243245D2831008F5625 /* 137_SingleNumberII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 137_SingleNumberII.h; sourceTree = "<group>"; };
 		53CB1244245DA962008F5625 /* 138_CopyListWithRandomPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 138_CopyListWithRandomPointer.h; sourceTree = "<group>"; };
+		53CB1245245EFCB4008F5625 /* 139_WordBreak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 139_WordBreak.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				53CB1242245D2694008F5625 /* 136_SingleNumber.h */,
 				53CB1243245D2831008F5625 /* 137_SingleNumberII.h */,
 				53CB1244245DA962008F5625 /* 138_CopyListWithRandomPointer.h */,
+				53CB1245245EFCB4008F5625 /* 139_WordBreak.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
