@@ -27,6 +27,8 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
+		53CB124724604D47008F5625 /* 145_BinaryTreePostorderTraversal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 145_BinaryTreePostorderTraversal.h; sourceTree = "<group>"; };
+		53CB124824607A84008F5625 /* 146_LRUCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 146_LRUCache.h; sourceTree = "<group>"; };
 		B98C99D7246016A5006D382C /* 141_LinkedListCycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 141_LinkedListCycle.h; sourceTree = "<group>"; };
 		B98C99D824601B22006D382C /* 142_LinkedListCycleII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 142_LinkedListCycleII.h; sourceTree = "<group>"; };
 		B98C99D924601F56006D382C /* 143_ReorderList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 143_ReorderList.h; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 				B98C99D824601B22006D382C /* 142_LinkedListCycleII.h */,
 				B98C99D924601F56006D382C /* 143_ReorderList.h */,
 				B98C99DA24602C1C006D382C /* 144_BinaryTreePreorderTraversal.h */,
+				53CB124724604D47008F5625 /* 145_BinaryTreePostorderTraversal.h */,
+				53CB124824607A84008F5625 /* 146_LRUCache.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
@@ -108,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -266,7 +270,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
