@@ -27,16 +27,9 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		53CB123D245997CE008F5625 /* 131_PalindromePartitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 131_PalindromePartitioning.h; sourceTree = "<group>"; };
-		53CB123E245997CE008F5625 /* 132_PalindromePartitioningII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 132_PalindromePartitioningII.h; sourceTree = "<group>"; };
-		53CB123F245997CE008F5625 /* 133_CloneGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 133_CloneGraph.h; sourceTree = "<group>"; };
-		53CB1240245BCCDA008F5625 /* 134_GasStation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 134_GasStation.h; sourceTree = "<group>"; };
-		53CB1241245C7780008F5625 /* 135_Candy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 135_Candy.h; sourceTree = "<group>"; };
-		53CB1242245D2694008F5625 /* 136_SingleNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 136_SingleNumber.h; sourceTree = "<group>"; };
-		53CB1243245D2831008F5625 /* 137_SingleNumberII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 137_SingleNumberII.h; sourceTree = "<group>"; };
-		53CB1244245DA962008F5625 /* 138_CopyListWithRandomPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 138_CopyListWithRandomPointer.h; sourceTree = "<group>"; };
-		53CB1245245EFCB4008F5625 /* 139_WordBreak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 139_WordBreak.h; sourceTree = "<group>"; };
-		53CB1246245FB309008F5625 /* 140_WordBreakII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 140_WordBreakII.h; sourceTree = "<group>"; };
+		B98C99D7246016A5006D382C /* 141_LinkedListCycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 141_LinkedListCycle.h; sourceTree = "<group>"; };
+		B98C99D824601B22006D382C /* 142_LinkedListCycleII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 142_LinkedListCycleII.h; sourceTree = "<group>"; };
+		B98C99D924601F56006D382C /* 143_ReorderList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 143_ReorderList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,16 +64,9 @@
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
-				53CB123D245997CE008F5625 /* 131_PalindromePartitioning.h */,
-				53CB123E245997CE008F5625 /* 132_PalindromePartitioningII.h */,
-				53CB123F245997CE008F5625 /* 133_CloneGraph.h */,
-				53CB1240245BCCDA008F5625 /* 134_GasStation.h */,
-				53CB1241245C7780008F5625 /* 135_Candy.h */,
-				53CB1242245D2694008F5625 /* 136_SingleNumber.h */,
-				53CB1243245D2831008F5625 /* 137_SingleNumberII.h */,
-				53CB1244245DA962008F5625 /* 138_CopyListWithRandomPointer.h */,
-				53CB1245245EFCB4008F5625 /* 139_WordBreak.h */,
-				53CB1246245FB309008F5625 /* 140_WordBreakII.h */,
+				B98C99D7246016A5006D382C /* 141_LinkedListCycle.h */,
+				B98C99D824601B22006D382C /* 142_LinkedListCycleII.h */,
+				B98C99D924601F56006D382C /* 143_ReorderList.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
@@ -120,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -278,7 +264,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
