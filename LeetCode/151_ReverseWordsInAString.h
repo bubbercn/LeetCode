@@ -3,8 +3,8 @@
 
 class Solution {
 public:
-    int maxPoints(vector<vector<int>>& points) {
-        return 0;
+    string reverseWords(string s) {
+        return {};
     }
 };
 
