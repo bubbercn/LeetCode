@@ -30,6 +30,8 @@
 		53CB124724604D47008F5625 /* 145_BinaryTreePostorderTraversal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 145_BinaryTreePostorderTraversal.h; sourceTree = "<group>"; };
 		53CB124824607A84008F5625 /* 146_LRUCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 146_LRUCache.h; sourceTree = "<group>"; };
 		53CB124924609196008F5625 /* 147_InsertionSortList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 147_InsertionSortList.h; sourceTree = "<group>"; };
+		53CB124A24611F40008F5625 /* 148_SortList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 148_SortList.h; sourceTree = "<group>"; };
+		53CB124B24613CA1008F5625 /* 149_MaxPointsOnALine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 149_MaxPointsOnALine.h; sourceTree = "<group>"; };
 		B98C99D7246016A5006D382C /* 141_LinkedListCycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 141_LinkedListCycle.h; sourceTree = "<group>"; };
 		B98C99D824601B22006D382C /* 142_LinkedListCycleII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 142_LinkedListCycleII.h; sourceTree = "<group>"; };
 		B98C99D924601F56006D382C /* 143_ReorderList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 143_ReorderList.h; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 				53CB124724604D47008F5625 /* 145_BinaryTreePostorderTraversal.h */,
 				53CB124824607A84008F5625 /* 146_LRUCache.h */,
 				53CB124924609196008F5625 /* 147_InsertionSortList.h */,
+				53CB124A24611F40008F5625 /* 148_SortList.h */,
+				53CB124B24613CA1008F5625 /* 149_MaxPointsOnALine.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
