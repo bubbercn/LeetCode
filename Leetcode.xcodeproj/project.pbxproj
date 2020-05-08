@@ -28,6 +28,9 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
+		53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 153_FindMinimumInRotatedSortedArray.h; sourceTree = "<group>"; };
+		53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 154_FindMinimumInRotatedSortedArrayII.h; sourceTree = "<group>"; };
+		53C7D4752465880500C0635C /* 155_MinStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 155_MinStack.h; sourceTree = "<group>"; };
 		53CB124D2461C210008F5625 /* 151_ReverseWordsInAString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 151_ReverseWordsInAString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +68,9 @@
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				53CB124D2461C210008F5625 /* 151_ReverseWordsInAString.h */,
 				532892F024628FB700E8F01D /* 152_MaximumProductSubarray.h */,
+				53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */,
+				53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */,
+				53C7D4752465880500C0635C /* 155_MinStack.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
