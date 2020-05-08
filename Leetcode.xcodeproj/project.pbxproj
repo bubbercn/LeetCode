@@ -31,6 +31,8 @@
 		53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 153_FindMinimumInRotatedSortedArray.h; sourceTree = "<group>"; };
 		53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 154_FindMinimumInRotatedSortedArrayII.h; sourceTree = "<group>"; };
 		53C7D4752465880500C0635C /* 155_MinStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 155_MinStack.h; sourceTree = "<group>"; };
+		53C7D47624658FF200C0635C /* 160_IntersectionOfTwoLinkedLists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 160_IntersectionOfTwoLinkedLists.h; sourceTree = "<group>"; };
+		53C7D4772465C1FE00C0635C /* 162_FindPeakElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 162_FindPeakElement.h; sourceTree = "<group>"; };
 		53CB124D2461C210008F5625 /* 151_ReverseWordsInAString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 151_ReverseWordsInAString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,8 @@
 				53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */,
 				53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */,
 				53C7D4752465880500C0635C /* 155_MinStack.h */,
+				53C7D47624658FF200C0635C /* 160_IntersectionOfTwoLinkedLists.h */,
+				53C7D4772465C1FE00C0635C /* 162_FindPeakElement.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
