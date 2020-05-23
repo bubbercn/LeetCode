@@ -23,20 +23,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		532892F024628FB700E8F01D /* 152_MaximumProductSubarray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 152_MaximumProductSubarray.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		53C3358C2466C8F300D92B38 /* 166_FractionToRecurringDecimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 166_FractionToRecurringDecimal.h; sourceTree = "<group>"; };
-		53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 153_FindMinimumInRotatedSortedArray.h; sourceTree = "<group>"; };
-		53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 154_FindMinimumInRotatedSortedArrayII.h; sourceTree = "<group>"; };
-		53C7D4752465880500C0635C /* 155_MinStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 155_MinStack.h; sourceTree = "<group>"; };
-		53C7D47624658FF200C0635C /* 160_IntersectionOfTwoLinkedLists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 160_IntersectionOfTwoLinkedLists.h; sourceTree = "<group>"; };
-		53C7D4772465C1FE00C0635C /* 162_FindPeakElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 162_FindPeakElement.h; sourceTree = "<group>"; };
-		53C7D47824665C5800C0635C /* 164_MaximumGap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 164_MaximumGap.h; sourceTree = "<group>"; };
-		53C7D4792466A9B000C0635C /* 165_CompareVersionNumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 165_CompareVersionNumbers.h; sourceTree = "<group>"; };
-		53CB124D2461C210008F5625 /* 151_ReverseWordsInAString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 151_ReverseWordsInAString.h; sourceTree = "<group>"; };
+		B98C99DB2479243B006D382C /* 174_DungeonGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 174_DungeonGame.h; sourceTree = "<group>"; };
+		B98C99DC2479243B006D382C /* 173_BinarySearchTreeIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 173_BinarySearchTreeIterator.h; sourceTree = "<group>"; };
+		B98C99DD2479243B006D382C /* 171_ExcelSheetColumnNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 171_ExcelSheetColumnNumber.h; sourceTree = "<group>"; };
+		B98C99DE2479243B006D382C /* 172_FactorialTrailingZeroes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 172_FactorialTrailingZeroes.h; sourceTree = "<group>"; };
+		B98C99DF2479243B006D382C /* 179_LargestNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 179_LargestNumber.h; sourceTree = "<group>"; };
+		B98C99E0247936BC006D382C /* 187_RepeatedDNASequences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 187_RepeatedDNASequences.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
+				B98C99DD2479243B006D382C /* 171_ExcelSheetColumnNumber.h */,
+				B98C99DE2479243B006D382C /* 172_FactorialTrailingZeroes.h */,
+				B98C99DC2479243B006D382C /* 173_BinarySearchTreeIterator.h */,
+				B98C99DB2479243B006D382C /* 174_DungeonGame.h */,
+				B98C99DF2479243B006D382C /* 179_LargestNumber.h */,
+				B98C99E0247936BC006D382C /* 187_RepeatedDNASequences.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
-				53CB124D2461C210008F5625 /* 151_ReverseWordsInAString.h */,
-				532892F024628FB700E8F01D /* 152_MaximumProductSubarray.h */,
-				53C7D4732465755C00C0635C /* 153_FindMinimumInRotatedSortedArray.h */,
-				53C7D4742465866000C0635C /* 154_FindMinimumInRotatedSortedArrayII.h */,
-				53C7D4752465880500C0635C /* 155_MinStack.h */,
-				53C7D47624658FF200C0635C /* 160_IntersectionOfTwoLinkedLists.h */,
-				53C7D4772465C1FE00C0635C /* 162_FindPeakElement.h */,
-				53C7D47824665C5800C0635C /* 164_MaximumGap.h */,
-				53C7D4792466A9B000C0635C /* 165_CompareVersionNumbers.h */,
-				53C3358C2466C8F300D92B38 /* 166_FractionToRecurringDecimal.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
@@ -120,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -278,7 +270,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
