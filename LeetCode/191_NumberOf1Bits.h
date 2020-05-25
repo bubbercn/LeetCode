@@ -1,14 +1,21 @@
 #pragma once
 #include "Common.h"
 
-class Solution {
+class Solution
+{
 public:
-    int hammingWeight(uint32_t n) {
-        
+    int hammingWeight(uint32_t n)
+    {
+        int result = 0;
+        while (n != 0)
+        {
+            result++;
+            n &= (n - 1);
+        }
+        return result;
     }
 };
 
 void Test()
 {
-    
 }
