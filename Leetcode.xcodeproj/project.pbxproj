@@ -23,16 +23,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5335004F247F7E00004348DB /* 191_NumberOf1Bits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 191_NumberOf1Bits.h; sourceTree = "<group>"; };
+		53350050247F7E00004348DB /* 199_BinaryTreeRightSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 199_BinaryTreeRightSideView.h; sourceTree = "<group>"; };
+		53350051247F7E00004348DB /* 198_HouseRobber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 198_HouseRobber.h; sourceTree = "<group>"; };
+		53350052247F8237004348DB /* 200_NumberOfIslands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 200_NumberOfIslands.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		B98C99DB2479243B006D382C /* 174_DungeonGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 174_DungeonGame.h; sourceTree = "<group>"; };
-		B98C99DC2479243B006D382C /* 173_BinarySearchTreeIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 173_BinarySearchTreeIterator.h; sourceTree = "<group>"; };
-		B98C99DD2479243B006D382C /* 171_ExcelSheetColumnNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 171_ExcelSheetColumnNumber.h; sourceTree = "<group>"; };
-		B98C99DE2479243B006D382C /* 172_FactorialTrailingZeroes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 172_FactorialTrailingZeroes.h; sourceTree = "<group>"; };
-		B98C99DF2479243B006D382C /* 179_LargestNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 179_LargestNumber.h; sourceTree = "<group>"; };
-		B98C99E0247936BC006D382C /* 187_RepeatedDNASequences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 187_RepeatedDNASequences.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
-				B98C99DD2479243B006D382C /* 171_ExcelSheetColumnNumber.h */,
-				B98C99DE2479243B006D382C /* 172_FactorialTrailingZeroes.h */,
-				B98C99DC2479243B006D382C /* 173_BinarySearchTreeIterator.h */,
-				B98C99DB2479243B006D382C /* 174_DungeonGame.h */,
-				B98C99DF2479243B006D382C /* 179_LargestNumber.h */,
-				B98C99E0247936BC006D382C /* 187_RepeatedDNASequences.h */,
+				5335004F247F7E00004348DB /* 191_NumberOf1Bits.h */,
+				53350051247F7E00004348DB /* 198_HouseRobber.h */,
+				53350050247F7E00004348DB /* 199_BinaryTreeRightSideView.h */,
+				53350052247F8237004348DB /* 200_NumberOfIslands.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
@@ -104,7 +100,7 @@
 		53543821243B465700A7BD1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Wu, Baosong";
 				TargetAttributes = {
 					53543828243B465700A7BD1F = {
@@ -112,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */;
+			buildConfigurationList = 53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -254,6 +250,7 @@
 		53543831243B465700A7BD1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -262,6 +259,7 @@
 		53543832243B465700A7BD1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -270,7 +268,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53543824243B465700A7BD1F /* Build configuration list for PBXProject "Leetcode" */ = {
+		53543824243B465700A7BD1F /* Build configuration list for PBXProject "LeetCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5354382E243B465700A7BD1F /* Debug */,
