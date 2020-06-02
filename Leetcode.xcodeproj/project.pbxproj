@@ -27,6 +27,10 @@
 		53350050247F7E00004348DB /* 199_BinaryTreeRightSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 199_BinaryTreeRightSideView.h; sourceTree = "<group>"; };
 		53350051247F7E00004348DB /* 198_HouseRobber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 198_HouseRobber.h; sourceTree = "<group>"; };
 		53350052247F8237004348DB /* 200_NumberOfIslands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 200_NumberOfIslands.h; sourceTree = "<group>"; };
+		533500532485FB35004348DB /* 201_BitwiseANDOfNumbersRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 201_BitwiseANDOfNumbersRange.h; sourceTree = "<group>"; };
+		533500542485FB35004348DB /* 203_RemoveLinkedListElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 203_RemoveLinkedListElements.h; sourceTree = "<group>"; };
+		533500552485FB35004348DB /* 202_HappyNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 202_HappyNumber.h; sourceTree = "<group>"; };
+		53350056248668D6004348DB /* 204_CountPrimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 204_CountPrimes.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
@@ -68,8 +72,12 @@
 				53350051247F7E00004348DB /* 198_HouseRobber.h */,
 				53350050247F7E00004348DB /* 199_BinaryTreeRightSideView.h */,
 				53350052247F8237004348DB /* 200_NumberOfIslands.h */,
-				53543843243B493E00A7BD1F /* Test.cpp */,
+				533500532485FB35004348DB /* 201_BitwiseANDOfNumbersRange.h */,
+				533500552485FB35004348DB /* 202_HappyNumber.h */,
+				533500542485FB35004348DB /* 203_RemoveLinkedListElements.h */,
+				53350056248668D6004348DB /* 204_CountPrimes.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
+				53543843243B493E00A7BD1F /* Test.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";

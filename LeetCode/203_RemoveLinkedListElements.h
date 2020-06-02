@@ -11,10 +11,29 @@ struct ListNode
 	ListNode(int x) : val(x), next(NULL) {}
 };
 
-class Solution {
+class Solution
+{
 public:
-    ListNode* removeElements(ListNode* head, int val) {
-
+    ListNode* removeElements(ListNode* head, int val)
+    {
+        ListNode fakeHead(0);
+        fakeHead.next = head;
+        
+        ListNode* preNode = &fakeHead;
+        while (head != nullptr)
+        {
+            if (head->val == val)
+            {
+                preNode->next = head->next;
+            }
+            else
+            {
+                preNode = head;
+            }
+            head = head->next;
+        }
+        
+        return fakeHead.next;
     }
 };
 
