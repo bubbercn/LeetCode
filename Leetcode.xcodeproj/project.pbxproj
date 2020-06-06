@@ -24,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		534A8CBA248A89120085884F /* 211_AddAndSearchWord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 211_AddAndSearchWord.h; sourceTree = "<group>"; };
+		534A8CBB248BDB1A0085884F /* 212_WordSearchII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 212_WordSearchII.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
 				534A8CBA248A89120085884F /* 211_AddAndSearchWord.h */,
+				534A8CBB248BDB1A0085884F /* 212_WordSearchII.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 			);

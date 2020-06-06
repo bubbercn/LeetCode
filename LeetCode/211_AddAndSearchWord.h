@@ -13,55 +13,84 @@ public:
     /** Adds a word into the data structure. */
     void addWord(string word)
     {
-        char2StringMaps& index1= idx[word.length()];
+        Index* curIndex = &index;
         for (int i = 0; i < word.length(); i++)
         {
-            if (index1.size() < i + 1)
+            auto it = curIndex->emplace(word[i], new IndexNode());
+            curIndex = &(it.first->second->childIndexNodes);
+            if (i == word.length() - 1)
             {
-                index1.push_back({});
+                it.first->second->hasWord = true;
             }
-            index1[i][word[i]].emplace(word);
         }
     }
     
     /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
     bool search(string word)
     {
-        char2StringMaps& index1= idx[word.length()];
-        if (index1.empty())
+        return search(index, word);
+    }
+private:
+    struct IndexNode;
+    using Index = unordered_map<char, unique_ptr<IndexNode>>;
+    struct IndexNode
+    {
+        bool hasWord = false;
+        Index childIndexNodes;
+    };
+    Index index;
+    
+    bool search(Index& index, const string& word)
+    {
+        if (word.empty())
             return false;
-        set<string> result;
-        for (int i = 0; i < word.length(); i++)
+        
+        if (word[0] == '.')
         {
-            if (word[i] != '.')
+            for (auto& i : index)
             {
-                unordered_set<string> cur = index1[i][word[i]];
-                if (cur.empty())
-                    return false;
-                
-                set<string> temp = set<string>(cur.begin(), cur.end());
-                
-                if (result.empty())
+                if (word.length() == 1)
                 {
-                    result = temp;
+                    if (i.second->hasWord)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
                 else
                 {
-                    set<string> temp2;
-                    set_intersection(result.begin(), result.end(), temp.begin(), temp.end(), inserter(temp2, temp2.begin()));
-                    result.swap(temp2);
-                    if (result.empty())
-                        return false;
+                    if (search(i.second->childIndexNodes, word.substr(1)))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
             }
+            return false;
         }
-        return true;
+        else
+        {
+            auto it = index.find(word[0]);
+            if (it == index.end())
+            {
+                return false;
+            }
+            if (word.length() == 1)
+            {
+                return it->second->hasWord;
+            }
+            else
+            {
+                return search(it->second->childIndexNodes, word.substr(1));
+            }
+        }
     }
-private:
-    
-    using char2StringMap = unordered_map<char, unordered_set<string>>;
-    using char2StringMaps = vector<char2StringMap>;
-    unordered_map<size_t, char2StringMaps> idx;
 };
 
 /**
