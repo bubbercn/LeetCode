@@ -10,3 +10,5 @@ UserInterface.xcuserstate
 *.ilk
 *.obj
 *.pdb
+*.out
+*.dSYM
