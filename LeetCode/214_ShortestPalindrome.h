@@ -18,14 +18,14 @@ public:
             }
             else
             {
-                int cur = dp[i - 1] - 1;
+                int cur = dp[i - 1] ;
                 while (cur != 0 && combination[i] != combination[cur])
                 {
-                    cur = dp[cur] - 1;
+                    cur = dp[cur - 1];
                 }
                 if (combination[i] == combination[cur])
                 {
-                    dp[i] = dp[cur] + 1;
+                    dp[i] = cur + 1;
                 }
                 else
                 {
@@ -33,7 +33,7 @@ public:
                 }
             }
         }
-        return r.substr(*dp.rbegin())  + s;
+        return r.substr(0, r.length() - *dp.rbegin())  + s;
     }
 };
 
