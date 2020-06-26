@@ -23,20 +23,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5336975324A4AF91000E2EFD /* 215_KthLargestElementInAnArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 215_KthLargestElementInAnArray.h; sourceTree = "<group>"; };
-		5336975424A4AF91000E2EFD /* 214_ShortestPalindrome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 214_ShortestPalindrome.h; sourceTree = "<group>"; };
-		5336975524A4AF91000E2EFD /* 217_ContainsDuplicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 217_ContainsDuplicate.h; sourceTree = "<group>"; };
-		5336975624A4AF91000E2EFD /* 218_TheSkylineProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 218_TheSkylineProblem.h; sourceTree = "<group>"; };
-		5336975724A4AF91000E2EFD /* 216_CombinationSumIII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 216_CombinationSumIII.h; sourceTree = "<group>"; };
-		534A8CBA248A89120085884F /* 211_AddAndSearchWord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 211_AddAndSearchWord.h; sourceTree = "<group>"; };
-		534A8CBB248BDB1A0085884F /* 212_WordSearchII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 212_WordSearchII.h; sourceTree = "<group>"; };
-		534A8CBC248D409A0085884F /* 213_HouseRobberII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 213_HouseRobberII.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		539A3CE924A5131F0061C1AE /* 219_ContainsDuplicateII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 219_ContainsDuplicateII.h; sourceTree = "<group>"; };
-		539A3CEA24A583910061C1AE /* 220_ContainsDuplicateIII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 220_ContainsDuplicateIII.h; sourceTree = "<group>"; };
+		B9C7AD3D24A5ED5D00D1C739 /* 221_MaximalSquare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 221_MaximalSquare.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,16 +62,7 @@
 			children = (
 				535438AB243B499E00A7BD1F /* Solved */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
-				534A8CBA248A89120085884F /* 211_AddAndSearchWord.h */,
-				534A8CBB248BDB1A0085884F /* 212_WordSearchII.h */,
-				534A8CBC248D409A0085884F /* 213_HouseRobberII.h */,
-				5336975424A4AF91000E2EFD /* 214_ShortestPalindrome.h */,
-				5336975324A4AF91000E2EFD /* 215_KthLargestElementInAnArray.h */,
-				5336975724A4AF91000E2EFD /* 216_CombinationSumIII.h */,
-				5336975524A4AF91000E2EFD /* 217_ContainsDuplicate.h */,
-				5336975624A4AF91000E2EFD /* 218_TheSkylineProblem.h */,
-				539A3CE924A5131F0061C1AE /* 219_ContainsDuplicateII.h */,
-				539A3CEA24A583910061C1AE /* 220_ContainsDuplicateIII.h */,
+				B9C7AD3D24A5ED5D00D1C739 /* 221_MaximalSquare.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
