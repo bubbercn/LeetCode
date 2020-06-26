@@ -36,6 +36,7 @@
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
 		539A3CE924A5131F0061C1AE /* 219_ContainsDuplicateII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 219_ContainsDuplicateII.h; sourceTree = "<group>"; };
+		539A3CEA24A583910061C1AE /* 220_ContainsDuplicateIII.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 220_ContainsDuplicateIII.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 				5336975524A4AF91000E2EFD /* 217_ContainsDuplicate.h */,
 				5336975624A4AF91000E2EFD /* 218_TheSkylineProblem.h */,
 				539A3CE924A5131F0061C1AE /* 219_ContainsDuplicateII.h */,
+				539A3CEA24A583910061C1AE /* 220_ContainsDuplicateIII.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
