@@ -23,6 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5342768924AA309700FF13F1 /* 224_BasicCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 224_BasicCalculator.h; sourceTree = "<group>"; };
+		5342768A24AA309700FF13F1 /* 223_RectangleArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 223_RectangleArea.h; sourceTree = "<group>"; };
+		5342768B24AA309700FF13F1 /* 222_CountCompleteTreeNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 222_CountCompleteTreeNodes.h; sourceTree = "<group>"; };
+		5342768C24AA309700FF13F1 /* 225_ImplementStackUsingQueues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 225_ImplementStackUsingQueues.h; sourceTree = "<group>"; };
+		5342768D24AA309700FF13F1 /* 226_InvertBinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 226_InvertBinaryTree.h; sourceTree = "<group>"; };
+		5342768E24AA309700FF13F1 /* 227_BasicCalculatorII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 227_BasicCalculatorII.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
@@ -63,6 +69,12 @@
 				535438AB243B499E00A7BD1F /* Solved */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				B9C7AD3D24A5ED5D00D1C739 /* 221_MaximalSquare.h */,
+				5342768B24AA309700FF13F1 /* 222_CountCompleteTreeNodes.h */,
+				5342768A24AA309700FF13F1 /* 223_RectangleArea.h */,
+				5342768924AA309700FF13F1 /* 224_BasicCalculator.h */,
+				5342768C24AA309700FF13F1 /* 225_ImplementStackUsingQueues.h */,
+				5342768D24AA309700FF13F1 /* 226_InvertBinaryTree.h */,
+				5342768E24AA309700FF13F1 /* 227_BasicCalculatorII.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
