@@ -1,4 +1,4 @@
-#include "230_KthSmallestElementInABST.h"
+#include "231_PowerOfTwo.h"
 
 int main()
 {
