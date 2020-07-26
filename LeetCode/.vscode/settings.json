@@ -8,6 +8,7 @@
         "cstddef": "cpp",
         "list": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp"
     }
 }
