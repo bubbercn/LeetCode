@@ -11,11 +11,12 @@ public:
         while (low <= high)
         {
             int middle = (low + high) / 2;
-            if (citations[middle - 1] == middle)
+            int temp = citations.size() - middle + 1;
+            if (citations[middle - 1] == temp)
             {
-                return middle;
+                return temp;
             }
-            else if (citations[middle - 1] < middle)
+            else if (citations[middle - 1] < temp)
             {
                 low = middle + 1;
             }
@@ -24,10 +25,18 @@ public:
                 high = middle - 1;
             }
         }
-        return -1;
+        return citations.size() - low + 1;
     }
 };
 
 void Test()
 {
+    Solution solution;
+    vector<int> citations;
+
+    citations ={ 0, 1, 3, 5, 6 };
+    assert(solution.hIndex(citations) == 3);
+
+    citations ={ 100 };
+    assert(solution.hIndex(citations) == 1);
 }
