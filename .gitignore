@@ -12,3 +12,4 @@ UserInterface.xcuserstate
 *.pdb
 *.out
 *.dSYM
+build/
