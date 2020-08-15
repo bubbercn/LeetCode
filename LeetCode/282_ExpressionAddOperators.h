@@ -63,7 +63,7 @@ private:
                         t_nums.pop();
                     }
 
-                    t_nums.emplace(left);
+                    t_nums.emplace(t_sum);
                     t_ops.emplace(operators.back());
                 }
                 else
@@ -89,7 +89,7 @@ private:
                         t_nums.pop();
                     }
 
-                    t_nums.emplace(left);
+                    t_nums.emplace(t_sum);
                     t_ops.emplace(operators.back());
                 }
                 dfs(t_sum, digits, operators, t_nums, t_ops, result, target);
