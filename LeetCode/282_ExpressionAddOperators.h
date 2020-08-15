@@ -10,9 +10,7 @@ public:
         if (digits.empty())
             return {};
 
-        vector<int> operators(digits.size() - 1, 0);
-
-        if (operators.empty())
+        if (digits.size() == 1)
         {
             if (digits[0] == target)
             {
@@ -24,30 +22,126 @@ public:
             }
         }
 
+        list<int> operators;
         vector<string> result;
-        do
-        {
-            //string toEvaluate = toString(digits, operators);
-            int temp = 0;
-            try
-            {
-                temp = evaluate(digits, operators);
-            }
-            catch (...)
-            {
-                continue;
-            }
+        operators.emplace_back(0);
+        stack<int> nums;
+        stack<int> ops;
 
-            if (temp == target)
-            {
-                result.emplace_back(toString(digits, operators));
-            }
-        } while (next(operators));
+        dfs(digits[0], digits, operators, nums, ops, result, target);
 
         return result;
     }
 
 private:
+    void dfs(int sum, const vector<int> &digits, list<int> &operators, stack<int> nums, stack<int> ops, vector<string> &result, int target)
+    {
+        if (operators.size() < digits.size() - 1)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                int temp = sum;
+                operators.emplace_back(i);
+                int right = digits[i + 1];
+                if (operators.back() == 0)
+                {
+                    if (temp == 0)
+                    {
+                        operators.pop_back();
+                        continue;
+                    }
+                    temp = temp * 10 + right;
+                }
+                else if (operators.back() == 3)
+                {
+                    while (!ops.empty() && ops.top() == 3)
+                    {
+                        temp *= nums.top();
+                        ops.pop();
+                        nums.pop();
+                    }
+
+                    if (i + 1 < operators.size() && operators[i + 1] == 0)
+                    {
+                        nums.emplace(left);
+                        ops.emplace(operators[i]);
+                        temp = digits[i + 1];
+                    }
+                    else
+                    {
+                        temp *= right;
+                    }
+                }
+                else
+                {
+                    while (!ops.empty())
+                    {
+                        switch (ops.top())
+                        {
+                        case 1:
+                            temp += nums.top();
+                            break;
+                        case 2:
+                            temp = nums.top() - temp;
+                            break;
+                        case 3:
+                            temp *= nums.top();
+                            break;
+
+                        default:
+                            break;
+                        }
+                        ops.pop();
+                        nums.pop();
+                    }
+
+                    if (i + 1 < operators.size() && (operators[i + 1] == 0 || operators[i + 1] == 3))
+                    {
+                        nums.emplace(left);
+                        ops.emplace(operators.back());
+                        temp = digits[i + 1];
+                    }
+                    else if (operators.back() == 1)
+                    {
+                        temp += right;
+                    }
+                    else
+                    {
+                        temp -= right;
+                    }
+                }
+            }
+        }
+        else
+        {
+            int temp = sum;
+            while (!ops.empty())
+            {
+                switch (ops.top())
+                {
+                case 1:
+                    temp += nums.top();
+                    break;
+                case 2:
+                    temp = nums.top() - temp;
+                    break;
+                case 3:
+                    temp *= nums.top();
+                    break;
+                default:
+                    break;
+                }
+                ops.pop();
+                nums.pop();
+            }
+            if (temp == target)
+            {
+                result.emplace_back(toString(digits, operators));
+            }
+        }
+        operators.pop_back();
+    }
+
     vector<int> toDigits(const string &num)
     {
         vector<int> result(num.size());
@@ -57,6 +151,16 @@ private:
         }
         return result;
     }
+
+    void tryNextOp(list<int> &ops, list<int> &results)
+    {
+        while (!ops.empty() && ++ops.back() == 4)
+        {
+            ops.pop_back();
+            results.pop_back();
+        }
+    }
+
     int evaluate(const vector<int> &digits, const vector<int> &operators)
     {
         stack<int> nums;
@@ -154,14 +258,15 @@ private:
 
         return left;
     }
-    string toString(const vector<int> &digits, const vector<int> &operators)
+    string toString(const vector<int> &digits, const list<int> &operators)
     {
         stringstream result;
         result << digits[0];
-        for (int i = 0; i < operators.size(); i++)
+        auto it = operators.begin();
+        for (int i = 1; i < digits.size(); i++)
         {
             string op;
-            switch (operators[i])
+            switch (*(it++))
             {
             case 0:
                 break;
@@ -175,7 +280,7 @@ private:
                 op = "*";
                 break;
             }
-            result << op << digits[i + 1];
+            result << op << digits[i];
         }
         return result.str();
     }
