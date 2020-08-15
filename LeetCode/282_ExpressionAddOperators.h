@@ -40,76 +40,60 @@ private:
         {
             for (int i = 0; i < 4; i++)
             {
-                int temp = sum;
+                int t_sum = sum;
+                stack<int> t_nums = nums;
+                stack<int> t_ops = ops;
                 operators.emplace_back(i);
                 int right = digits[i + 1];
                 if (operators.back() == 0)
                 {
-                    if (temp == 0)
+                    if (t_sum == 0)
                     {
                         operators.pop_back();
                         continue;
                     }
-                    temp = temp * 10 + right;
+                    t_sum = t_sum * 10 + right;
                 }
                 else if (operators.back() == 3)
                 {
                     while (!ops.empty() && ops.top() == 3)
                     {
-                        temp *= nums.top();
-                        ops.pop();
-                        nums.pop();
+                        t_sum *= nums.top();
+                        t_ops.pop();
+                        t_nums.pop();
                     }
 
-                    if (i + 1 < operators.size() && operators[i + 1] == 0)
-                    {
-                        nums.emplace(left);
-                        ops.emplace(operators[i]);
-                        temp = digits[i + 1];
-                    }
-                    else
-                    {
-                        temp *= right;
-                    }
+                    t_nums.emplace(left);
+                    t_ops.emplace(operators.back());
                 }
                 else
                 {
-                    while (!ops.empty())
+                    while (!t_ops.empty())
                     {
-                        switch (ops.top())
+                        switch (t_ops.top())
                         {
                         case 1:
-                            temp += nums.top();
+                            t_sum += t_nums.top();
                             break;
                         case 2:
-                            temp = nums.top() - temp;
+                            t_sum = t_nums.top() - t_sum;
                             break;
                         case 3:
-                            temp *= nums.top();
+                            t_sum *= t_nums.top();
                             break;
 
                         default:
                             break;
                         }
-                        ops.pop();
-                        nums.pop();
+                        t_ops.pop();
+                        t_nums.pop();
                     }
 
-                    if (i + 1 < operators.size() && (operators[i + 1] == 0 || operators[i + 1] == 3))
-                    {
-                        nums.emplace(left);
-                        ops.emplace(operators.back());
-                        temp = digits[i + 1];
-                    }
-                    else if (operators.back() == 1)
-                    {
-                        temp += right;
-                    }
-                    else
-                    {
-                        temp -= right;
-                    }
+                    t_nums.emplace(left);
+                    t_ops.emplace(operators.back());
                 }
+                dfs(t_sum, digits, operators, t_nums, t_ops, result, target);
+                operators.pop_back();
             }
         }
         else
@@ -138,8 +122,8 @@ private:
             {
                 result.emplace_back(toString(digits, operators));
             }
+            operators.pop_back();
         }
-        operators.pop_back();
     }
 
     vector<int> toDigits(const string &num)
@@ -152,112 +136,6 @@ private:
         return result;
     }
 
-    void tryNextOp(list<int> &ops, list<int> &results)
-    {
-        while (!ops.empty() && ++ops.back() == 4)
-        {
-            ops.pop_back();
-            results.pop_back();
-        }
-    }
-
-    int evaluate(const vector<int> &digits, const vector<int> &operators)
-    {
-        stack<int> nums;
-        stack<int> ops;
-        int left = digits[0];
-        for (int i = 0; i < operators.size(); i++)
-        {
-            int right = digits[i + 1];
-            if (operators[i] == 0)
-            {
-                if (left == 0)
-                    throw "starting with 0 is not allowed";
-                left = left * 10 + right;
-            }
-            else if (operators[i] == 3)
-            {
-                while (!ops.empty() && ops.top() == 3)
-                {
-                    left *= nums.top();
-                    ops.pop();
-                    nums.pop();
-                }
-
-                if (i + 1 < operators.size() && operators[i + 1] == 0)
-                {
-                    nums.emplace(left);
-                    ops.emplace(operators[i]);
-                    left = digits[i + 1];
-                }
-                else
-                {
-                    left *= right;
-                }
-            }
-            else
-            {
-                while (!ops.empty())
-                {
-                    switch (ops.top())
-                    {
-                    case 1:
-                        left += nums.top();
-                        break;
-                    case 2:
-                        left = nums.top() - left;
-                        break;
-                    case 3:
-                        left *= nums.top();
-                        break;
-
-                    default:
-                        break;
-                    }
-                    ops.pop();
-                    nums.pop();
-                }
-
-                if (i + 1 < operators.size() && (operators[i + 1] == 0 || operators[i + 1] == 3))
-                {
-                    nums.emplace(left);
-                    ops.emplace(operators[i]);
-                    left = digits[i + 1];
-                }
-                else if (operators[i] == 1)
-                {
-                    left += right;
-                }
-                else
-                {
-                    left -= right;
-                }
-            }
-        }
-
-        while (!ops.empty())
-        {
-            switch (ops.top())
-            {
-            case 1:
-                left += nums.top();
-                break;
-            case 2:
-                left = nums.top() - left;
-                break;
-            case 3:
-                left *= nums.top();
-                break;
-
-            default:
-                break;
-            }
-            ops.pop();
-            nums.pop();
-        }
-
-        return left;
-    }
     string toString(const vector<int> &digits, const list<int> &operators)
     {
         stringstream result;
@@ -284,19 +162,7 @@ private:
         }
         return result.str();
     }
-    bool next(vector<int> &operators)
-    {
-        operators[0]++;
-        for (int i = 0; i < operators.size() - 1; i++)
-        {
-            if (operators[i] == 4)
-            {
-                operators[i + 1]++;
-                operators[i] = 0;
-            }
-        }
-        return *operators.rbegin() != 4;
-    }
+
 };
 
 void Test()
