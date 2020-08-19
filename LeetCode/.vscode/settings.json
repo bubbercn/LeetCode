@@ -13,7 +13,8 @@
         "stack": "cpp",
         "ios": "cpp",
         "__split_buffer": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "tuple": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": true

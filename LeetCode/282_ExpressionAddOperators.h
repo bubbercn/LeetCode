@@ -25,20 +25,20 @@ public:
         list<int> operators;
         vector<string> result;
 
-        dfs(digits[0], stack<tuple<int, long, long>>(), digits, operators, result, target);
+        dfs(digits[0], list<tuple<int, long, long>>(), digits, operators, result, target);
 
         return result;
     }
 
 private:
-    void dfs(long value, stack<tuple<int, long, long>>& state, const vector<int> &digits, list<int> &operators, vector<string> &result, int target)
+    void dfs(long value, const list<tuple<int, long, long>>& state, const vector<int> &digits, list<int> &operators, vector<string> &result, int target)
     {
         if (operators.size() < digits.size() - 1)
         {
             for (int i = 0; i < 4; i++)
             {
                 long t_value = 0;
-                stack<tuple<int, long, long>> t_state = state;
+                list<tuple<int, long, long>> t_state = state;
                 try
                 {
                     t_value = eval(value, t_state, i, digits, operators);
@@ -56,41 +56,48 @@ private:
         {
             if (value == target)
             {
-                // string temp = toString(digits, operators);
-                // assert(temp != "1*2+3*4*5-6*7+8+9");
+                string temp = toString(digits, operators);
+                assert(temp != "123*4+5*6-78-9");
                 result.emplace_back(toString(digits, operators));
             }
         }
     }
 
-    long eval(long value, stack<tuple<int, long, long>>& state, int op, const vector<int> &digits, const list<int> &operators)
+    long eval(long value, list<tuple<int, long, long>>& state, int op, const vector<int> &digits, const list<int> &operators)
     {
-        while (!state.empty() && ((get<0>(state.top()) > op || op == 1))
+        if (op == 0 || op == 1)
         {
-            state.pop();
+            state.clear();
+        }
+        if (!state.empty() && (get<0>(state.back()) == 2) && (op <=2))
+        {
+            state.pop_back();
         }
 
-        long *left = nullptr;
+        long left = 0;
         if (!state.empty())
         {
-            left = &get<2>(state.top());
+            left = get<2>(state.back());
         }
         else
         {
-            left = &value;
+            left = value;
         }
         long right = digits[operators.size() + 1];
-        *left = calc(*left, right, op);
+        long result = calc(left, right, op);
 
-        if (state.empty())
+        for (auto it = state.rbegin(); it != state.rend(); it++)
         {
-            state.emplace(op, *left, right);
+            get<2>(*it) = result;
+            result = calc(get<1>(*it), get<2>(*it), get<0>(*it));
         }
-        else
+
+        if (op != 3 && (state.empty() || ((get<0>(state.back()) < 2) && op == 2)))
         {
-            get<2>(state.top()) = *left;
+            state.emplace_back(op, left, right);
         }
-        
+
+        return result;
     }
 
     long calc(long left, long right, int op)
@@ -179,5 +186,6 @@ void Test()
     // output = {};
     // assert(solution.addOperators("3456237490", 9191) == output);
 
-    solution.addOperators("123456789", 45);
+    // solution.addOperators("123456789", 45);
+    solution.addOperators("999999999", 80);
 }
