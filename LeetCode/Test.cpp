@@ -1,4 +1,4 @@
-#include "287_FindTheDuplicateNumber.h"
+#include "290_WordPattern.h"
 
 int main()
 {

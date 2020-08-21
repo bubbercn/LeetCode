@@ -7,8 +7,8 @@ public:
     int findDuplicate(vector<int> &nums)
     {
         int left = 1;
-        int right = nums.size() - 1;
-        int count = nums.size();
+        int right = static_cast<int>(nums.size() - 1);
+        int count = static_cast<int>(nums.size());
         while (left <= right)
         {
             if (left == right)
