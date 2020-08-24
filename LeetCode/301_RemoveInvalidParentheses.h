@@ -4,7 +4,7 @@
 class Solution
 {
 public:
-    int lengthOfLIS(vector<int> &nums)
+    vector<string> removeInvalidParentheses(string s)
     {
     }
 };
