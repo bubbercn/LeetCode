@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		53543845243B493E00A7BD1F /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53543843243B493E00A7BD1F /* Test.cpp */; };
+		B985032D24FB6B2B0064001E /* libgmock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B985032B24FB6B2B0064001E /* libgmock.a */; };
+		B985032E24FB6B2B0064001E /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B985032C24FB6B2B0064001E /* libgtest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +29,9 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		5360407C24ED1137001C1B36 /* 282_ExpressionAddOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 282_ExpressionAddOperators.h; sourceTree = "<group>"; };
+		B985032924FB64C40064001E /* 301_RemoveInvalidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 301_RemoveInvalidParentheses.h; sourceTree = "<group>"; };
+		B985032B24FB6B2B0064001E /* libgmock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmock.a; path = "../vcpkg/installed/x64-osx/lib/libgmock.a"; sourceTree = "<group>"; };
+		B985032C24FB6B2B0064001E /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "../vcpkg/installed/x64-osx/lib/libgtest.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B985032D24FB6B2B0064001E /* libgmock.a in Frameworks */,
+				B985032E24FB6B2B0064001E /* libgtest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +52,7 @@
 			children = (
 				5354382B243B465700A7BD1F /* LeetCode */,
 				5354382A243B465700A7BD1F /* Products */,
+				B985032A24FB6B2B0064001E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,12 +67,21 @@
 		5354382B243B465700A7BD1F /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
-				5360407C24ED1137001C1B36 /* 282_ExpressionAddOperators.h */,
 				535438AB243B499E00A7BD1F /* Solved */,
+				B985032924FB64C40064001E /* 301_RemoveInvalidParentheses.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
 			path = LeetCode;
+			sourceTree = "<group>";
+		};
+		B985032A24FB6B2B0064001E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B985032B24FB6B2B0064001E /* libgmock.a */,
+				B985032C24FB6B2B0064001E /* libgtest.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +262,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = "/Users/wubaosong/Source/vcpkg/installed/x64-osx/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = "/Users/wubaosong/Source/vcpkg/installed/x64-osx/include";
 			};
 			name = Debug;
 		};
@@ -255,7 +273,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = "/Users/wubaosong/Source/vcpkg/installed/x64-osx/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = "/Users/wubaosong/Source/vcpkg/installed/x64-osx/include";
 			};
 			name = Release;
 		};

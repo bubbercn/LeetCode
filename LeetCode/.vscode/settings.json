@@ -18,7 +18,7 @@
         "xtree": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "cmake.configureOnOpen": true,
+    "cmake.configureOnOpen": false,
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "../../vcpkg/scripts/buildsystems/vcpkg.cmake"
     }
