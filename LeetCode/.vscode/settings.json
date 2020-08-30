@@ -15,7 +15,9 @@
         "__split_buffer": "cpp",
         "deque": "cpp",
         "tuple": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "unordered_set": "cpp",
+        "xhash": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,
