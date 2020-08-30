@@ -1,7 +1,9 @@
 #include "301_RemoveInvalidParentheses.h"
 
-int main()
+Solution LeetCodeTest::solution;
+
+int main(int argc, char *argv[])
 {
-    Test();
-    return 0;
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
