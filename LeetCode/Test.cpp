@@ -1,4 +1,4 @@
-#include "303_RangeSumQueryImmutable.h"
+#include "304_RangeSumQuery2DImmutable.h"
 
 Solution LeetCodeTest::solution;
 

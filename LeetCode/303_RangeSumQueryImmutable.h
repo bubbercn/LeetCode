@@ -6,12 +6,22 @@ class NumArray
 public:
     NumArray(vector<int> &nums)
     {
+        lookup.resize(nums.size());
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            sum += nums[i];
+            lookup[i] = sum;
+        }
     }
 
     int sumRange(int i, int j)
     {
-        return 0;
+        return i == 0 ? lookup[j] : lookup[j] - lookup[i - 1];
     }
+
+private:
+    vector<int> lookup;
 };
 
 class Solution
@@ -33,9 +43,3 @@ TEST_F(LeetCodeTest, Example1)
     EXPECT_EQ(obj->sumRange(2, 5), -1);
     EXPECT_EQ(obj->sumRange(0, 5), -3);
 }
-
-/**
- * Your NumArray object will be instantiated and called as such:
- * NumArray* obj = new NumArray(nums);
- * int param_1 = obj->sumRange(i,j);
- */
