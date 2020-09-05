@@ -1,49 +1,54 @@
 #pragma once
 #include "Common.h"
 
+struct state
+{
+    long value;
+    size_t pos;
+    size_t length;
+};
+
 class Solution
 {
 public:
     bool isAdditiveNumber(const string &num)
     {
-        if (num.length() < 3)
-            return false;
-
-        size_t i1 = 0, i2 = 1, i3 = 2, i4 = 3;
-
-        do
-        {
-            if (helper(num, i1, i2, i3, i4))
-                return true;
-        } while (next(num, i1, i2, i3, i4));
-        
-        return false;
+        list<state> states;
+        return dfs(num, 0，1，states);
     }
 
 private:
-    bool helper(const string &num, size_t i1, size_t i2, size_t i3, size_t i4)
+    bool dfs(const string &num, size_t pos, size_t length, list<state> &states)
     {
-        if (num[i1] == '0')
-            return false;
-        
-        long num1 = stol(num.substr(i1, i2 - i1));
+        do
+        {
+            if (moveAndValidate(const string &num, size_t pos, size_t length, list<state> &states))
+            {
+                if (dfs())
+                    return true;
+            }
 
-        if (num[i2] == '0')
-            return false;
-        
-        long num1 = stol(num.substr(i2, i3 - i2));
-
-        if (num[i3] == '0')
-            return false;
-        
-        long num1 = stol(num.substr(i3, i4 - i3));
-
-        return false;
+        } while (restore()) return false;
     }
 
-    bool next(const string &num, size_t& i1, size_t& i2, size_t& i3, size_t& i4)
+    int moveAndValidate(const string &num, size_t pos, size_t length, list<state> &states)
     {
-        return false;
+        if (states.size() <)
+    }
+
+    long getValue(const string &num, size_t pos, size_t length)
+    {
+        if (num[pos] == 0)
+            return -1;
+
+        long sum = 0;
+
+        while (length-- > 0)
+        {
+            sum = sum * 10 + num[pos++];
+        }
+
+        return sum;
     }
 };
 
