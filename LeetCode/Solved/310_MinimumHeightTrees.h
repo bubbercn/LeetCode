@@ -9,58 +9,57 @@ public:
         if (n == 0)
             return {};
 
-        vector<vector<int>> distances(n, vector<int>(n, INT_MAX));
-        for (auto& edge : edges)
+        vector<Vertex> vertexes(n);
+        for (auto &edge : edges)
         {
-            distances[edge[1]][edge[0]] = 1;
-            distances[edge[0]][edge[1]] = 1;
+            vertexes[edge[0]].degree++;
+            vertexes[edge[0]].adjacentVertexes.emplace_back(edge[1]);
+            vertexes[edge[1]].degree++;
+            vertexes[edge[1]].adjacentVertexes.emplace_back(edge[0]);
         }
 
-        for (int k = 0; k < n; k++)
+        set<int> result;
+        for (int i = 0; i < n; i++)
         {
-            distances[k][k] = 0;
+            result.emplace(i);
         }
 
-        for (int k = 0; k < n; k++)
+        list<int> vertexesToRemove;
+        for (auto i : result)
         {
-            for (int i = 0; i < n; i++)
+            if (vertexes[i].degree == 1)
             {
-                for (int j = 0; j < n; j++)
+                vertexesToRemove.emplace_back(i);
+            }
+        }
+
+        while (result.size() > 2)
+        {
+            list<int> vertexesToRemoveNext;
+            for (auto vertex : vertexesToRemove)
+            {
+                result.erase(vertex);
+                for (auto i : vertexes[vertex].adjacentVertexes)
                 {
-                    if (distances[i][k] != INT_MAX && distances[k][j] != INT_MAX)
+                    vertexes[i].degree--;
+                    if (vertexes[i].degree == 1)
                     {
-                        distances[i][j] = min(distances[i][j], distances[i][k] + distances[k][j]);
+                        vertexesToRemoveNext.emplace_back(i);
                     }
                 }
             }
+            vertexesToRemove.swap(vertexesToRemoveNext);
         }
 
-        int minTreeDepth = INT_MAX;
-        vector<int> result;
-        for(int i = 0; i < n; i++)
-        {
-            int treeDepth = 0;
-            for (int j = 0; j < n; j++)
-            {
-                if (i != j)
-                {
-                    treeDepth = max(treeDepth, distances[i][j]);
-                }
-            }
-            if (treeDepth < minTreeDepth)
-            {
-                result.clear();
-                result.emplace_back(i);
-                minTreeDepth = treeDepth;
-            }
-            else if (treeDepth == minTreeDepth)
-            {
-                result.emplace_back(i);
-            }
-        }
-
-        return result;
+        return {result.begin(), result.end()};
     }
+
+private:
+    struct Vertex
+    {
+        int degree;
+        vector<int> adjacentVertexes;
+    };
 };
 
 class LeetCodeTest : public testing::Test
