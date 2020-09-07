@@ -6,7 +6,60 @@ class Solution
 public:
     vector<int> findMinHeightTrees(int n, vector<vector<int>> &edges)
     {
-        return {};
+        if (n == 0)
+            return {};
+
+        vector<vector<int>> distances(n, vector<int>(n, INT_MAX));
+        for (auto& edge : edges)
+        {
+            distances[edge[1]][edge[0]] = 1;
+            distances[edge[0]][edge[1]] = 1;
+        }
+
+        for (int k = 0; k < n; k++)
+        {
+            distances[k][k] = 0;
+        }
+
+        for (int k = 0; k < n; k++)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (distances[i][k] != INT_MAX && distances[k][j] != INT_MAX)
+                    {
+                        distances[i][j] = min(distances[i][j], distances[i][k] + distances[k][j]);
+                    }
+                }
+            }
+        }
+
+        int minTreeDepth = INT_MAX;
+        vector<int> result;
+        for(int i = 0; i < n; i++)
+        {
+            int treeDepth = 0;
+            for (int j = 0; j < n; j++)
+            {
+                if (i != j)
+                {
+                    treeDepth = max(treeDepth, distances[i][j]);
+                }
+            }
+            if (treeDepth < minTreeDepth)
+            {
+                result.clear();
+                result.emplace_back(i);
+                minTreeDepth = treeDepth;
+            }
+            else if (treeDepth == minTreeDepth)
+            {
+                result.emplace_back(i);
+            }
+        }
+
+        return result;
     }
 };
 
