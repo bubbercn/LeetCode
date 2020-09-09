@@ -18,7 +18,10 @@
         "xtree": "cpp",
         "unordered_set": "cpp",
         "xhash": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "map": "cpp",
+        "queue": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,

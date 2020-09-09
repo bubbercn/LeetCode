@@ -1,4 +1,4 @@
-#include "313_SuperUglyNumber.h"
+#include "315_CountOfSmallerNumbersAfterSelf.h"
 
 Solution LeetCodeTest::solution;
 
