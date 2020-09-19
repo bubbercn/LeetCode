@@ -6,7 +6,23 @@ class Solution
 public:
     vector<int> countSmaller(vector<int> &nums)
     {
-        return {};
+        map<int, int> lookup;
+        vector<int> result(nums.size(), 0);
+        for (int i = nums.size() - 1; i >= 0; i--)
+        {
+            lookup[nums[i]]++;
+            if (i != nums.size() - 1)
+            {
+                int sum = 0;
+                auto end = lookup.find(nums[i]);
+                for (auto it = lookup.begin(); it != end; it++)
+                {
+                    sum += it->second;
+                }
+                result[i] = sum;
+            }
+        }
+        return result;
     }
 };
 
