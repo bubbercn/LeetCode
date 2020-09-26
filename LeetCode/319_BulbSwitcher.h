@@ -6,7 +6,7 @@ class Solution
 public:
     int bulbSwitch(int n)
     {
-        return 0;
+        return static_cast<int>(sqrt(n));
     }
 };
 
