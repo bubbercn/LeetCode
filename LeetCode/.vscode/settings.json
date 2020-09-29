@@ -21,7 +21,8 @@
         "memory": "cpp",
         "map": "cpp",
         "queue": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "xiosbase": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,
