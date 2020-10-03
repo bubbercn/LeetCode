@@ -6,7 +6,17 @@ class Solution
 public:
     int countRangeSum(vector<int> &nums, int lower, int upper)
     {
-        return 0;
+        multiset<long> preSums;
+        preSums.emplace(0);
+        long preSum = 0;
+        int result = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            preSum += nums[i];
+            result += distance(preSums.lower_bound(preSum - upper), preSums.upper_bound(preSum - lower));
+            preSums.emplace(preSum);
+        }
+        return result;
     }
 };
 
