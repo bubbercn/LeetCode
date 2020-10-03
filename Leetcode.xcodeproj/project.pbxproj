@@ -29,7 +29,19 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		B985032924FB64C40064001E /* 301_RemoveInvalidParentheses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 301_RemoveInvalidParentheses.h; sourceTree = "<group>"; };
+		B98137352528BCFA005AB195 /* 326_PowerOfThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 326_PowerOfThree.h; sourceTree = "<group>"; };
+		B98137362528BCFA005AB195 /* 315_CountOfSmallerNumbersAfterSelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 315_CountOfSmallerNumbersAfterSelf.h; sourceTree = "<group>"; };
+		B98137372528BCFB005AB195 /* 318_MaximumProductOfWordLengths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 318_MaximumProductOfWordLengths.h; sourceTree = "<group>"; };
+		B98137382528BCFB005AB195 /* 312_BurstBalloons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 312_BurstBalloons.h; sourceTree = "<group>"; };
+		B98137392528BCFB005AB195 /* 319_BulbSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 319_BulbSwitcher.h; sourceTree = "<group>"; };
+		B981373A2528BCFB005AB195 /* 316_RemoveDuplicateLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 316_RemoveDuplicateLetters.h; sourceTree = "<group>"; };
+		B981373B2528BCFB005AB195 /* 321_CreateMaximumNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 321_CreateMaximumNumber.h; sourceTree = "<group>"; };
+		B981373C2528BCFB005AB195 /* 329_LongestIncreasingPathInAMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 329_LongestIncreasingPathInAMatrix.h; sourceTree = "<group>"; };
+		B981373D2528BCFB005AB195 /* 324_WiggleSortII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 324_WiggleSortII.h; sourceTree = "<group>"; };
+		B981373E2528BCFB005AB195 /* 327_CountOfRangeSum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 327_CountOfRangeSum.h; sourceTree = "<group>"; };
+		B981373F2528BCFB005AB195 /* 313_SuperUglyNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 313_SuperUglyNumber.h; sourceTree = "<group>"; };
+		B98137402528BCFB005AB195 /* 322_CoinChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 322_CoinChange.h; sourceTree = "<group>"; };
+		B98137412528BCFB005AB195 /* 328_OddEvenLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 328_OddEvenLinkedList.h; sourceTree = "<group>"; };
 		B985032B24FB6B2B0064001E /* libgmock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmock.a; path = "../vcpkg/installed/x64-osx/lib/libgmock.a"; sourceTree = "<group>"; };
 		B985032C24FB6B2B0064001E /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "../vcpkg/installed/x64-osx/lib/libgtest.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,8 +79,20 @@
 		5354382B243B465700A7BD1F /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				B98137382528BCFB005AB195 /* 312_BurstBalloons.h */,
+				B981373F2528BCFB005AB195 /* 313_SuperUglyNumber.h */,
+				B98137362528BCFA005AB195 /* 315_CountOfSmallerNumbersAfterSelf.h */,
+				B981373A2528BCFB005AB195 /* 316_RemoveDuplicateLetters.h */,
+				B98137372528BCFB005AB195 /* 318_MaximumProductOfWordLengths.h */,
+				B98137392528BCFB005AB195 /* 319_BulbSwitcher.h */,
+				B981373B2528BCFB005AB195 /* 321_CreateMaximumNumber.h */,
+				B98137402528BCFB005AB195 /* 322_CoinChange.h */,
+				B981373D2528BCFB005AB195 /* 324_WiggleSortII.h */,
+				B98137352528BCFA005AB195 /* 326_PowerOfThree.h */,
+				B981373E2528BCFB005AB195 /* 327_CountOfRangeSum.h */,
+				B98137412528BCFB005AB195 /* 328_OddEvenLinkedList.h */,
+				B981373C2528BCFB005AB195 /* 329_LongestIncreasingPathInAMatrix.h */,
 				535438AB243B499E00A7BD1F /* Solved */,
-				B985032924FB64C40064001E /* 301_RemoveInvalidParentheses.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 			);
