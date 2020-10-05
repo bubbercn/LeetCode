@@ -6,7 +6,27 @@ class Solution
 public:
     bool isValidSerialization(string preorder)
     {
-        return false;
+        if (preorder.empty())
+            return false;
+
+        int nodeCount = 1;
+
+        char *input = &preorder[0];
+        char *token;
+
+        token = strtok(input, ",");
+        while (token != nullptr)
+        {
+            nodeCount--;
+            if (nodeCount < 0)
+                return false;
+            if (strcmp("#", token) != 0)
+                nodeCount += 2;
+
+            token = strtok(nullptr, ",");
+        }
+
+        return nodeCount == 0;
     }
 };
 
@@ -29,4 +49,14 @@ TEST_F(LeetCodeTest, Example2)
 TEST_F(LeetCodeTest, Example3)
 {
     EXPECT_EQ(solution.isValidSerialization("9,#,#,1"), false);
+}
+
+TEST_F(LeetCodeTest, Empty)
+{
+    EXPECT_EQ(solution.isValidSerialization(""), false);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.isValidSerialization("9,#,92,#,#"), true);
 }
