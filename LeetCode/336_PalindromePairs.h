@@ -7,21 +7,61 @@ public:
     vector<vector<int>> palindromePairs(vector<string> &words)
     {
         vector<vector<int>> result;
+        unordered_map<string, int> lookup;
         for (int i = 0; i < words.size(); i++)
         {
-            for (int j = 0; j < words.size(); j++)
+            lookup.emplace(words[i], i);
+        }
+
+        for (int i = 0; i < words.size(); i++)
+        {
+            for (int j = 0; j < words[i].length(); j++)
             {
-                if (i == j)
-                    continue;
-                string temp = words[i] + words[j];
-                auto hash1 = hash<string>()(temp);
-                reverse(temp.begin(), temp.end());
-                auto hash2 = hash<string>()(temp);
-                if (hash1 == hash2)
-                    result.push_back({i, j});
+                if (isPalindrome(words[i].substr(j)))
+                {
+                    string target = words[i].substr(0, j);
+                    reverse(target.begin(), target.end());
+                    auto it = lookup.find(target);
+                    if (it != lookup.end() && it->second != i)
+                    {
+                        result.push_back({i, it->second});
+                    }
+                }
+            }
+
+            for (int j = 0; j <= words[i].length(); j++)
+            {
+                if (isPalindrome(words[i].substr(0, j)))
+                {
+                    string target = words[i].substr(j);
+                    reverse(target.begin(), target.end());
+                    auto it = lookup.find(target);
+                    if (it != lookup.end() && it->second != i)
+                    {
+                        result.push_back({it->second, i});
+                    }
+                }
             }
         }
+
         return result;
+    }
+
+private:
+    bool isPalindrome(const string &word)
+    {
+        if (word.empty())
+            return true;
+        int begin = 0;
+        int end = word.length() - 1;
+        while (begin < end)
+        {
+            if (word[begin++] != word[end--])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 };
 
