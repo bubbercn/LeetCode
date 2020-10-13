@@ -6,7 +6,18 @@ class Solution
 public:
     vector<int> countBits(int num)
     {
-        return {};
+        vector<int> result(num + 1);
+        result[0] = 0;
+        int offset = 1;
+        for (int i = 1; i <= num; i++)
+        {
+            if (i == offset * 2)
+            {
+                offset *= 2;
+            }
+            result[i] = result[i - offset] + 1;
+        }
+        return result;
     }
 };
 
