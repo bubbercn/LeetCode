@@ -18,7 +18,7 @@ public:
             {
                 frequencyHeap.emplace(it->second, it->first);
             }
-            else if (it->second > frequencyHeap.top().second)
+            else if (it->second > frequencyHeap.top().first)
             {
                 frequencyHeap.pop();
                 frequencyHeap.emplace(it->second, it->first);
