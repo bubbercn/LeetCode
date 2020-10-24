@@ -6,6 +6,8 @@ class Solution
 public:
     int maxEnvelopes(vector<vector<int>> &envelopes)
     {
+        sort(envelopes.begin(), envelopes.end());
+
         return 0;
     }
 };
