@@ -6,34 +6,24 @@ class Solution
 public:
     int maxEnvelopes(vector<vector<int>> &envelopes)
     {
-        sort(envelopes.begin(), envelopes.end());
-        int max = 0;
-        stack<vector<int>> increasingSequence;
-        for (auto it = envelopes.begin(); it != envelopes.end();)
+        sort(envelopes.begin(), envelopes.end(), [](const auto &a, const auto &b) {
+            return a[0] < b[0] || (a[0] == b[0] && a[1] > b[1]);
+        });
+
+        int maxLength = 0;
+        set<int> increasingSequence;
+
+        for (const auto& envelope : envelopes)
         {
-            auto curIt = it;
-            map<int, vector<vector<int>>::const_iterator> lookup;
-            while (it != envelopes.end() && it->at(0) == curIt->at(0))
+            auto it = increasingSequence.lower_bound(envelope[1]);
+            if (it != increasingSequence.end())
             {
-                lookup.emplace(it->at(1), it);
-                it++;
+                it = increasingSequence.erase(it);
             }
-            auto i = lookup.begin();
-            while (!increasingSequence.empty() && (i = lookup.upper_bound(increasingSequence.top()[1])) == lookup.end())
-            {
-                increasingSequence.pop();
-            }
-            if (i != lookup.end())
-            {
-                increasingSequence.emplace(*(i->second));
-            }
-            else
-            {
-                increasingSequence.emplace(*curIt);
-            }
-            max = ::max(max, static_cast<int>(increasingSequence.size()));
+            increasingSequence.emplace_hint(it, envelope[1]);
+            maxLength = max(maxLength, static_cast<int>(increasingSequence.size()));
         }
-        return max;
+        return maxLength;
     }
 };
 
