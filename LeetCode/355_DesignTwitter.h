@@ -44,14 +44,15 @@ public:
                 newsFeed.emplace(user.posts.begin(), user.posts.end());
             }
         }
-        while (result.size() < 10 || !newsFeed.empty())
+        while (result.size() < 10 && !newsFeed.empty())
         {
             result.emplace_back(newsFeed.begin()->first->id);
-            auto [first, second] = *newsFeed.begin();
+            pair<set<Post>::const_iterator, set<Post>::const_iterator> temp = *newsFeed.begin();
             newsFeed.erase(newsFeed.begin());
-            if (first++; first != second)
+            temp.first++;
+            if (temp.first != temp.second)
             {
-                newsFeed.emplace(first, second);
+                newsFeed.emplace(temp.first, temp.second);
             }
         }
         return result;
@@ -62,10 +63,17 @@ public:
     {
         if (followerId == followeeId)
             return;
-        auto follower = users.find(followerId);
+        unordered_map<int, User>::iterator follower = users.find(followerId);
         if (follower == users.end())
-            return;
-        follower->second.followeeIDs.erase(followerId);
+        {
+            follower = addUser(followerId);
+        }
+        unordered_map<int, User>::iterator followee = users.find(followeeId);
+        if (followee == users.end())
+        {
+            followee = addUser(followeeId);
+        }
+        follower->second.followeeIDs.emplace(followeeId);
     }
 
     /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
@@ -73,13 +81,12 @@ public:
     {
         if (followerId == followeeId)
             return;
-        auto follower = users.find(followerId);
+        unordered_map<int, User>::iterator follower = users.find(followerId);
         if (follower == users.end())
-            return;
-        auto followee = users.find(followeeId);
-        if (followee == users.end())
-            return;
-        follower->second.followeeIDs.emplace(followerId);
+        {
+            follower = addUser(followerId);
+        }
+        follower->second.followeeIDs.erase(followeeId);
     }
 
 private:
@@ -90,7 +97,7 @@ private:
         int id;
         bool operator<(const Post &post) const
         {
-            return index < post.index;
+            return index > post.index;
         }
     };
     struct User
@@ -99,9 +106,9 @@ private:
         set<int> followeeIDs;
     };
     unordered_map<int, User> users;
-    void addUser(int userID)
+    unordered_map<int, User>::iterator addUser(int userID)
     {
-        users.insert({userID, {{}, {}}});
+        return users.insert({userID, {{}, {}}}).first;
     }
 };
 
@@ -141,4 +148,21 @@ TEST_F(LeetCodeTest, Example1)
     // since user 1 is no longer following user 2.
     twitter.getNewsFeed(1);
     EXPECT_EQ(twitter.getNewsFeed(1), vector<int>{5});
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    Twitter twitter;
+
+    twitter.postTweet(1, 2);
+
+    EXPECT_EQ(twitter.getNewsFeed(1), vector<int>{2});
+
+    twitter.follow(2, 1);
+
+    EXPECT_EQ(twitter.getNewsFeed(2), vector<int>{2});
+
+    twitter.unfollow(2,1);
+
+    EXPECT_EQ(twitter.getNewsFeed(2), vector<int>{});
 }
