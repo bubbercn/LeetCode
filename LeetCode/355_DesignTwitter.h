@@ -12,22 +12,96 @@ public:
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId)
     {
+        if (users.count(userId) == 0)
+        {
+            addUser(userId);
+        }
+        users[userId].posts.insert({Post::curIndex++, tweetId});
     }
 
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     vector<int> getNewsFeed(int userId)
     {
-        return {};
+        if (users.count(userId) == 0)
+            return {};
+
+        vector<int> result;
+        result.reserve(10);
+        auto compare = [](const set<Post>::const_iterator &it1, const set<Post>::const_iterator &it2) {
+            return *it1 < *it2;
+        };
+        map<set<Post>::const_iterator, set<Post>::const_iterator, decltype(compare)> newsFeed(compare);
+        User &user = users[userId];
+        if (!user.posts.empty())
+        {
+            newsFeed.emplace(user.posts.begin(), user.posts.end());
+        }
+        for (const auto &followeeID : user.followeeIDs)
+        {
+            User &user = users[followeeID];
+            if (!user.posts.empty())
+            {
+                newsFeed.emplace(user.posts.begin(), user.posts.end());
+            }
+        }
+        while (result.size() < 10 || !newsFeed.empty())
+        {
+            result.emplace_back(newsFeed.begin()->first->id);
+            auto [first, second] = *newsFeed.begin();
+            newsFeed.erase(newsFeed.begin());
+            if (first++; first != second)
+            {
+                newsFeed.emplace(first, second);
+            }
+        }
+        return result;
     }
 
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
     void follow(int followerId, int followeeId)
     {
+        if (followerId == followeeId)
+            return;
+        auto follower = users.find(followerId);
+        if (follower == users.end())
+            return;
+        follower->second.followeeIDs.erase(followerId);
     }
 
     /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
     void unfollow(int followerId, int followeeId)
     {
+        if (followerId == followeeId)
+            return;
+        auto follower = users.find(followerId);
+        if (follower == users.end())
+            return;
+        auto followee = users.find(followeeId);
+        if (followee == users.end())
+            return;
+        follower->second.followeeIDs.emplace(followerId);
+    }
+
+private:
+    struct Post
+    {
+        inline static int curIndex = 0;
+        int index;
+        int id;
+        bool operator<(const Post &post) const
+        {
+            return index < post.index;
+        }
+    };
+    struct User
+    {
+        set<Post> posts;
+        set<int> followeeIDs;
+    };
+    unordered_map<int, User> users;
+    void addUser(int userID)
+    {
+        users.insert({userID, {{}, {}}});
     }
 };
 
