@@ -1,4 +1,4 @@
-#include "365_WaterAndJugProblem.h"
+#include "371_SumOfTwoIntegers.h"
 
 Solution LeetCodeTest::solution;
 

@@ -23,7 +23,8 @@
         "queue": "cpp",
         "set": "cpp",
         "xiosbase": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "initializer_list": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,

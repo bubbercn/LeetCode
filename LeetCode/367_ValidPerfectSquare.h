@@ -8,9 +8,16 @@ public:
     {
         if (num == 1)
             return true;
-        for (int i = 2; i * i < num; i++)
+        for (long i = 2; i * i <= num; i++)
         {
-            
+            if (num % i == 0)
+            {
+                num /= i;
+                if (num % i != 0)
+                    return false;
+                num /= i;
+                return isPerfectSquare(num);
+            }
         }
         return false;
     }
@@ -30,4 +37,9 @@ TEST_F(LeetCodeTest, Example1)
 TEST_F(LeetCodeTest, Example2)
 {
     EXPECT_EQ(solution.isPerfectSquare(14), false);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.isPerfectSquare(2147483647), false);
 }
