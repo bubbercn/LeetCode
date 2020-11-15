@@ -1,12 +1,40 @@
 #pragma once
 #include "Common.h"
 
+constexpr int DEVIDER = 1337;
+
 class Solution
 {
 public:
     int superPow(int a, vector<int> &b)
     {
-        return 0;
+        if (b.empty())
+            return 1;
+
+        a = (a >= DEVIDER) ? (a % DEVIDER) : a;
+
+        int r = *b.rbegin();
+        b.pop_back();
+
+        return (helper(superPow(a, b), 10) * helper(a, r)) % DEVIDER;
+    }
+
+private:
+    int helper(int a, int b)
+    {
+        a = (a >= DEVIDER) ? (a % DEVIDER) : a;
+
+        if (b == 0)
+            return 1;
+
+        int r = 1;
+
+        if (b % 2)
+        {
+            r = a;
+        }
+        b /= 2;
+        return (helper(a * a, b) * r) % DEVIDER;
     }
 };
 
@@ -34,4 +62,9 @@ TEST_F(LeetCodeTest, Example3)
 TEST_F(LeetCodeTest, Example4)
 {
     EXPECT_EQ(solution.superPow(2147483647, vector<int>{2, 0, 0}), 1198);
+}
+
+TEST_F(LeetCodeTest, BigNumber)
+{
+    EXPECT_EQ(solution.superPow(2147483647, vector<int>{1}), 932);
 }
