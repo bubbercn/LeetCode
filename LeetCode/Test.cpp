@@ -1,4 +1,4 @@
-#include "371_SumOfTwoIntegers.h"
+#include "372_SuperPow.h"
 
 Solution LeetCodeTest::solution;
 

@@ -6,7 +6,11 @@ class Solution
 public:
     int getSum(int a, int b)
     {
-        return 0;
+        if ((a & b) == 0)
+        {
+            return a ^ b;
+        }
+        return getSum(a ^ b, static_cast<unsigned int>(a & b) << 1);
     }
 };
 
@@ -24,4 +28,9 @@ TEST_F(LeetCodeTest, Example1)
 TEST_F(LeetCodeTest, Example2)
 {
     EXPECT_EQ(solution.getSum(-2, 3), 1);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.getSum(20, 30), 50);
 }
