@@ -1,6 +1,4 @@
-#include "376_WiggleSubsequence.h"
-
-Solution LeetCodeTest::solution;
+#include "377_CombinationSumIV.h"
 
 int main(int argc, char *argv[])
 {
