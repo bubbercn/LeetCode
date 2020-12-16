@@ -1,4 +1,4 @@
-#include "380_InsertDeleteGetRandomO(1).h"
+#include "381_InsertDeleteGetRandomO(1)DuplicatesAllowed.h"
 
 int main(int argc, char *argv[])
 {
