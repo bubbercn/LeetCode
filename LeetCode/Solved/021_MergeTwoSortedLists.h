@@ -1,9 +1,7 @@
 #pragma once
 #include "Common.h"
 
-/**
- * Definition for singly-linked list.
- */
+//  Definition for singly-linked list.
 struct ListNode
 {
 	int val;

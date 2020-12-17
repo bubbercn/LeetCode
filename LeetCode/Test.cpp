@@ -1,4 +1,4 @@
-#include "381_InsertDeleteGetRandomO(1)DuplicatesAllowed.h"
+#include "382_LinkedListRandomNode.h"
 
 int main(int argc, char *argv[])
 {
