@@ -4,9 +4,22 @@
 class Solution
 {
 public:
-    bool canConstruct(string ransomNote, string magazine)
+    bool canConstruct(const string& ransomNote, const string& magazine)
     {
-        return false;
+        vector<int> lookup(26, 0);
+        for (auto c : magazine)
+        {
+            lookup[c - 'a']++;
+        }
+        for (auto c : ransomNote)
+        {
+            lookup[c - 'a']--;
+            if (lookup[c - 'a'] < 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 };
 
