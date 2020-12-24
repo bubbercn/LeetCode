@@ -60,29 +60,60 @@ private:
 class Solution
 {
 public:
-    NestedInteger deserialize(string s)
+    NestedInteger deserialize(const string &s)
     {
-        if (*s.begin() != '[')
+        int begin = -1;
+        int end = -1;
+        NestedInteger result;
+        stack<NestedInteger> resultStack;
+        for (int i = 0; i < s.size(); i++)
         {
-            return NestedInteger(stoi(s));
-        }
-        else
-        {
-            NestedInteger result;
-            string temp = s.substr(1, s.size() - 2);
-            if (!temp.empty())
+            switch (s[i])
             {
-                char *input = &temp[0];
-                char *token;
-                token = strtok(input, ",");
-                while (token != nullptr)
+            case '[':
+            {
+                resultStack.emplace();
+            }
+            break;
+            case ']':
+            {
+                if (begin != -1)
                 {
-                    result.add(deserialize(token));
-                    token = strtok(nullptr, ",");
+                    resultStack.top().add(NestedInteger(stoi(s.substr(begin, i - begin))));
+                    begin = -1;
+                }
+                result = resultStack.top();
+                resultStack.pop();
+                if (!resultStack.empty())
+                {
+                    resultStack.top().add(result);
                 }
             }
-            return result;
+            break;
+            case ',':
+            {
+                if (begin != -1)
+                {
+                    resultStack.top().add(NestedInteger(stoi(s.substr(begin, i - begin))));
+                    begin = -1;
+                }
+            }
+            break;
+            default:
+            {
+                if (begin == -1)
+                {
+                    begin = i;
+                }
+            }
+            break;
+            }
         }
+        if (begin != -1)
+        {
+            result.setInteger(stoi(s.substr(begin)));
+        }
+        return result;
     }
 };
 
@@ -100,6 +131,12 @@ TEST_F(LeetCodeTest, Example1)
     EXPECT_EQ(result.getList().at(0).getInteger(), 123);
 }
 
+TEST_F(LeetCodeTest, Case1)
+{
+    NestedInteger result = solution.deserialize("123");
+    EXPECT_EQ(result.getInteger(), 123);
+}
+
 TEST_F(LeetCodeTest, Failure1)
 {
     NestedInteger result = solution.deserialize("[[]]");
@@ -114,4 +151,9 @@ TEST_F(LeetCodeTest, Failure2)
     EXPECT_EQ(result.getList().size(), 1);
     EXPECT_EQ(result.getList().at(0).isInteger(), false);
     EXPECT_EQ(result.getList().at(0).getList().size(), 1);
+}
+
+TEST_F(LeetCodeTest, Failure3)
+{
+    NestedInteger result = solution.deserialize("[123,456,[788,799,833],[[]],10,[]]");
 }
