@@ -37,3 +37,23 @@ TEST_F(LeetCodeTest, Example2)
         {3, 2, 4, 4}};
     EXPECT_EQ(solution.isRectangleCover(rectangles), false);
 }
+
+TEST_F(LeetCodeTest, Example3)
+{
+    rectangles = {
+        {1, 1, 3, 3},
+        {3, 1, 4, 2},
+        {1, 3, 2, 4},
+        {3, 2, 4, 4}};
+    EXPECT_EQ(solution.isRectangleCover(rectangles), false);
+}
+
+TEST_F(LeetCodeTest, Example4)
+{
+    rectangles = {
+        {1, 1, 3, 3},
+        {3, 1, 4, 2},
+        {1, 3, 2, 4},
+        {2, 2, 4, 4}};
+    EXPECT_EQ(solution.isRectangleCover(rectangles), false);
+}
