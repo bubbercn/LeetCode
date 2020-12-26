@@ -8,7 +8,7 @@ public:
     {
         if (input.empty())
             return 0;
-        
+
         size_t result = 0;
         stack<size_t> folderLengths;
         size_t curPathLength = 0;
@@ -17,17 +17,17 @@ public:
         size_t level = 0;
         for (string token = getNextToken(input, begin, isFile, level); !token.empty(); token = getNextToken(input, begin, isFile, level))
         {
+            while (level != folderLengths.size())
+            {
+                curPathLength -= folderLengths.top();
+                folderLengths.pop();
+            }
             if (isFile)
             {
                 result = max(result, curPathLength + token.length());
             }
             else
             {
-                while (level != folderLengths.size())
-                {
-                    curPathLength -= folderLengths.top();
-                    folderLengths.pop();
-                }
                 folderLengths.emplace(token.length() + 1);
                 curPathLength += (token.length() + 1);
             }
@@ -37,7 +37,7 @@ public:
     }
 
 private:
-    string getNextToken(const string&s, size_t& begin, bool& isFile, size_t& level)
+    string getNextToken(const string &s, size_t &begin, bool &isFile, size_t &level)
     {
         if (begin == string::npos)
             return {};
