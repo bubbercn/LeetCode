@@ -6,7 +6,46 @@ class Solution
 public:
     string decodeString(string s)
     {
-        return {};
+        stack<int> repeatCounts;
+        int begin = -1;
+        int end = -1;
+        stack<stringstream> decodedString;
+        decodedString.emplace();
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] == '[')
+            {
+                decodedString.emplace();
+            }
+            else if (s[i] == ']')
+            {
+                string repeat = decodedString.top().str();
+                decodedString.pop();
+                int repeatCount = repeatCounts.top();
+                repeatCounts.pop();
+                for (int i = 0; i < repeatCount; i++)
+                {
+                    decodedString.top() << repeat;
+                }
+            }
+            else if (isNumeric(s[i]))
+            {
+                begin = i;
+                end =  s.find('[', begin);
+                repeatCounts.emplace(stoi(s.substr(begin, end - begin)));
+                i = end - 1;
+            }
+            else
+            {
+                decodedString.top() << s[i];
+            }
+        }
+        return decodedString.top().str();
+    }
+private:
+    bool isNumeric(char c)
+    {
+        return c >= '0' && c <= '9';
     }
 };
 
