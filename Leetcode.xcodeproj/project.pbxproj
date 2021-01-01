@@ -29,13 +29,9 @@
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
+		B9537010259F05FA007564BC /* 395_LongestSubstringWithAtLeastKRepeatingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 395_LongestSubstringWithAtLeastKRepeatingCharacters.h; sourceTree = "<group>"; };
 		B985032B24FB6B2B0064001E /* libgmock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmock.a; path = "../vcpkg/installed/x64-osx/lib/libgmock.a"; sourceTree = "<group>"; };
 		B985032C24FB6B2B0064001E /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "../vcpkg/installed/x64-osx/lib/libgtest.a"; sourceTree = "<group>"; };
-		B9B37219255705A900A89C17 /* 357_CountNumbersWithUniqueDigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 357_CountNumbersWithUniqueDigits.h; sourceTree = "<group>"; };
-		B9B3721A255705A900A89C17 /* 354_RussianDollEnvelopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 354_RussianDollEnvelopes.h; sourceTree = "<group>"; };
-		B9B3721B255705A900A89C17 /* 352_DataStreamAsDisjointIntervals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 352_DataStreamAsDisjointIntervals.h; sourceTree = "<group>"; };
-		B9B3721C255705A900A89C17 /* 363_MaxSumOfRectangleNoLargerThanK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 363_MaxSumOfRectangleNoLargerThanK.h; sourceTree = "<group>"; };
-		B9E79DBB254D4C5400947D15 /* 355_DesignTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 355_DesignTwitter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +67,8 @@
 		5354382B243B465700A7BD1F /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				B9537010259F05FA007564BC /* 395_LongestSubstringWithAtLeastKRepeatingCharacters.h */,
 				535438AB243B499E00A7BD1F /* Solved */,
-				B9B3721B255705A900A89C17 /* 352_DataStreamAsDisjointIntervals.h */,
-				B9B3721A255705A900A89C17 /* 354_RussianDollEnvelopes.h */,
-				B9E79DBB254D4C5400947D15 /* 355_DesignTwitter.h */,
-				B9B37219255705A900A89C17 /* 357_CountNumbersWithUniqueDigits.h */,
-				B9B3721C255705A900A89C17 /* 363_MaxSumOfRectangleNoLargerThanK.h */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
 			);

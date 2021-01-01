@@ -26,7 +26,7 @@ public:
                 {
                     result = max(result, longestSubstring(s.substr(begin, i - begin), k));
                     begin = -1;
-                }                
+                }
             }
             else
             {
@@ -39,7 +39,14 @@ public:
 
         if (begin != -1)
         {
-            result = max(result, longestSubstring(s.substr(begin), k));
+            if (begin == 0)
+            {
+                result = s.length();
+            }
+            else
+            {
+                result = max(result, longestSubstring(s.substr(begin), k));
+            }
         }
 
         return result;
