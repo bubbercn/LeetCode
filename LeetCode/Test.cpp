@@ -1,4 +1,4 @@
-#include "397_IntegerReplacement.h"
+#include "398_RandomPickIndex.h"
 
 int main(int argc, char *argv[])
 {
