@@ -1,4 +1,4 @@
-#include "398_RandomPickIndex.h"
+#include "400_NthDigit.h"
 
 int main(int argc, char *argv[])
 {

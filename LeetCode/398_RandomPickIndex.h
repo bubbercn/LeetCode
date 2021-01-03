@@ -6,12 +6,19 @@ class Solution
 public:
     Solution(vector<int> &nums)
     {
+        for (int i = 0; i < nums.size(); i++)
+        {
+            lookup[nums[i]].emplace_back(i);
+        }
     }
 
     int pick(int target)
     {
-        return 0;
+        vector<int> &v = lookup[target]; 
+        return v[random() % v.size()];
     }
+private:
+    unordered_map<int, vector<int>> lookup;
 };
 
 class LeetCodeTest : public testing::Test
