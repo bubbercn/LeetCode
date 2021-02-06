@@ -6,6 +6,9 @@ class Solution
 public:
     vector<vector<int>> reconstructQueue(vector<vector<int>> &people)
     {
+        sort(people.begin(), people.end(), [](const vector<int> &left, const vector<int> &right) {
+            return left[0] == right[0] ? left[1] < right[1] : left[0] < right[0];
+        });
         return {};
     }
 };
