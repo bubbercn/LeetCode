@@ -9,7 +9,40 @@ public:
         sort(people.begin(), people.end(), [](const vector<int> &left, const vector<int> &right) {
             return left[0] == right[0] ? left[1] < right[1] : left[0] < right[0];
         });
-        return {};
+        vector<int> index(people.size(), -1);
+        for (int i = 0; i < people.size(); i++)
+        {
+            findIndex(people, index, i);
+        }
+        vector<vector<int>> result;
+        result.reserve(people.size());
+        for (auto i : index)
+        {
+            result.emplace_back(people[i]);
+        }
+        return result;
+    }
+
+private:
+    void findIndex(const vector<vector<int>> &people, vector<int> &index, int curIndex)
+    {
+        int numberOfHiger = people[curIndex][1];
+        for (int i = 0; i < index.size(); i++)
+        {
+            if (index[i] == -1)
+            {
+                numberOfHiger--;
+                if (numberOfHiger == -1)
+                {
+                    index[i] = curIndex;
+                    break;
+                }
+            }
+            else if (people[index[i]][0] >= people[curIndex][0])
+            {
+                numberOfHiger--;
+            }
+        }
     }
 };
 
