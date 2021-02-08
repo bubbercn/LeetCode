@@ -25,11 +25,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		531B701425D0260C00A0D8F9 /* 405_ConvertANumberToHexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 405_ConvertANumberToHexadecimal.h; sourceTree = "<group>"; };
+		531B701525D0260C00A0D8F9 /* 404_SumOfLeftLeaves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 404_SumOfLeftLeaves.h; sourceTree = "<group>"; };
+		531B701625D0260C00A0D8F9 /* 403_FrogJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 403_FrogJump.h; sourceTree = "<group>"; };
+		531B701725D0260C00A0D8F9 /* 402_RemoveKDigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 402_RemoveKDigits.h; sourceTree = "<group>"; };
+		531B701825D0260C00A0D8F9 /* 407_TrappingRainWaterII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 407_TrappingRainWaterII.h; sourceTree = "<group>"; };
+		531B701925D0260C00A0D8F9 /* 406_QueueReconstructionByHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 406_QueueReconstructionByHeight.h; sourceTree = "<group>"; };
+		531B701A25D0260C00A0D8F9 /* 401_BinaryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 401_BinaryWatch.h; sourceTree = "<group>"; };
 		53543829243B465700A7BD1F /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		5354383F243B493E00A7BD1F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		53543843243B493E00A7BD1F /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		535438AB243B499E00A7BD1F /* Solved */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solved; sourceTree = "<group>"; };
-		B9537010259F05FA007564BC /* 395_LongestSubstringWithAtLeastKRepeatingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 395_LongestSubstringWithAtLeastKRepeatingCharacters.h; sourceTree = "<group>"; };
 		B985032B24FB6B2B0064001E /* libgmock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmock.a; path = "../vcpkg/installed/x64-osx/lib/libgmock.a"; sourceTree = "<group>"; };
 		B985032C24FB6B2B0064001E /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "../vcpkg/installed/x64-osx/lib/libgtest.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +73,13 @@
 		5354382B243B465700A7BD1F /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
-				B9537010259F05FA007564BC /* 395_LongestSubstringWithAtLeastKRepeatingCharacters.h */,
+				531B701A25D0260C00A0D8F9 /* 401_BinaryWatch.h */,
+				531B701725D0260C00A0D8F9 /* 402_RemoveKDigits.h */,
+				531B701625D0260C00A0D8F9 /* 403_FrogJump.h */,
+				531B701525D0260C00A0D8F9 /* 404_SumOfLeftLeaves.h */,
+				531B701425D0260C00A0D8F9 /* 405_ConvertANumberToHexadecimal.h */,
+				531B701925D0260C00A0D8F9 /* 406_QueueReconstructionByHeight.h */,
+				531B701825D0260C00A0D8F9 /* 407_TrappingRainWaterII.h */,
 				535438AB243B499E00A7BD1F /* Solved */,
 				5354383F243B493E00A7BD1F /* Common.h */,
 				53543843243B493E00A7BD1F /* Test.cpp */,
