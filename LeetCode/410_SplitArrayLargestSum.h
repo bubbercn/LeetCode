@@ -6,7 +6,48 @@ class Solution
 public:
     int splitArray(vector<int> &nums, int m)
     {
-        return 0;
+        long left = numeric_limits<long>::min();
+        long right = 0;
+
+        for (auto i : nums)
+        {
+            left = max(left, static_cast<long>(i));
+            right += i;
+        }
+
+        while (left < right)
+        {
+            long middle = (left + right) / 2;
+            int n = helper(nums, m, middle);
+            if (n > m)
+            {
+                left = middle + 1;
+            }
+            else
+            {
+                right = middle;
+            }
+        }
+
+        return left;
+    }
+private: 
+    int helper(const vector<int>& nums, int m, int max)
+    {
+        int result = 0;
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            sum += nums[i];
+            if (sum > max)
+            {
+                result++;
+                sum = nums[i];
+            }
+        }
+        if (!nums.empty())
+            result++;
+        return result;
     }
 };
 

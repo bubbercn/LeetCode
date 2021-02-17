@@ -1,4 +1,4 @@
-#include "410_SplitArrayLargestSum.h"
+#include "413_ArithmeticSlices.h"
 
 int main(int argc, char *argv[])
 {
