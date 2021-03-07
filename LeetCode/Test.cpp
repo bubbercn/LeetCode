@@ -1,4 +1,4 @@
-#include "420_StrongPasswordChecker.h"
+#include "421_MaximumXORoOfTwoNumbersInAnArray.h"
 
 int main(int argc, char *argv[])
 {
