@@ -1,12 +1,69 @@
 #pragma once
 #include "Common.h"
 
+struct PrefixTree
+{
+    unique_ptr<PrefixTree> mChildren[2];
+    void insert(int num)
+    {
+        PrefixTree* parent = this;
+        for (int i = MaxBitsLength - 1; i >= 0; i--)
+        {
+            int bit = (((1 << i) & num) == 0) ? 0 : 1;
+            if (parent->mChildren[bit].get() == nullptr)
+            {
+                parent->mChildren[bit].reset(new PrefixTree());
+            }
+            parent = parent->mChildren[bit].get();
+        }
+    }
+    int search(int num)
+    {
+        int target = 0;
+        PrefixTree* parent = this;
+        for (int i = MaxBitsLength - 1; i >= 0; i--)
+        {
+            int bit = 0;
+            if (parent->mChildren[0].get() == nullptr)
+            {
+                bit = 1;
+            }
+            else
+            {
+                if (parent->mChildren[1].get() == nullptr)
+                {
+                    bit = 0;
+                }
+                else
+                {
+                    bit = (((1 << i) & num) == 0) ? 1 : 0;
+                }
+            }
+            target |= (bit << i);
+            parent = parent->mChildren[bit].get();
+        }
+        return target;
+    }
+private:
+    static constexpr int MaxBitsLength = 31; 
+};
+
 class Solution
 {
 public:
     int findMaximumXOR(vector<int> &nums)
     {
-        return 0;
+        unique_ptr<PrefixTree> root(new PrefixTree());
+        for (auto i : nums)
+        {
+            root->insert(i);
+        }
+        int result = 0;
+        for (auto i : nums)
+        {
+            result = max(result, i ^ root->search(i));
+        }
+        return result;
     }
 };
 
