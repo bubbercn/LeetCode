@@ -4,30 +4,35 @@
 class Solution
 {
 public:
-    double maxAverageRatio(vector<vector<int>> &classes, int extraStudents)
+    int maxValue(int n, int index, int maxSum)
     {
-        double sum = 0;
-        double delta2 = 0;
-        priority_queue<double, vector<double>, greater<double>> delta1;
-        for (auto& c : classes)
+        int left = 1;
+        int right = maxSum;
+        long leftCount = index;
+        long rightCount = n - index - 1;
+        auto helper = [&](long value) {
+            long sum = value;
+            int count = min(leftCount, value - 1);
+            sum += (value - 1 + value - 1 - count + 1) * count / 2;
+            sum += leftCount > value - 1 ? leftCount - value + 1 : 0;
+            count = min(rightCount, value - 1);
+            sum += (value - 1 + value - 1 - count + 1) * count / 2;
+            sum += rightCount > value - 1 ? rightCount - value + 1 : 0;
+            return sum;
+        };
+        while (left <= right)
         {
-            double temp = c[0] / c[1];
-            delta2 = max(delta2, (c[0] + 2) / (c[1] + 2) - temp);
-            double delta = (c[0] + 1) / (c[1] + 1) - temp;
-            if (delta1.size() >= 2 && delta > delta1.top())
-                delta1.pop();
-            delta1.emplace(delta);
-            sum += temp;
+            int middle = left + (right - left) / 2;
+            if (helper(middle) > maxSum)
+            {
+                right = middle - 1;
+            }
+            else
+            {
+                left = middle + 1;
+            }
         }
-        double delta = 0;
-        while (!delta1.empty())
-        {
-            delta += delta1.top();
-            delta1.pop();
-        }
-        delta = max(delta2, delta);
-        sum += delta;
-        return sum / classes.size();
+        return right;
     }
 };
 
@@ -39,14 +44,13 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    vector<vector<int>> classes = {{1,2},{3,5},{2,2}};
-    EXPECT_EQ(solution.maxAverageRatio(classes, 2), true);
+    EXPECT_EQ(solution.maxValue(4, 2, 6), 2);
 }
 
-// TEST_F(LeetCodeTest, Example2)
-// {
-//     EXPECT_EQ(solution.areAlmostEqual("attack", "defend"), false);
-// }
+TEST_F(LeetCodeTest, Example2)
+{
+    EXPECT_EQ(solution.maxValue(6, 1, 10), 3);
+}
 
 // TEST_F(LeetCodeTest, Example3)
 // {
@@ -58,7 +62,12 @@ TEST_F(LeetCodeTest, Example1)
 //     EXPECT_EQ(solution.areAlmostEqual("abcd", "dcba"), false);
 // }
 
-// TEST_F(LeetCodeTest, Faulre1)
-// {
-//     EXPECT_EQ(solution.areAlmostEqual("abc", "dbe"), false);
-// }
+TEST_F(LeetCodeTest, Faulre1)
+{
+    EXPECT_EQ(solution.maxValue(3, 2, 18), 7);
+}
+
+TEST_F(LeetCodeTest, Faulre2)
+{
+    EXPECT_EQ(solution.maxValue(4458197, 897057, 683214517), 26053);
+}
