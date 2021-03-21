@@ -48,7 +48,56 @@ class Solution
 public:
     Node *construct(vector<vector<int> > &grid)
     {
-        return nullptr;
+        return helper(grid, 0, 0, grid.size());
+    }
+private:
+    Node* helper(const vector<vector<int>>& grid, int top, int left, int length)
+    {
+        if (length == 0)
+            return nullptr;
+        
+        Node* root = new Node();
+        int checkResult = check(grid, top, left, length);
+        if (checkResult == 1)
+        {
+            root->isLeaf = true;
+            root->val = 1;
+        }
+        else if (checkResult == 0)
+        {
+            root->isLeaf = true;
+            root->val = 0;
+        }
+        else
+        {
+            root->topLeft = helper(grid, top, left, length / 2);
+            root->topRight = helper(grid, top, left + length / 2, length / 2);
+            root->bottomLeft = helper(grid, top + length / 2, left, length / 2);
+            root->bottomRight = helper(grid, top + length / 2, left + length / 2, length / 2);
+        }
+        return root;
+    }
+
+    int check(const vector<vector<int>>& grid, int top, int left, int length)
+    {
+        assert(length >= 1);
+        int result = -1;
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < length; j++)
+            {
+                if (result == -1)
+                {
+                    result = grid[top + i][left + j];
+                }
+                else
+                {
+                    if (result != grid[top + i][left + j])
+                        return -1;
+                }
+            }
+        }
+        return result;
     }
 };
 
