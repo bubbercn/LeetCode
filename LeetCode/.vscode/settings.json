@@ -40,7 +40,15 @@
         "string_view": "cpp",
         "system_error": "cpp",
         "type_traits": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "__bit_reference": "cpp",
+        "__node_handle": "cpp",
+        "atomic": "cpp",
+        "__memory": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "locale": "cpp",
+        "ratio": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,
