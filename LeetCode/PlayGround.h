@@ -4,36 +4,45 @@
 class Solution
 {
 public:
-    int maxValue(int n, int index, int maxSum)
+    int maxNiceDivisors(int primeFactors)
     {
-        int left = 1;
-        int right = maxSum;
-        long leftCount = index;
-        long rightCount = n - index - 1;
-        auto helper = [&](long value) {
-            long sum = value;
-            int count = min(leftCount, value - 1);
-            sum += (value - 1 + value - 1 - count + 1) * count / 2;
-            sum += leftCount > value - 1 ? leftCount - value + 1 : 0;
-            count = min(rightCount, value - 1);
-            sum += (value - 1 + value - 1 - count + 1) * count / 2;
-            sum += rightCount > value - 1 ? rightCount - value + 1 : 0;
-            return sum;
-        };
-        while (left <= right)
+        if (primeFactors == 1)
+            return 1;
+        
+        long result = 0;
+
+        switch (primeFactors % 3)
         {
-            int middle = left + (right - left) / 2;
-            if (helper(middle) > maxSum)
-            {
-                right = middle - 1;
-            }
-            else
-            {
-                left = middle + 1;
-            }
+        case 0:
+            result = helper(primeFactors/3);
+            break;
+        case 1:
+            result = 4 * helper((primeFactors-4)/3);
+            break;
+        default:
+            result = 2 * helper(primeFactors/3);
+            break;
         }
-        return right;
+
+        return result % threshold;
     }
+
+private:
+    long helper(int n)
+    {
+        if (n == 0)
+            return 1;
+        long temp = helper(n/2);
+        if (n %2 == 0)
+        {
+            return temp * temp % threshold;
+        }
+        else
+        {
+            return 3 * temp * temp % threshold;
+        }
+    }
+    inline constexpr static int threshold = 1000000000 + 7;
 };
 
 class LeetCodeTest : public testing::Test
@@ -44,13 +53,22 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    EXPECT_EQ(solution.maxValue(4, 2, 6), 2);
+    EXPECT_EQ(solution.maxNiceDivisors(1), 1);
+    EXPECT_EQ(solution.maxNiceDivisors(2), 2);
+    EXPECT_EQ(solution.maxNiceDivisors(3), 3);
+    EXPECT_EQ(solution.maxNiceDivisors(4), 4);
+    EXPECT_EQ(solution.maxNiceDivisors(5), 6);
+    EXPECT_EQ(solution.maxNiceDivisors(6), 9);
+    EXPECT_EQ(solution.maxNiceDivisors(7), 12);
+    EXPECT_EQ(solution.maxNiceDivisors(8), 18);
+    EXPECT_EQ(solution.maxNiceDivisors(100), 703522804);
+    EXPECT_EQ(solution.maxNiceDivisors(901891104), 713696372);
 }
 
-TEST_F(LeetCodeTest, Example2)
-{
-    EXPECT_EQ(solution.maxValue(6, 1, 10), 3);
-}
+// TEST_F(LeetCodeTest, Example2)
+// {
+//     EXPECT_EQ(solution.maxValue(6, 1, 10), 3);
+// }
 
 // TEST_F(LeetCodeTest, Example3)
 // {
@@ -62,12 +80,12 @@ TEST_F(LeetCodeTest, Example2)
 //     EXPECT_EQ(solution.areAlmostEqual("abcd", "dcba"), false);
 // }
 
-TEST_F(LeetCodeTest, Faulre1)
-{
-    EXPECT_EQ(solution.maxValue(3, 2, 18), 7);
-}
+// TEST_F(LeetCodeTest, Faulre1)
+// {
+//     EXPECT_EQ(solution.maxValue(3, 2, 18), 7);
+// }
 
-TEST_F(LeetCodeTest, Faulre2)
-{
-    EXPECT_EQ(solution.maxValue(4458197, 897057, 683214517), 26053);
-}
+// TEST_F(LeetCodeTest, Faulre2)
+// {
+//     EXPECT_EQ(solution.maxValue(4458197, 897057, 683214517), 26053);
+// }
