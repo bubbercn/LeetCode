@@ -6,7 +6,23 @@ class Solution
 public:
     int countSegments(const string &s)
     {
-        return 0;
+        int result = 0;
+        int isStarted = false;
+        for (auto c : s)
+        {
+            if (c != ' ')
+            {
+                isStarted = true;
+            }
+            else if (isStarted)
+            {
+                isStarted = false;
+                result++;
+            }
+        }
+        if (isStarted)
+            result++;
+        return result;
     }
 };
 
