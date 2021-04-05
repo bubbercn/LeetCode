@@ -6,7 +6,28 @@ class Solution
 public:
     vector<int> findRightInterval(vector<vector<int>> &intervals)
     {
-        return {};
+        auto cmp = [](const vector<int> &v1, const vector<int> &v2) {
+            return v1[0] < v2[0];
+        };
+        map<vector<int>, int, decltype(cmp)> lookup(cmp);
+        for (int i = 0; i < intervals.size(); i++)
+        {
+            lookup.emplace(intervals[i], i);
+        }
+        vector<int> result;
+        for (int i = 0; i < intervals.size(); i++)
+        {
+            auto it = lookup.lower_bound(vector<int>{intervals[i][1], -1});
+            if (it != lookup.end())
+            {
+                result.emplace_back(it->second);
+            }
+            else
+            {
+                result.emplace_back(-1);
+            }
+        }
+        return result;
     }
 };
 
