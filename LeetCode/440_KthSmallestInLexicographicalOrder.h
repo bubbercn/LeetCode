@@ -16,6 +16,19 @@ public:
     }
 
 private:
+    int getNodesCount(int depth)
+    {
+        static unordered_map<int, int> lookup;
+        if (auto it = lookup.find(depth); it != lookup.end())
+            return it->second;
+        int nodesCount = 0;
+        for (int i = 0, j = 1; i < depth; i++, j *= 10)
+        {
+            nodesCount += j;
+        }
+        lookup[depth] = nodesCount;
+        return nodesCount;
+    }
     string helper(const string &limit, int depth, int &k, bool isCallByItself = true, bool updateK = true)
     {
         if (k == 0)
@@ -35,12 +48,7 @@ private:
                 return {};
             }
         }
-        int nodesCount = 0;
-
-        for (int i = 0, j = 1; i < depth; i++, j *= 10)
-        {
-            nodesCount += j;
-        }
+        int nodesCount = getNodesCount(depth);
         char c = start;
         int temp = k;
         for (;temp > nodesCount; c++)
@@ -60,7 +68,7 @@ private:
             string temp = helper(limit.substr(1), depth - 1, --k);
             if (k != 0)
             {
-                return string{++c} + helper(limit, depth, k, true, false);
+                return string{++c} + helper("", depth - 2, --k, true, false);
             }
             else
             {
