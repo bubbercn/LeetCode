@@ -6,7 +6,20 @@ class Solution
 public:
     vector<int> findDuplicates(vector<int> &nums)
     {
-        return {};
+        vector<int> result;
+        for (auto num : nums)
+        {
+            int temp = abs(num);
+            if (nums[temp - 1] < 0)
+            {
+                result.emplace_back(temp);
+            }
+            else
+            {
+                nums[temp - 1] = - nums[temp - 1];
+            }
+        }
+        return result;
     }
 };
 
