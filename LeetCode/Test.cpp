@@ -1,4 +1,4 @@
-#include "440_KthSmallestInLexicographicalOrder.h"
+#include "442_FindAllDuplicatesInAnArray.h"
 
 int main(int argc, char *argv[])
 {

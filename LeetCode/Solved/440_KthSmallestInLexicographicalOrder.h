@@ -20,7 +20,7 @@ private:
     {
         static unordered_map<int, int> lookup;
 
-        int nodesCount = 0;
+        long nodesCount = 0;
 
         if (auto it = lookup.find(depth); it != lookup.end())
         {
@@ -39,7 +39,7 @@ private:
         {
             for (int i = 1, j = 1; i < depth; i++, j *= 10)
             {
-                nodesCount -= ('9' - limit[0]) * j;
+                nodesCount -= ('9' - limit[depth - i - 1]) * j;
             }
         }
 
