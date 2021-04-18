@@ -16,64 +16,68 @@ public:
     }
 
 private:
-    int getNodesCount(int depth)
+    int getNodesCount(int depth, const string &limit)
     {
         static unordered_map<int, int> lookup;
-        if (auto it = lookup.find(depth); it != lookup.end())
-            return it->second;
+
         int nodesCount = 0;
-        for (int i = 0, j = 1; i < depth; i++, j *= 10)
+
+        if (auto it = lookup.find(depth); it != lookup.end())
         {
-            nodesCount += j;
+            nodesCount = it->second;
         }
-        lookup[depth] = nodesCount;
+        else
+        {
+            for (int i = 0, j = 1; i < depth; i++, j *= 10)
+            {
+                nodesCount += j;
+            }
+            lookup[depth] = nodesCount;
+        }
+
+        if (!limit.empty())
+        {
+            for (int i = 1, j = 1; i < depth; i++, j *= 10)
+            {
+                nodesCount -= ('9' - limit[0]) * j;
+            }
+        }
+
         return nodesCount;
     }
-    string helper(const string &limit, int depth, int &k, bool isCallByItself = true, bool updateK = true)
+    string helper(const string &limit, int depth, int k, bool isCallByItself = true)
     {
         if (k == 0)
             return {};
         char start = isCallByItself ? '0' : '1';
         if (depth == 1)
         {
-            if (!limit.empty() && k <= limit[0] - '0' + 1)
-            {
-                int temp = k;
-                k = 0;
-                return string(1, start + temp - 1);
-            }
-            else
-            {
-                k -= limit[0] - '0' + 1;
-                return {};
-            }
+            return string(1, start + k - 1);
         }
-        int nodesCount = getNodesCount(depth);
         char c = start;
-        int temp = k;
-        for (;temp > nodesCount; c++)
+        int nodesCount = getNodesCount(depth, "");
+        while (true)
         {
-            temp -= nodesCount;
-            if (updateK)
+            if (!limit.empty() && c == limit[0])
             {
-                k = temp;
+                nodesCount = getNodesCount(depth, limit.substr(1));
             }
-            else
+
+            if (k <= nodesCount)
+                break;
+
+            k -= nodesCount;
+
+            if (!limit.empty() && c == limit[0])
             {
-                c++;
+                nodesCount = getNodesCount(--depth, "");
             }
+
+            c++;
         }
         if (!limit.empty() && c == limit[0])
         {
-            string temp = helper(limit.substr(1), depth - 1, --k);
-            if (k != 0)
-            {
-                return string{++c} + helper("", depth - 2, --k, true, false);
-            }
-            else
-            {
-                return string({c}) + temp;
-            }
+            return string({c}) + helper(limit.substr(1), depth - 1, --k);
         }
         else
         {
@@ -116,4 +120,9 @@ TEST_F(LeetCodeTest, Failure1)
 TEST_F(LeetCodeTest, Failure2)
 {
     EXPECT_EQ(solution.findKthNumber(100, 10), 17);
+}
+
+TEST_F(LeetCodeTest, Failure3)
+{
+    EXPECT_EQ(solution.findKthNumber(1692778, 1545580), 867519);
 }
