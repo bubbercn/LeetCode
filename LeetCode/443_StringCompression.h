@@ -6,7 +6,29 @@ class Solution
 public:
     int compress(vector<char> &chars)
     {
-        return 0;
+        int result = 0;
+        int count = 0;
+        for (int i = 0; i < chars.size(); i++)
+        {
+            if (i > 0 && chars[i] != chars[i - 1])
+            {
+                result += append(&chars[result], chars[i - 1], count);
+                count = 0;
+            }
+            count++;
+        }
+        result += append(&chars[result], *chars.rbegin(), count);
+        return result;
+    }
+
+private:
+    int  append(char *source, char value, int count)
+    {
+        *source++ = value;
+        string temp = count == 1 ? "" : to_string(count);
+        for (int i = 0; i < temp.length(); i++)
+            *source++ = temp[i];
+        return temp.length() + 1;
     }
 };
 
