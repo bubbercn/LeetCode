@@ -16,20 +16,49 @@ public:
     // Encodes a tree to a single string.
     string serialize(TreeNode *root)
     {
-        return {};
+        stringstream stream;
+        writeToStream(stream, root);
+        return stream.str();
     }
 
     // Decodes your encoded data to tree.
     TreeNode *deserialize(const string &data)
     {
-        return nullptr;
+        stringstream stream(data);
+        return readFromStream(stream);
+    }
+
+private:
+    void writeToStream(stringstream &stream, TreeNode *root)
+    {
+        if (root == nullptr)
+        {
+            stream << "N ";
+            return;
+        }
+
+        stream << "Y " << root->val << " ";
+        writeToStream(stream, root->left);
+        writeToStream(stream, root->right);
+    }
+    TreeNode *readFromStream(stringstream &stream)
+    {
+        string tag;
+        stream >> tag;
+        if (tag == "N")
+            return nullptr;
+
+        int value = 0;
+        stream >> value;
+        TreeNode *root = new TreeNode(value);
+        root->left = readFromStream(stream);
+        root->right = readFromStream(stream);
+        return root;
     }
 };
 
 class LeetCodeTest : public testing::Test
 {
-public:
-    inline static Solution solution;
 };
 
 TEST_F(LeetCodeTest, Example1)
@@ -43,6 +72,6 @@ TEST_F(LeetCodeTest, Example1)
     nodes[0]->left = nodes[1].get();
     nodes[0]->right = nodes[2].get();
     Codec c;
-    string tree = c.serialize(node[0].get());
+    string tree = c.serialize(nodes[0].get());
     TreeNode *root = c.deserialize(tree);
 }
