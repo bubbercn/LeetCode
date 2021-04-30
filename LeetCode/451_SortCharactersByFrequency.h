@@ -4,9 +4,29 @@
 class Solution
 {
 public:
-    string frequencySort(string s)
+    string frequencySort(const string &s)
     {
-        return {};
+        list<pair<int, char>> frequencyList;
+        {
+            unordered_map<char, int> frequencies;
+            for (auto c : s)
+            {
+                frequencies[c]++;
+            }
+            for (auto &[c, frequency] : frequencies)
+            {
+                frequencyList.emplace_back(frequency, c);
+            }
+        }
+        frequencyList.sort([](const pair<int, char> &l, const pair<int, char> &r) {
+            return l.first != r.first ? l.first > r.first : l.second > r.second;
+        });
+        stringstream result;
+        for (auto &[frequency, c] : frequencyList)
+        {
+            result << string(frequency, c);
+        }
+        return result.str();
     }
 };
 
@@ -28,5 +48,5 @@ TEST_F(LeetCodeTest, Example2)
 
 TEST_F(LeetCodeTest, Example3)
 {
-    EXPECT_EQ(solution.frequencySort("Aabb"), "bbAa");
+    EXPECT_EQ(solution.frequencySort("Aabb"), "bbaA");
 }

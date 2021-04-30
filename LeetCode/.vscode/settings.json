@@ -48,7 +48,8 @@
         "iterator": "cpp",
         "limits": "cpp",
         "locale": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "array": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,
