@@ -6,7 +6,29 @@ class Solution
 public:
     int findMinArrowShots(vector<vector<int>> &points)
     {
-        return 0;
+        auto cmp = [](const vector<int> &l, vector<int> &r) {
+            return l[1] < r[1];
+        };
+        sort(points.begin(), points.end(), cmp);
+        int arrow = 0;
+        int result = 0;
+        for (int i = 0; i < points.size(); i++)
+        {
+            if (i == 0)
+            {
+                arrow = points[0][1];
+                result++;
+            }
+            else
+            {
+                if (points[i][0] > arrow)
+                {
+                    arrow = points[i][1];
+                    result++;
+                }
+            }
+        }
+        return result;
     }
 };
 
