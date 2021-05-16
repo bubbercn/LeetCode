@@ -6,7 +6,9 @@ class Solution
 public:
     int poorPigs(int buckets, int minutesToDie, int minutesToTest)
     {
-        return 0;
+        int times = minutesToTest / minutesToDie;
+        int result = ceil(log2(buckets) / log2(times + 1));
+        return result;
     }
 };
 
