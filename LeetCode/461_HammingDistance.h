@@ -6,7 +6,14 @@ class Solution
 public:
     int hammingDistance(int x, int y)
     {
-        return 0;
+        x ^= y;
+        int result = 0;
+        while (x > 0)
+        {
+            result += x % 2;
+            x /= 2;
+        }
+        return result;
     }
 };
 
@@ -23,5 +30,5 @@ TEST_F(LeetCodeTest, Example1)
 
 TEST_F(LeetCodeTest, Example2)
 {
-    EXPECT_EQ(solution.hammingDistanc(3, 1), 1);
+    EXPECT_EQ(solution.hammingDistance(3, 1), 1);
 }
