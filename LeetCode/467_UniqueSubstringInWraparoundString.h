@@ -4,9 +4,33 @@
 class Solution
 {
 public:
-    int findSubstringInWraproundString(string p)
+    int findSubstringInWraproundString(const string &p)
     {
-        return 0;
+        if (p.empty())
+            return 0;
+
+        vector<int> lookup(26, 0);
+        int length = 1;
+        for (int i = p.length() - 1; i >= 0; i--)
+        {
+            if (i < p.length() - 1 && isAdjacent(p[i], p[i + 1]))
+            {
+                length++;
+            }
+            else
+            {
+                length = 1;
+            }
+
+            lookup[p[i] - 'a'] = max(lookup[p[i] - 'a'], length);
+        }
+        return accumulate(lookup.begin(), lookup.end(), 0);
+    }
+
+private:
+    bool isAdjacent(char c1, char c2)
+    {
+        return (c1 == 'z' && c2 == 'a') || c1 + 1 == c2;
     }
 };
 
