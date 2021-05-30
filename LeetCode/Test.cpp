@@ -1,4 +1,4 @@
-#include "470_ImplementRand10UsingRand7.h"
+#include "472_ConcatenatedWords.h"
 
 int main(int argc, char *argv[])
 {
