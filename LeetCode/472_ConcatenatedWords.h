@@ -15,28 +15,14 @@ public:
         sort(words.begin(), words.end(), cmp);
         DictionaryNode root{false, {}};
         vector<string> result;
+        lookup.clear();
         for (const auto &word : words)
         {
-            DictionaryNode *parent = &root;
-            bool isConcatenated = false;
-            for (int i = 0; i < word.length(); i++)
+            if (isConcatenated(&root, word))
             {
-                auto [it, inserted] = parent->children.emplace(word[i], nullptr);
-                if (inserted)
-                {
-                    it->second.reset(new DictionaryNode{i == word.length() - 1, {}});
-                }
-                else
-                {
-                    if (!isConcatenated && it->second.get()->exitWord)
-                    {
-                        isConcatenated = Solution::isConcatenated(&root, word.substr(i + 1));
-                        if (isConcatenated)
-                            result.emplace_back(word);
-                    }
-                }
-                parent = it->second.get();
+                result.emplace_back(word);
             }
+            addWord(&root, word);
         }
         return result;
     }
@@ -47,14 +33,14 @@ private:
         bool exitWord;
         unordered_map<char, unique_ptr<DictionaryNode>> children;
     };
+    unordered_map<string, bool> lookup;
     bool isConcatenated(DictionaryNode *root, const string &word)
     {
-        static unordered_map<string, bool> lookup;
         if (auto i = lookup.find(word); i != lookup.end())
         {
             return i->second;
         }
-        DictionaryNode* parent = root;
+        DictionaryNode *parent = root;
         for (int i = 0; i < word.length(); i++)
         {
             if (auto it = parent->children.find(word[i]); it == parent->children.end())
@@ -72,8 +58,22 @@ private:
                 parent = it->second.get();
             }
         }
+        lookup[word] = false;
+        return false;
+    }
+    void addWord(DictionaryNode *root, const string &word)
+    {
+        DictionaryNode *parent = root;
+        for (int i = 0; i < word.length(); i++)
+        {
+            auto [it, inserted] = parent->children.emplace(word[i], nullptr);
+            if (inserted)
+            {
+                it->second.reset(new DictionaryNode{i == word.length() - 1, {}});
+            }
+            parent = it->second.get();
+        }
         lookup[word] = true;
-        return true;
     }
 };
 
@@ -86,7 +86,7 @@ public:
 TEST_F(LeetCodeTest, Example1)
 {
     vector<string> words = {"cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"};
-    vector<string> output = {"catsdogcats", "dogcatsdog", "ratcatdogcat"};
+    vector<string> output = {"dogcatsdog", "catsdogcats", "ratcatdogcat"};
     EXPECT_EQ(solution.findAllConcatenatedWordsInADict(words), output);
 }
 
