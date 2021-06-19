@@ -6,7 +6,22 @@ class Solution
 public:
     int totalHammingDistance(vector<int> &nums)
     {
-        return 0;
+        int result = 0;
+        constexpr int limit = sizeof(int) * 8;
+        for (int i = 0; i < limit; i++)
+        {
+            int temp = 1 << i;
+            int numOf1 = 0;
+            for (auto num : nums)
+            {
+                if ((temp & num) != 0)
+                {
+                    numOf1++;
+                }
+            }
+            result += numOf1 * (nums.size() - numOf1);
+        }
+        return result;
     }
 };
 
