@@ -4,17 +4,25 @@
 class Solution
 {
 public:
-    Solution(double radius, double x_center, double y_center)
+    Solution(double radius, double x_center, double y_center) : radius(radius), x_center(x_center), y_center(y_center), distribution(0, 1)
     {
-
     }
 
     vector<double> randPoint()
     {
-        return {};
+        double r = radius * sqrt(distribution(generator));
+        double angle = 2 * M_PI * distribution(generator);
+        return {x_center + r * cos(angle), y_center + r * sin(angle)};
     }
 
     Solution() {}
+
+private:
+    double radius;
+    double x_center;
+    double y_center;
+    default_random_engine generator;
+    uniform_real_distribution<double> distribution;
 };
 
 class LeetCodeTest : public testing::Test
