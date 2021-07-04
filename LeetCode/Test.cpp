@@ -1,4 +1,4 @@
-#include "480_SlidingWindowMedian.h"
+#include "481_MagicalString.h"
 
 int main(int argc, char *argv[])
 {

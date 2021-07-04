@@ -10,7 +10,7 @@ public:
         priority_queue<int, vector<int>, greater<int>> minHeap;
         multiset<int> removedMax;
         multiset<int> removedMin;
-        int k2 = k / 2;
+        int k2 = (k - 1) / 2;
 
         for (int i = 0; i < k; i++)
         {
@@ -41,29 +41,49 @@ public:
             }
             else
             {
-                result.emplace_back((maxHeap.top() + minHeap.top()) / 2.0);
+                result.emplace_back((static_cast<double>(maxHeap.top()) + minHeap.top()) / 2.0);
             }
         };
         pushResult();
 
         for (int i = k; i < nums.size(); i++)
         {
-            if (nums[i] >= maxHeap.top())
+            if (nums[i - k] <= maxHeap.top())
             {
-                minHeap.emplace(nums[i]);
-                removedMin.emplace(nums[i - k]);
+                removedMax.emplace(nums[i - k]);
+                if (minHeap.empty() || nums[i] <= minHeap.top())
+                {
+                    maxHeap.emplace(nums[i]);
+                }
+                else
+                {
+                    maxHeap.emplace(minHeap.top());
+                    minHeap.pop();
+                    minHeap.emplace(nums[i]);
+                }
             }
             else
             {
-                maxHeap.emplace(nums[i]);
-                removedMax.emplace(nums[i - k]);
+                removedMin.emplace(nums[i - k]);
+                if (nums[i] >= maxHeap.top())
+                {
+                    minHeap.emplace(nums[i]);
+                }
+                else
+                {
+                    minHeap.emplace(maxHeap.top());
+                    maxHeap.pop();
+                    maxHeap.emplace(nums[i]);
+                }
             }
+
             for (auto it = removedMax.find(maxHeap.top()); it != removedMax.end(); it = removedMax.find(maxHeap.top()))
             {
                 maxHeap.pop();
                 removedMax.erase(it);
             }
-            for (auto it = removedMin.find(minHeap.top()); it != removedMin.end(); it = removedMin.find(minHeap.top()))
+
+            for (auto it = minHeap.empty() ? removedMin.end() : removedMin.find(minHeap.top()); it != removedMin.end(); it = removedMin.find(minHeap.top()))
             {
                 minHeap.pop();
                 removedMin.erase(it);
@@ -92,4 +112,18 @@ TEST_F(LeetCodeTest, Example2)
     vector<int> nums = {1, 2, 3, 4, 2, 3, 1, 4, 2};
     vector<double> output = {2.00000, 3.00000, 3.00000, 3.00000, 2.00000, 3.00000, 2.00000};
     EXPECT_EQ(solution.medianSlidingWindow(nums, 3), output);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    vector<int> nums = {1, 4, 2, 3};
+    vector<double> output = {2.5};
+    EXPECT_EQ(solution.medianSlidingWindow(nums, 4), output);
+}
+
+TEST_F(LeetCodeTest, Failure2)
+{
+    vector<int> nums = {1, 2};
+    vector<double> output = {1, 2};
+    EXPECT_EQ(solution.medianSlidingWindow(nums, 1), output);
 }
