@@ -1,4 +1,4 @@
-#include "481_MagicalString.h"
+#include "483_SmallestGoodBase.h"
 
 int main(int argc, char *argv[])
 {
