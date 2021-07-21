@@ -1,4 +1,4 @@
-#include "483_SmallestGoodBase.h"
+#include "486_PredictTheWinner.h"
 
 int main(int argc, char *argv[])
 {
