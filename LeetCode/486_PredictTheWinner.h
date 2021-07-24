@@ -6,7 +6,16 @@ class Solution
 public:
     bool PredictTheWinner(vector<int> &nums)
     {
-        return false;
+        vector<int> dp = nums;
+        for (int i = 1; i < dp.size(); i++)
+        {
+            int temp = dp.size() - i;
+            for (int j = 0; j < temp; j++)
+            {
+                dp[j] = max(nums[j] - dp[j + 1], nums[i + j] - dp[j]);
+            }
+        }
+        return dp[0] >= 0;
     }
 };
 
