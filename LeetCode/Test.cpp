@@ -1,4 +1,4 @@
-#include "501_FindModeInBinarySearchTree.h"
+#include "502_IPO.h"
 
 int main(int argc, char *argv[])
 {
