@@ -6,8 +6,40 @@ class Solution
 public:
     int findMaximizedCapital(int k, int w, vector<int> &profits, vector<int> &capital)
     {
-        return 0;
+        list<Project> projects;
+        for (int i = 0; i < profits.size(); i++)
+        {
+            projects.push_back({profits[i], capital[i]});
+        }
+        auto cmp = [](const Project &p1, const Project &p2)
+        {
+            return p1.capital < p2.capital;
+        };
+        projects.sort(cmp);
+        priority_queue<int> profitQ;
+        for (int i = 0; i < k; i++)
+        {
+            for (auto it = projects.begin(); it != projects.end(); it = projects.erase(it))
+            {
+                if (it->capital > w)
+                    break;
+                profitQ.emplace(it->profit);
+            }
+            if (!profitQ.empty())
+            {
+                w += profitQ.top();
+                profitQ.pop();
+            }
+        }
+        return w;
     }
+
+private:
+    struct Project
+    {
+        int profit;
+        int capital;
+    };
 };
 
 class LeetCodeTest : public testing::Test
