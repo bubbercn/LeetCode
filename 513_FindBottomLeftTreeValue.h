@@ -15,35 +15,10 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<int> findFrequentTreeSum(TreeNode *root)
+    int findBottomLeftValue(TreeNode *root)
     {
-        lookup.clear();
-        max = 0;
-        helper(root);
-        vector<int> result;
-        for (const auto& [sum, count] : lookup)
-        {
-            if (count == max)
-            {
-                result.emplace_back(sum);
-            }
-        }
-        return result;
+        return 0;
     }
-
-private:
-    int helper(TreeNode *node)
-    {
-        if (node == nullptr)
-            return 0;
-    
-        int sum = helper(node->left) + helper(node->right) + node->val;
-        lookup[sum]++;
-        max = ::max(max, lookup[sum]);
-        return sum;
-    }
-    unordered_map<int, int> lookup;
-    int max;
 };
 
 class LeetCodeTest : public testing::Test
@@ -54,7 +29,7 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    vector<int> values = {5, 2, -3};
+    vector<int> values = {2, 1, 3};
     vector<unique_ptr<TreeNode>> nodes;
     for (auto i = values.begin(); i != values.end(); i++)
     {
@@ -62,13 +37,12 @@ TEST_F(LeetCodeTest, Example1)
     }
     nodes[0]->left = nodes[1].get();
     nodes[0]->right = nodes[2].get();
-    vector<int> output = {2, -3, 4};
-    EXPECT_EQ(solution.findFrequentTreeSum(nodes[0].get()), output);
+    EXPECT_EQ(solution.findBottomLeftValue(nodes[0].get()), 1);
 }
 
 TEST_F(LeetCodeTest, Example2)
 {
-    vector<int> values = {5, 2, -5};
+    vector<int> values = {1, 2, 3, 4, 5, 6, 7};
     vector<unique_ptr<TreeNode>> nodes;
     for (auto i = values.begin(); i != values.end(); i++)
     {
@@ -76,6 +50,9 @@ TEST_F(LeetCodeTest, Example2)
     }
     nodes[0]->left = nodes[1].get();
     nodes[0]->right = nodes[2].get();
-    vector<int> output = {2};
-    EXPECT_EQ(solution.findFrequentTreeSum(nodes[0].get()), output);
+    nodes[1]->left = nodes[3].get();
+    nodes[2]->left = nodes[4].get();
+    nodes[2]->right = nodes[5].get();
+    nodes[4]->left = nodes[6].get();
+    EXPECT_EQ(solution.findBottomLeftValue(nodes[0].get()), 7);
 }
