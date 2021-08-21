@@ -17,7 +17,30 @@ class Solution
 public:
     int findBottomLeftValue(TreeNode *root)
     {
-        return 0;
+        return helper(root).first;
+    }
+
+private:
+    pair<int, int> helper(TreeNode *node)
+    {
+        if (node == nullptr)
+        {
+            return {0, 0};
+        }
+        auto [leftResult, leftDepth] = helper(node->left);
+        auto [rightResult, rightDepth] = helper(node->right);
+        if (leftDepth == 0 && rightDepth == 0)
+        {
+            return {node->val, 1};
+        }
+        else if (leftDepth >= rightDepth)
+        {
+            return {leftResult, leftDepth + 1};
+        }
+        else
+        {
+            return {rightResult, rightDepth + 1};
+        }
     }
 };
 
