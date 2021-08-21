@@ -17,7 +17,30 @@ class Solution
 public:
     vector<int> largestValues(TreeNode *root)
     {
-        return {};
+        vector<int> result;
+        queue<TreeNode*> current;
+        if (root)
+        {
+            current.emplace(root);
+        }
+        while (!current.empty())
+        {
+            int max = numeric_limits<int>::min();
+            queue<TreeNode*> next;
+            while (!current.empty())
+            {
+                TreeNode* node = current.front();
+                max = ::max(max, node->val);
+                if (node->left)
+                    next.emplace(node->left);
+                if (node->right)
+                    next.emplace(node->right);
+                current.pop();
+            }
+            result.emplace_back(max);
+            swap(current, next);
+        }
+        return result;
     }
 };
 
