@@ -6,7 +6,27 @@ class Solution
 public:
     int longestPalindromeSubseq(string s)
     {
-        return 0;
+        int n = s.length();
+        vector<vector<int>> dp(n, vector<int>(n, 0));
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n - i; j++)
+            {
+                if (i == 0)
+                {
+                    dp[j][i + j] = 1;
+                }
+                else if (s[j] == s[i + j])
+                {
+                    dp[j][i + j] = dp[j + 1][i + j - 1] + 2;
+                }
+                else
+                {
+                    dp[j][i + j] = max(dp[j + 1][i + j], dp[j][i + j - 1]);
+                }
+            }
+        }
+        return dp[0][n - 1];
     }
 };
 
