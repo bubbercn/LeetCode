@@ -4,12 +4,11 @@
 class Solution
 {
 public:
-    int change(int amount, vector<int> &coins)
+    int findLUSlength(string_view a, string_view b)
     {
         return 0;
     }
 };
-
 
 class LeetCodeTest : public testing::Test
 {
@@ -19,18 +18,15 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    vector<int> coins = {1, 2, 5};
-    EXPECT_EQ(solution.change(5, coins), 4);
+    EXPECT_EQ(solution.findLUSlength("aba", "cdc"), 3);
 }
 
 TEST_F(LeetCodeTest, Example2)
 {
-    vector<int> coins = {2};
-    EXPECT_EQ(solution.change(3, coins), 0);
+    EXPECT_EQ(solution.findLUSlength("aaa", "bbb"), 3);
 }
 
 TEST_F(LeetCodeTest, Example3)
 {
-    vector<int> coins = {10};
-    EXPECT_EQ(solution.change(10, coins), 1);
+    EXPECT_EQ(solution.findLUSlength("aaa", "aaa"), -1);
 }
