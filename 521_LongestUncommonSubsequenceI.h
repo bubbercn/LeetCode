@@ -6,7 +6,9 @@ class Solution
 public:
     int findLUSlength(string_view a, string_view b)
     {
-        return 0;
+        if (a == b)
+            return -1;
+        return max(a.length(), b.length()); 
     }
 };
 
