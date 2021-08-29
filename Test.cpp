@@ -1,4 +1,4 @@
-#include "523_ContinuousSubarraySum.h"
+#include "525_ContiguousArray.h"
 
 int main(int argc, char *argv[])
 {

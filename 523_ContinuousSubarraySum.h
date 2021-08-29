@@ -6,6 +6,17 @@ class Solution
 public:
     bool checkSubarraySum(vector<int> &nums, int k)
     {
+        int n = nums.size();
+        unordered_map<int, int> sumIndexMap;
+        long preSum = 0;
+        sumIndexMap.emplace(0, 0);
+        for (int i = 1; i <= n; i++)
+        {
+            preSum = (preSum + nums[i - 1]) % k;
+            if (auto [it, inserted] = sumIndexMap.emplace(preSum, i); !inserted && i - it->second > 1)
+                return true;
+        }
+
         return false;
     }
 };
