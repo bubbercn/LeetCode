@@ -6,7 +6,20 @@ class Solution
 public:
     int findMaxLength(vector<int> &nums)
     {
-        return 0;
+        replace(nums.begin(), nums.end(), 0, -1);
+        vector<int> preSum(nums.size() + 1, 0);
+        unordered_map<int, int> lookup = {{0, 0}};
+        int result = 0;
+        for (int i = 1; i < preSum.size(); i++)
+        {
+            preSum[i] = preSum[i - 1] + nums[i - 1];
+            auto [it, inserted] = lookup.emplace(preSum[i], i);
+            if (!inserted && i - it->second >= 2)
+            {
+                result = max(result, i - it->second);
+            }
+        }
+        return result;
     }
 };
 

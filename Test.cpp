@@ -1,4 +1,4 @@
-#include "525_ContiguousArray.h"
+#include "526_BeautifulArrangement.h"
 
 int main(int argc, char *argv[])
 {
