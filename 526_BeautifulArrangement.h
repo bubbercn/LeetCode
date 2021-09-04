@@ -6,7 +6,22 @@ class Solution
 public:
     int countArrangement(int n)
     {
-        return 0;
+        int size = 1 << n;
+        vector<int> dp(size);
+        dp[0] = 1;
+        for (int state = 1; state < size; state++)
+        {
+            bitset<15> mask(state);
+            int num = mask.count();
+            for (int i = 0; i < n; i++)
+            {
+                if (state & (1 << i) && (num % (i + 1) == 0 || (i + 1) % num == 0))
+                {
+                    dp[state] += dp[state ^ (1 << i)];
+                }
+            }
+        }
+        return dp[size - 1];
     }
 };
 

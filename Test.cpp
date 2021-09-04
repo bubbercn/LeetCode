@@ -1,4 +1,4 @@
-#include "526_BeautifulArrangement.h"
+#include "529_Minesweeper.h"
 
 int main(int argc, char *argv[])
 {
