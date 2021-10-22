@@ -6,8 +6,34 @@ class Solution
 public:
     string optimalDivision(vector<int> &nums)
     {
-        return {};
+        lookup.clear();
+        return helper(nums, 0).first;
     }
+
+private:
+    pair<string, double> helper(vector<int> &nums, int start)
+    {
+        if (start == nums.size() - 1)
+            return {to_string(nums[start]), nums[start]};
+        
+        if (start == nums.size() - 2)
+        {
+            string s = to_string(nums[start]) + "/" + to_string(nums[start + 1]);
+            double v = static_cast<double>(nums[start]) / nums[start + 1];
+            if (start == 0)
+                return {s, v};
+            
+            s = "(" + s + ")";
+            lookup.insert({start, {s, v}});
+            return {s, v};
+        }
+
+        if (auto it = lookup.find(start); it != lookup.end())
+            return it->second;
+
+        
+    }
+    unordered_map<int, pair<string, double>> lookup;
 };
 
 class LeetCodeTest : public testing::Test
