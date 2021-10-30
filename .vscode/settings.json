@@ -52,7 +52,10 @@
         "array": "cpp",
         "*.tcc": "cpp",
         "any": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,
