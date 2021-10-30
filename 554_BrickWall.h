@@ -6,7 +6,20 @@ class Solution
 public:
     int leastBricks(vector<vector<int>> &wall)
     {
-        return 0;
+        int maxCount = 0;
+        unordered_map<long, int> lookup;
+        for (auto& row : wall)
+        {
+            long sum = 0;
+            int upper = row.size() - 1;
+            for (int i = 0; i < upper; i++)
+            {
+                sum += row[i];
+                int count = ++lookup[sum];
+                maxCount = max(count, maxCount);
+            }
+        }
+        return wall.size() - maxCount;
     }
 };
 
