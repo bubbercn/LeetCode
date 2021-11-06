@@ -14,6 +14,7 @@
 #include <unordered_set>
 #include <sstream>
 #include <random>
+#include <bitset>
 #include <gtest/gtest.h>
 
 using namespace std;
