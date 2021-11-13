@@ -6,37 +6,39 @@ class Solution
 public:
     int minDistance(string_view word1, string_view word2)
     {
-        int result = 0;
-        for (int i = 0; i < word1.length(); i++)
+        int m = word1.size();
+        int n = word2.size();
+        vector<int> dp(n + 1, 0);
+        for (int i = 0; i <= m; i++)
         {
-            auto pos = word2.find(word1[i]);
-            if (pos == word1.npos)
+            int pre = 0;
+            for (int j = 0; j <= n; j++)
             {
-                result++;
-            }
-            else
-            {
-                result += pos;
-
-                if (pos + 1 == word2.length())
+                if (i == 0)
                 {
-                    result += word1.length() - i - 1;
-                    return result;
+                    dp[j] = j;
                 }
-                
-                if (i + 1 == word1.length())
+                else if (j == 0)
                 {
-                    result += word2.length() - pos - 1;
-                    return result;
-                    
+                    pre = dp[j];
+                    dp[j] = i;
                 }
-                
-                result += min(minDistance(word1, word2.substr(pos + 1)), minDistance(word1.substr(i + 1), word2.substr(pos + 1)));
-                return result;
+                else
+                {
+                    int temp = dp[j];
+                    if (word1[i - 1] == word2[j - 1])
+                    {
+                        dp[j] = pre;
+                    }
+                    else
+                    {
+                        dp[j] = min(dp[j], dp[j - 1]) + 1;
+                    }
+                    pre = temp;
+                }
             }
         }
-        result += word2.length();
-        return result;
+        return dp[n];
     }
 };
 
