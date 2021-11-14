@@ -15,6 +15,7 @@
 #include <sstream>
 #include <random>
 #include <bitset>
+#include <cmath>
 #include <gtest/gtest.h>
 
 using namespace std;
