@@ -27,7 +27,22 @@ class Solution
 public:
     vector<int> preorder(Node *root)
     {
-        return {};
+        vector<int> result;
+        helper(root, result);
+        return result;
+    }
+
+private:
+    void helper(Node *root, vector<int> &result)
+    {
+        if (root == nullptr)
+            return;
+
+        result.emplace_back(root->val);
+        for (auto child : root->children)
+        {
+            helper(child, result);
+        }
     }
 };
 
