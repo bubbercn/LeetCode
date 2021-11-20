@@ -6,8 +6,11 @@ class Solution
 public:
     bool isValid(string_view code)
     {
+        regex reg1(R"(<(.*)>.*</\1>)");
         return false;
     }
+private:
+    inline static regex CODE{R"(<(.*)>.*</\1>)"};
 };
 
 class LeetCodeTest : public testing::Test

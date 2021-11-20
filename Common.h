@@ -16,6 +16,7 @@
 #include <random>
 #include <bitset>
 #include <cmath>
+#include <regex>
 #include <gtest/gtest.h>
 
 using namespace std;
