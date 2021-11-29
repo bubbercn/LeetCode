@@ -6,7 +6,52 @@ class Solution
 public:
     int leastInterval(vector<char> &tasks, int n)
     {
-        return 0;
+        multimap<int, char, greater<int>> taskMap;
+        {
+            map<char, int> lookup;
+            for (auto task : tasks)
+            {
+                lookup[task]++;
+            }
+            for (auto [task, count] : lookup)
+            {
+                taskMap.emplace(count, task);
+            }
+        }
+        queue<pair<int, char>> cooldownQueue;
+        for (int i = 0; i <= n; i++)
+        {
+            cooldownQueue.emplace(0, '0');
+        }
+        int result = 0;
+        int remain = taskMap.size();
+        while (remain > 0)
+        {
+            auto [count, task] = cooldownQueue.front();
+            cooldownQueue.pop();
+            if (task != '0')
+            {
+                taskMap.emplace(count, task);
+            }
+            if (taskMap.empty())
+            {
+                cooldownQueue.emplace(0, '0');
+            }
+            else
+            {
+                pair<int, char> temp = *taskMap.begin();
+                taskMap.erase(taskMap.begin());
+                temp.first--;
+                if (temp.first == 0)
+                {
+                    remain--;
+                }
+                cooldownQueue.emplace(temp);
+            }
+            result++;
+        }
+
+        return result;
     }
 };
 
