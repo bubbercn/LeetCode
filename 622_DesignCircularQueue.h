@@ -6,37 +6,60 @@ class MyCircularQueue
 public:
     MyCircularQueue(int k)
     {
+        values.resize(k);
     }
 
     bool enQueue(int value)
     {
-        return false;
+        if (isFull())
+            return false;
+
+        values[end++] = value;
+        end %= values.size();
+        empty = false;
+        return true;
     }
 
     bool deQueue()
     {
-        return false;
+        if (isEmpty())
+            return false;
+        begin++;
+        begin %= values.size();
+        if (begin == end)
+            empty = true;
+        return true;
     }
 
     int Front()
     {
-        return 0;
+        if (isEmpty())
+            return -1;
+        return values[begin];
     }
 
     int Rear()
     {
-        return 0;
+        if (isEmpty())
+            return -1;
+        return values[(end - 1 + values.size()) % values.size()];
     }
 
     bool isEmpty()
     {
-        return false;
+        return empty;
     }
 
     bool isFull()
     {
-        return false;
+        return (begin == end) && (!empty);
     }
+
+private:
+    vector<int> values;
+    int begin = 0;
+    int end = 0;
+    bool empty = true;
 };
 
 class Solution
@@ -52,13 +75,13 @@ public:
 TEST_F(LeetCodeTest, Example1)
 {
     MyCircularQueue myCircularQueue(3);
-    myCircularQueue.enQueue(1); // return True
-    myCircularQueue.enQueue(2); // return True
-    myCircularQueue.enQueue(3); // return True
-    myCircularQueue.enQueue(4); // return False
-    myCircularQueue.Rear();     // return 3
-    myCircularQueue.isFull();   // return True
-    myCircularQueue.deQueue();  // return True
-    myCircularQueue.enQueue(4); // return True
-    myCircularQueue.Rear();     // return 4
+    EXPECT_TRUE(myCircularQueue.enQueue(1));  // return True
+    EXPECT_TRUE(myCircularQueue.enQueue(2));  // return True
+    EXPECT_TRUE(myCircularQueue.enQueue(3));  // return True
+    EXPECT_FALSE(myCircularQueue.enQueue(4)); // return False
+    EXPECT_EQ(myCircularQueue.Rear(), 3);     // return 3
+    EXPECT_TRUE(myCircularQueue.isFull());    // return True
+    EXPECT_TRUE(myCircularQueue.deQueue());   // return True
+    EXPECT_TRUE(myCircularQueue.enQueue(4));  // return True
+    EXPECT_EQ(myCircularQueue.Rear(), 4);     // return 4
 }
