@@ -6,7 +6,49 @@ class Solution
 public:
     vector<int> smallestRange(vector<vector<int>> &nums)
     {
-        return {};
+        multimap<int, int> valueIndexMap;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            for (auto value : nums[i])
+            {
+                valueIndexMap.emplace(value, i);
+            }
+        }
+        
+        int currentSize = 1;
+        unordered_map<int, int> lookup;
+        auto left = valueIndexMap.begin();
+        auto right = valueIndexMap.begin();
+        lookup[left->second] = 1;
+        vector<int> result;
+        int minRange = numeric_limits<int>::max();
+        while(true)
+        {
+            if (currentSize < nums.size())
+            {
+                right++;
+                if (right == valueIndexMap.end())
+                    break;
+                if (++lookup[right->second] == 1)
+                {
+                    currentSize++;
+                }
+            }
+            else
+            {
+                if (right->first - left->first < minRange)
+                {
+                    minRange = right->first - left->first;
+                    result.assign({left->first, right->first});
+                }
+                if (--lookup[left->second] == 0)
+                {
+                    currentSize--;
+                }
+                left++;
+            }
+        }
+        return result;
     }
 };
 

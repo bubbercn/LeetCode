@@ -1,4 +1,4 @@
-#include "632_SmallestRangeCoveringElementsFromKLists.h"
+#include "633_SumOfSquareNumbers.h"
 
 int main(int argc, char *argv[])
 {
