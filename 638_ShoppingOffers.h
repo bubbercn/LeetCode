@@ -6,8 +6,65 @@ class Solution
 public:
     int shoppingOffers(vector<int> &price, vector<vector<int>> &special, vector<int> &needs)
     {
-        return 0;
+        int n = price.size();
+        filter(special, needs);
+        return helper(price, special, needs);
     }
+
+private:
+    int helper(const vector<int> &price, vector<vector<int>> special, const vector<int> &needs)
+    {
+        if (auto it = lookup.find(needs); it != lookup.end())
+        {
+            return it->second;
+        }
+
+        int result = 0;
+        for (int i = 0; i < needs.size(); i++)
+        {
+            result += price[i] * needs[i];
+        }
+        for (auto s : special)
+        {
+            auto nextNeeds = needs;
+            if (!check(s, nextNeeds))
+                continue;
+
+            result = min(result, helper(price, special, nextNeeds) + *s.rbegin());
+        }
+        lookup[needs] = result;
+        return result;
+    }
+    bool check(const vector<int> &special, vector<int> &needs)
+    {
+        for (int i = 0; i < needs.size(); i++)
+        {
+            needs[i] -= special[i];
+            if (needs[i] < 0)
+                return false;
+        }
+        return true;
+    }
+    void filter(vector<vector<int>> &special, const vector<int> &needs)
+    {
+        vector<vector<int>> temp;
+        for (auto &s : special)
+        {
+            bool exclude = false;
+            for (int i = 0; i < needs.size(); i++)
+            {
+                if (s[i] > needs[i])
+                {
+                    exclude = true;
+                    break;
+                }
+            }
+            if (!exclude)
+                temp.emplace_back(s);
+        }
+        special.swap(temp);
+    }
+    map<vector<int>, int> lookup;
 };
 
 class LeetCodeTest : public testing::Test
