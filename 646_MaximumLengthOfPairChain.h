@@ -6,7 +6,23 @@ class Solution
 public:
     int findLongestChain(vector<vector<int>> &pairs)
     {
-        return 0;
+        sort(pairs.begin(), pairs.end(), [](const vector<int>& v1, const vector<int>& v2)
+        {
+            if (v1[1] == v2[1])
+                return v1[0] > v2[0];
+            return v1[1] < v2[1];
+        });
+        int result = 1;
+        int last = pairs[0][1];
+        for (int i = 1; i < pairs.size(); i++)
+        {
+            if (pairs[i][0] > last)
+            {
+                result++;
+                last = pairs[i][1];
+            }
+        }
+        return result;
     }
 };
 
