@@ -17,7 +17,22 @@ class Solution
 public:
     TreeNode *constructMaximumBinaryTree(vector<int> &nums)
     {
-        return nullptr;
+        return helper(nums.begin(), nums.end());
+    }
+    private:
+    TreeNode* helper(vector<int>::const_iterator begin, vector<int>::const_iterator end)
+    {
+        auto it = max_element(begin, end);
+        TreeNode* root = new TreeNode(*it);
+        if (it  != begin)
+        {
+            root->left = helper(begin, it);
+        }
+        if (++it != end)
+        {
+            root->right = helper(it, end);
+        }
+        return root;
     }
 };
 
