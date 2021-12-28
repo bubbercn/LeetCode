@@ -17,39 +17,29 @@ class Solution
 public:
     vector<vector<string>> printTree(TreeNode *root)
     {
-        if (!root)
-            return {};
-
-        auto leftResult = printTree(root->left);
-        int lm = leftResult.size();
-        int ln = leftResult.empty() ? 0 : leftResult[0].size();
-
-        auto rightResult = printTree(root->right);
-        int rm = rightResult.size();
-        int rn = rightResult.empty() ? 0 : rightResult[0].size();
-
-        int m = max(lm, rm) + 1;
-        int n = max(ln, rn) * 2 + 1;
+        int m = getHeight(root);
+        int n = (1 << m) - 1;
         vector<vector<string>> result(m, vector<string>(n, ""));
-
-        result[0][n / 2] = to_string(root->val);
-        int offset = (max(ln, rn) - ln) / 2;
-        for (int i = 0; i < lm; i++)
-        {
-            for (int j = 0; j < ln; j++)
-            {
-                result[i + 1][j + offset] = leftResult[i][j];
-            }
-        }
-        offset = n / 2 + 1 + (max(ln, rn) - rn) / 2;
-        for (int i = 0; i < rm; i++)
-        {
-            for (int j = 0; j < rn; j++)
-            {
-                result[i + 1][j + offset] = rightResult[i][j];
-            }
-        }
+        print(result, root, 0, (n - 1) / 2, m);
         return result;
+    }
+
+private:
+    int getHeight(TreeNode *root)
+    {
+        if (root == nullptr)
+            return 0;
+
+        return max(getHeight(root->left), getHeight(root->right)) + 1;
+    }
+    void print(vector<vector<string>> &result, TreeNode *root, int row, int column, int m)
+    {
+        if (root == nullptr)
+            return;
+        result[row][column] = to_string(root->val);
+        int offset = pow(2, m - 2 - row);
+        print(result, root->left, row + 1, column - offset, m);
+        print(result, root->right, row + 1, column + offset, m);
     }
 };
 
@@ -58,17 +48,3 @@ class LeetCodeTest : public testing::Test
 public:
     inline static Solution solution;
 };
-
-[
-    [ "", "", "", "", "", "", "", "3", "", "", "", "", "", "", "" ],
-    [ "", "", "", "1", "", "", "", "", "", "", "", "5", "", "", "" ],
-    [ "", "0", "", "", "", "2", "", "", "", "", "4", "", "6", "", "" ],
-    [ "", "", "", "", "", "", "3", "", "", "", "", "", "", "", "" ],
-];
-
-[
-    [ "", "", "", "", "", "", "", "3", "", "", "", "", "", "", "" ],
-    [ "", "", "", "1", "", "", "", "", "", "", "", "5", "", "", "" ],
-    [ "", "0", "", "", "", "2", "", "", "", "4", "", "", "", "6", "" ],
-    [ "", "", "", "", "", "", "3", "", "", "", "", "", "", "", "" ],
-]
