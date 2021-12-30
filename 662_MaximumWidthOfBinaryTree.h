@@ -17,32 +17,32 @@ class Solution
 public:
     int widthOfBinaryTree(TreeNode *root)
     {
-        int result = 0;
-        list<TreeNode*> curLevel;
+        deque<pair<TreeNode *, long>> curLevel;
         root->val = 0;
-        curLevel.emplace_back(root);
+        curLevel.emplace_back(root, 1);
+        int result = 0;
         while (!curLevel.empty())
         {
-            int min = numeric_limits<int>::min();
-            int max = numeric_limits<int>::max();
-            list<TreeNode*> nextLevel;
+            int sum = 0;
+            deque<pair<TreeNode *, long>> nextLevel;
             for (auto node : curLevel)
             {
-                min = ::min(min, node->val);
-                max = ::max(max, node->val);
-                if (node->left)
+                if (node.first == nullptr)
                 {
-                    node->left->val = node->val * 2;
-                    nextLevel.emplace_back(node->left);
+                    nextLevel.emplace_back(nullptr, node.second * 2);
                 }
-                if (node->right)
+                else
                 {
-                    node->right->val = node->val * 2 + 1;
-                    nextLevel.emplace_back(node->right);
-                }
+                    nextLevel.emplace_back(node.first->left, 1);
+                    nextLevel.emplace_back(node.first->right, 1);
+                }   
+                sum += node.second;
             }
-            int width = max - min + 1;
-            result = ::max(result, width);
+            result = max(result, sum);
+            while (!nextLevel.empty() && nextLevel.front().first == nullptr)
+                nextLevel.pop_front();
+            while (!nextLevel.empty() && nextLevel.back().first == nullptr)
+                nextLevel.pop_back();
             curLevel.swap(nextLevel);
         }
         return result;
