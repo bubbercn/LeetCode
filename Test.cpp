@@ -1,4 +1,4 @@
-#include "671_SecondMinimumNodeInABinaryTree.h"
+#include "672_BulbSwitcherII.h"
 
 int main(int argc, char *argv[])
 {

@@ -17,7 +17,27 @@ class Solution
 public:
     int findSecondMinimumValue(TreeNode *root)
     {
-        return 0;
+        if (root == nullptr)
+            return -1;
+
+        if (root->left == nullptr)
+            return -1;
+
+        int leftResult = root->val == root->left->val ? findSecondMinimumValue(root->left) : root->left->val;
+        int rightResult = root->val == root->right->val ? findSecondMinimumValue(root->right) : root->right->val;
+
+        if (leftResult == -1)
+        {
+            if (rightResult == -1)
+                return -1;
+            return rightResult;
+        }
+        else
+        {
+            if (rightResult == -1)
+                return leftResult;
+            return min(leftResult, rightResult);
+        }
     }
 };
 
