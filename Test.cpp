@@ -1,4 +1,4 @@
-#include "667_BeautifulArrangementII.h"
+#include "668_KthSmallestNumberInMultiplicationTable.h"
 
 int main(int argc, char *argv[])
 {

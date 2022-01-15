@@ -6,7 +6,20 @@ class Solution
 public:
     vector<int> constructArray(int n, int k)
     {
-        return {};
+        vector<int> result(n);
+        result[0] = 1;
+        int sign = 1;
+        int offset = n - 1;
+        for (int i = 1; i < k; i++)
+        {
+            result[i] = result[i - 1] + (offset--) * sign;
+            sign = -sign;
+        }
+        for (int i = k; i < n; i++)
+        {
+            result[i] = result[i - 1] + sign;
+        }
+        return result;
     }
 };
 
