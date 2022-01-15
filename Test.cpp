@@ -1,4 +1,4 @@
-#include "668_KthSmallestNumberInMultiplicationTable.h"
+#include "671_SecondMinimumNodeInABinaryTree.h"
 
 int main(int argc, char *argv[])
 {
