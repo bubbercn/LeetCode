@@ -1,4 +1,4 @@
-#include "672_BulbSwitcherII.h"
+#include "673_NumberOfLongestIncreasingSubsequence.h"
 
 int main(int argc, char *argv[])
 {
