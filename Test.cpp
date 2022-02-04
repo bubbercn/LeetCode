@@ -1,4 +1,4 @@
-#include "676_ImplementMagicDictionary.h"
+#include "677_MapSumPairs.h"
 
 int main(int argc, char *argv[])
 {
