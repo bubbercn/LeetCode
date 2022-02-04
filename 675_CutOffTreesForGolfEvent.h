@@ -6,50 +6,19 @@ class Solution
 public:
     int cutOffTree(vector<vector<int>> &forest)
     {
-        int m = forest.size();
-        int n = forest[0].size();
-        int x = m * n;
-        const int nill = numeric_limits<int>::max();
-        vector<vector<int>> distance(x, vector<int>(x, nill));
+        m = forest.size();
+        n = forest[0].size();
+        k = m * n;
         map<int, int> valueIndexMap;
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (forest[i][j] == 0)
+                if (forest[i][j] == 0 || forest[i][j] == 1)
                     continue;
 
                 int index = i * n + j;
-                if (int down = index + n; i + 1 < m && forest[i + 1][j] != 0)
-                {
-                    distance[index][down] = distance[down][index] = 1;
-                }
-                if (int right = index + 1; j + 1 < n && forest[i][j + 1] != 0)
-                {
-                    distance[index][right] = distance[right][index] = 1;
-                }
-                distance[index][index] = 0;
                 valueIndexMap[forest[i][j]] = index;
-            }
-        }
-
-        for (int k = 0; k < x; k++)
-        {
-            for (int i = 0; i < x; i++)
-            {
-                for (int j = 0; j < x; j++)
-                {
-                    if (i == j)
-                        continue;
-
-                    if (k == i || k == j)
-                        continue;
-
-                    if (distance[i][k] == nill || distance[k][j] == nill)
-                        continue;
-
-                    distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j]);
-                }
             }
         }
 
@@ -57,14 +26,66 @@ public:
         int begin = 0;
         for (auto [value, index] : valueIndexMap)
         {
-            if (distance[begin][index] == nill)
+            if (int d = distance(begin, index, forest); d == -1)
+            {
                 return -1;
-
-            result += distance[begin][index];
-            begin = index;
+            }
+            else
+            {
+                result += d;
+                begin = index;
+            }
         }
         return result;
     }
+
+private:
+    int distance(int i, int j, vector<vector<int>> &forest)
+    {
+        list<int> current = {i};
+        vector<bool> visited(k, false);
+        visited[i] = true;
+        int result = 0;
+        while (!current.empty())
+        {
+            list<int> next;
+            for (auto point : current)
+            {
+                if (point == j)
+                    return result;
+
+                int x = point / n;
+                int y = point % n;
+                if (int up = point - n; x - 1 >= 0 && !visited[up] && forest[x - 1][y])
+                {
+                    next.emplace_back(up);
+                    visited[up] = true;
+                }
+                if (int down = point + n; down < k && !visited[down] && forest[x + 1][y])
+                {
+                    next.emplace_back(down);
+                    visited[down] = true;
+                }
+                if (int left = point - 1; y - 1 >= 0 && !visited[left] && forest[x][y - 1])
+                {
+                    next.emplace_back(left);
+                    visited[left] = true;
+                }
+                if (int right = point + 1; y + 1 < n && !visited[right] && forest[x][y + 1])
+                {
+                    next.emplace_back(right);
+                    visited[right] = true;
+                }
+            }
+            current.swap(next);
+            result++;
+        }
+        return -1;
+    }
+    map<pair<int, int>, int> lookup;
+    int m;
+    int n;
+    int k;
 };
 
 class LeetCodeTest : public testing::Test
@@ -159,4 +180,14 @@ TEST_F(LeetCodeTest, Failure3)
         {24454, 77324, 20725, 89455, 83717, 82482, 60498, 7191, 73315, 94284, 31921, 84243, 67118, 62731, 1678, 46376, 94405, 4051, 0, 0, 0, 96329, 75733, 99345, 26763, 15444, 30255},
     };
     EXPECT_EQ(solution.cutOffTree(forest), 9581);
+}
+
+TEST_F(LeetCodeTest, Failure4)
+{
+    vector<vector<int>> forest = {
+        {4, 2, 3},
+        {0, 0, 1},
+        {7, 6, 5},
+    };
+    EXPECT_EQ(solution.cutOffTree(forest), 10);
 }

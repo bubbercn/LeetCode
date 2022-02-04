@@ -1,4 +1,4 @@
-#include "675_CutOffTreesForGolfEvent.h"
+#include "676_ImplementMagicDictionary.h"
 
 int main(int argc, char *argv[])
 {
