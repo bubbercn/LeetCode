@@ -1,4 +1,4 @@
-#include "686_RepeatedStringMatch.h"
+#include "688_KnightProbabilityInChessboard.h"
 
 int main(int argc, char *argv[])
 {
