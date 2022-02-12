@@ -1,4 +1,4 @@
-#include "688_KnightProbabilityInChessboard.h"
+#include "689_MaximumSumOf3NonOverlappingSubarrays.h"
 
 int main(int argc, char *argv[])
 {
