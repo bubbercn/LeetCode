@@ -6,7 +6,38 @@ class Solution
 public:
     vector<string> topKFrequent(vector<string> &words, int k)
     {
-        return {};
+        unordered_map<string_view, int> wordFrequencies;
+        for (const auto &word : words)
+        {
+            wordFrequencies[word]++;
+        }
+        auto cmp = [](const pair<string_view, int> &v1, const pair<string_view, int> &v2)
+        {
+            if (v1.second == v2.second)
+                return v1.first < v2.first;
+
+            return v1.second > v2.second;
+        };
+        priority_queue<pair<string_view, int>, vector<pair<string_view, int>>, decltype(cmp)> heap(cmp);
+        for (const auto &wordFrequency : wordFrequencies)
+        {
+            if (heap.size() < k)
+            {
+                heap.emplace(wordFrequency);
+            }
+            else if (cmp(wordFrequency, heap.top()))
+            {
+                heap.pop();
+                heap.emplace(wordFrequency);
+            }
+        }
+        vector<string> result(heap.size());
+        for (int i = result.size() - 1; i >= 0; i--)
+        {
+            result[i] = heap.top().first;
+            heap.pop();
+        }
+        return result;
     }
 };
 
