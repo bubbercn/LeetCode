@@ -1,4 +1,4 @@
-#include "710_RandomPickWithBlacklist.h"
+#include "712_MinimumASCIIDeleteSumForTwoStrings.h"
 
 int main(int argc, char *argv[])
 {
