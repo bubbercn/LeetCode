@@ -8,38 +8,40 @@ public:
     {
         int n1 = s1.length();
         int n2 = s2.length();
-        vector<vector<int>> dp(n1 + 1, vector<int>(n2 + 1, 0));
+        vector<int> dp(n2 + 1, 0);
+        int p = 0;
         for (int i = 0; i <= n1; i++)
         {
             for (int j = 0; j <= n2; j++)
             {
                 if (i == 0 && j == 0)
                 {
-                    dp[i][j] = 0;
+                    dp[j] = 0;
                 }
                 else if (i == 0)
                 {
-                    dp[i][j] = s2[j - 1];
+                    dp[j] = dp[j - 1] + s2[j - 1];
                 }
                 else if (j == 0)
                 {
-                    dp[i][j] = s1[i - 1];
+                    p = dp[j];
+                    dp[j] += s1[i - 1];
                 }
                 else
                 {
                     if (s1[i - 1] == s2[j - 1])
                     {
-                        dp[i][j] = dp[i - 1][j - 1];
+                        swap(p, dp[j]);
                     }
                     else
                     {
-                        dp[i][j] = min(dp[i - 1][j - 1] + s1[i - 1] + s2[j - 1], dp[i - 1][j] + s1[i - 1]);
-                        dp[i][j] = min(dp[i][j], dp[i][j - 1] + s2[j - 1]);
+                        p = dp[j];
+                        dp[j] = min(dp[j - 1] + s2[j - 1], dp[j] + s1[i - 1]);
                     }
                 }
             }
         }
-        return dp[n1][n2];
+        return dp[n2];
     }
 };
 
