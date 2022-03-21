@@ -6,7 +6,34 @@ class Solution
 public:
     int numSubarrayProductLessThanK(vector<int> &nums, int k)
     {
-        return 0;
+        int result = 0;
+        int product = nums[0];
+        int left = 0;
+        int right = 1;
+        int n = nums.size();
+        while (true)
+        {
+            if (product < k)
+            {
+                result++;
+                if (right < n)
+                {
+                    product *= nums[right++];
+                    continue;
+                }
+            }
+
+            product /= nums[left++];
+            if (left == n)
+                break;
+            if (left == right)
+            {
+                product = nums[left];
+                right = left + 1;
+            }
+            result += right - left - 1;
+        }
+        return result;
     }
 };
 
