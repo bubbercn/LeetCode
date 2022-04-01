@@ -6,7 +6,24 @@ class Solution
 public:
     int smallestDistancePair(vector<int> &nums, int k)
     {
-        return 0;
+        sort(nums.begin(), nums.end());
+        int left = 0, right = nums.back() - nums.front();
+        while (left < right)
+        {
+            int middle = (left + right) / 2;
+            int count = 0;
+            for (int l = 0, r = 0; r < nums.size(); r++)
+            {
+                while (l < r && nums[r] - nums[l] > middle)
+                    l++;
+                count += r - l;
+            }
+            if (count >= k)
+                right = middle;
+            else
+                left = middle + 1;
+        }
+        return left;
     }
 };
 
