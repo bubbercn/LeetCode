@@ -1,4 +1,4 @@
-#include "721_AccountsMerge.h"
+#include "722_RemoveComments.h"
 
 int main(int argc, char *argv[])
 {
