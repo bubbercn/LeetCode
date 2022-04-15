@@ -6,7 +6,44 @@ class Solution
 public:
     vector<string> removeComments(vector<string> &source)
     {
-        return {};
+        vector<string> result;
+        bool inComment = false;
+        for (auto &line : source)
+        {
+            size_t pos = 0;
+            string lineNoComment;
+            while (true)
+            {
+                if (inComment)
+                {
+                    if (pos = line.find("*/", pos); pos == string::npos)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        line = line.substr(pos + 2);
+                    }
+                }
+                else
+                {
+                    if (auto pos = line.find("//"); pos != string::npos)
+                    {
+                        line = line.substr(0, pos);
+                    }
+                    else if (pos = line.find("/*"); pos != string::npos)
+                    {
+                        line = line.substr(0, pos);
+                        inComment = true;
+                    }
+                }
+                if (!line.empty())
+                {
+                    result.emplace_back(line);
+                }
+            }
+        }
+        return result;
     }
 };
 
