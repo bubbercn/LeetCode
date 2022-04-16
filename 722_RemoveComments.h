@@ -8,38 +8,73 @@ public:
     {
         vector<string> result;
         bool inComment = false;
+        string lineNoComment;
         for (auto &line : source)
         {
-            size_t pos = 0;
-            string lineNoComment;
+            size_t curPos = 0;
             while (true)
             {
                 if (inComment)
                 {
-                    if (pos = line.find("*/", pos); pos == string::npos)
+                    if (auto pos = line.find("*/", curPos); pos == string::npos)
                     {
-                        continue;
+                        break;
                     }
                     else
                     {
-                        line = line.substr(pos + 2);
+                        inComment = false;
+                        curPos = pos + 2;
                     }
                 }
                 else
                 {
-                    if (auto pos = line.find("//"); pos != string::npos)
+                    if (auto pos = line.find('/', curPos); pos != string::npos)
                     {
-                        line = line.substr(0, pos);
+                        if (pos + 1 < line.length())
+                        {
+                            if (line[pos + 1] == '/')
+                            {
+                                lineNoComment += line.substr(curPos, pos - curPos);
+                                if (!lineNoComment.empty())
+                                {
+                                    result.emplace_back(lineNoComment);
+                                }
+                                lineNoComment.clear();
+                                break;
+                            }
+                            else if (line[pos + 1] == '*')
+                            {
+                                lineNoComment += line.substr(curPos, pos - curPos);
+                                curPos = pos + 2;
+                                inComment = true;
+                            }
+                            else
+                            {
+                                lineNoComment += line.substr(curPos, pos + 2 - curPos);
+                                curPos = pos + 2;
+                            }
+                        }
+                        else
+                        {
+                            lineNoComment += line.substr(curPos);
+                            if (!lineNoComment.empty())
+                            {
+                                result.emplace_back(lineNoComment);
+                            }
+                            lineNoComment.clear();
+                            break;
+                        }
                     }
-                    else if (pos = line.find("/*"); pos != string::npos)
+                    else
                     {
-                        line = line.substr(0, pos);
-                        inComment = true;
+                        lineNoComment += line.substr(curPos);
+                        if (!lineNoComment.empty())
+                        {
+                            result.emplace_back(lineNoComment);
+                        }
+                        lineNoComment.clear();
+                        break;
                     }
-                }
-                if (!line.empty())
-                {
-                    result.emplace_back(line);
                 }
             }
         }
@@ -64,5 +99,19 @@ TEST_F(LeetCodeTest, Example2)
 {
     vector<string> source = {"a/*comment", "line", "more_comment*/b"};
     vector<string> output = {"ab"};
+    EXPECT_EQ(solution.removeComments(source), output);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    vector<string> source = {"a//*b//*c", "blank", "d/*/e*//f"};
+    vector<string> output = {"a", "blank", "d/f"};
+    EXPECT_EQ(solution.removeComments(source), output);
+}
+
+TEST_F(LeetCodeTest, Failure2)
+{
+    vector<string> source = {"void func(int k) {", "// this function does nothing /*", "   k = k*2/4;", "   k = k/2;*/", "}"};
+    vector<string> output = {"void func(int k) {", "   k = k*2/4;", "   k = k/2;*/", "}"};
     EXPECT_EQ(solution.removeComments(source), output);
 }

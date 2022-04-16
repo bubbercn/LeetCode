@@ -1,4 +1,4 @@
-#include "722_RemoveComments.h"
+#include "726_NumberOfAtoms.h"
 
 int main(int argc, char *argv[])
 {
