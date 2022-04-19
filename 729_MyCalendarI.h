@@ -10,8 +10,16 @@ public:
 
     bool book(int start, int end)
     {
+        if (auto it = leftMap.lower_bound(end); leftMap.empty() || it == leftMap.begin() || (--it)->second <= start)
+        {
+            leftMap.emplace_hint(it, start, end);
+            return true;
+        }
         return false;
     }
+
+private:
+    map<int, int> leftMap;
 };
 
 class Solution
