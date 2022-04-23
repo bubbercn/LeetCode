@@ -10,8 +10,30 @@ public:
 
     int book(int start, int end)
     {
-        return 0;
+        left.emplace(start, end);
+        points.emplace(start);
+        auto lower = points.lower_bound(start);
+        auto upper = points.upper_bound(end);
+        for (auto it1 = lower; it1 != upper; it1++)
+        {
+            int result = 0;
+            auto upper2 = left.upper_bound(*it1);
+            for (auto it2 = left.begin(); it2 != upper2; it2++)
+            {
+                if (it2->second > *it1)
+                {
+                    result++;
+                }
+            }
+            k = max(k, result);
+        }
+        return k;
     }
+
+private:
+    multimap<int, int> left;
+    set<int> points;
+    int k = 0;
 };
 
 class Solution
