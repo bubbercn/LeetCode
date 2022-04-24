@@ -6,7 +6,40 @@ class Solution
 public:
     vector<int> asteroidCollision(vector<int> &asteroids)
     {
-        return {};
+        vector<int> result;
+        for (auto value : asteroids)
+        {
+            if (value > 0)
+            {
+                result.emplace_back(value);
+            }
+            else
+            {
+                bool add = true;
+                while (!result.empty() && result.back() > 0)
+                {
+                    if (-value > result.back())
+                    {
+                        result.pop_back();
+                        add = true;
+                    }
+                    else if (-value == result.back())
+                    {
+                        result.pop_back();
+                        add = false;
+                        break;
+                    }
+                    else
+                    {
+                        add = false;
+                        break;
+                    }
+                }
+                if (add)
+                    result.emplace_back(value);
+            }
+        }
+        return result;
     }
 };
 
