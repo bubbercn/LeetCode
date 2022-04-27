@@ -6,7 +6,19 @@ class Solution
 public:
     vector<int> dailyTemperatures(vector<int> &temperatures)
     {
-        return {};
+        stack<int> lookup;
+        size_t n = temperatures.size();
+        vector<int> result(n, 0);
+        for (size_t i = 0; i < n; i++)
+        {
+            while (!lookup.empty() && temperatures[i] > temperatures[lookup.top()])
+            {
+                result[lookup.top()] = i - lookup.top();
+                lookup.pop();
+            }
+            lookup.emplace(i);
+        }
+        return result;
     }
 };
 
