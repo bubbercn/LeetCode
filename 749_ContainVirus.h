@@ -38,7 +38,7 @@ public:
             {
                 isInfected[i][j] = -1;
             }
-            result += it->edges.size();
+            result += it->wallCount;
             virusGroups.erase(it);
             for (auto &g : virusGroups)
             {
@@ -47,17 +47,17 @@ public:
                     isInfected[i][j] = 1;
                 }
             }
-            for (int i = 0; i < m; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (isInfected[i][j] != -1)
-                        cout << " ";
-                    cout << isInfected[i][j] << " ";
-                }
-                cout << endl;
-            }
-            cout << endl;
+            // for (int i = 0; i < m; i++)
+            // {
+            //     for (int j = 0; j < n; j++)
+            //     {
+            //         if (isInfected[i][j] != -1)
+            //             cout << " ";
+            //         cout << isInfected[i][j] << " ";
+            //     }
+            //     cout << endl;
+            // }
+            // cout << endl;
         }
 
         return result;
@@ -70,6 +70,7 @@ private:
     {
         list<Virus> viruses;
         list<Virus> edges;
+        int wallCount = 0;
     };
     VirusGroup generateVirusGroup(Virus v, vector<vector<int>> &isInfected, vector<vector<bool>> &isVisited)
     {
@@ -80,6 +81,7 @@ private:
         int n = isInfected[0].size();
         isVisited[v.first][v.second] = true;
         result.viruses.emplace_back(v);
+        vector<vector<bool>> isVisited2 = isVisited;
         while (!next.empty())
         {
             list<Virus> temp;
@@ -103,6 +105,10 @@ private:
                     }
                     else if (isInfected[i][j] == 0)
                     {
+                        result.wallCount++;
+                        if (isVisited2[i][j])
+                            continue;
+                        isVisited2[i][j] = true;
                         result.edges.emplace_back(i, j);
                     }
                 }
