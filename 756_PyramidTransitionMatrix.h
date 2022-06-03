@@ -16,20 +16,63 @@ public:
         lookup.clear();
         for (auto &rule : allowed)
         {
-            lookup.emplace(rule.substr(0, 2), rule[2]);
+            lookup[rule.substr(0, 2)].emplace_back(rule[2]);
         }
-        return dfs(n - 1, 0);
+        return dfs(n - 1);
     }
 
 private:
     vector<string> pyramid;
-    unordered_map<string, char> lookup;
-    bool dfs(int floor, int start)
+    unordered_map<string, vector<char>> lookup;
+    bool dfs(int floor)
     {
-        
+        if (floor == 0)
+            return true;
+
+        vector<vector<char>> limit;
+        vector<int> state(floor, 0);
+        for (int i = 0; i < floor; i++)
+        {
+            if (auto it = lookup.find(pyramid[floor].substr(i, 2)); it == lookup.end())
+            {
+                return false;
+            }
+            else
+            {
+                limit.emplace_back(it->second);
+            }
+        }
+
+        do
+        {
+            for (int i = 0; i < floor; i++)
+            {
+                pyramid[floor - 1][i] = limit[i][state[i]];
+            }
+            if (dfs(floor - 1))
+                return true;
+        } while (next(limit, state));
+
         return false;
     }
-    bool help
+
+private:
+    bool next(const vector<vector<char>> &limit, vector<int>& state)
+    {
+        for (int i = 0; i < limit.size(); i++)
+        {
+            state[i]++;
+            if (state[i] == limit[i].size())
+            {
+                state[i] = 0;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 };
 
 class LeetCodeTest : public testing::Test
