@@ -7,68 +7,39 @@ public:
     bool pyramidTransition(string_view bottom, vector<string> &allowed)
     {
         int n = bottom.size();
-        pyramid.assign(n, {});
-        pyramid[n - 1] = bottom;
-        for (int i = 0; i < n - 1; i++)
-        {
-            pyramid[i].assign(i + 1, '0');
-        }
         lookup.clear();
         for (auto &rule : allowed)
         {
-            lookup[rule.substr(0, 2)].emplace_back(rule[2]);
+            string_view view(rule);
+            lookup[view.substr(0, 2)].emplace_back(rule[2]);
         }
-        return dfs(n - 1);
+        string temp;
+        return dfs(bottom, temp);
     }
 
 private:
-    vector<string> pyramid;
-    unordered_map<string, vector<char>> lookup;
-    bool dfs(int floor)
+    unordered_map<string_view, vector<char>> lookup;
+    bool dfs(string_view bottom, string &upper)
     {
-        if (floor == 0)
+        int n = bottom.length();
+        if (n == 1)
             return true;
 
-        vector<vector<char>> limit;
-        vector<int> state(floor, 0);
-        for (int i = 0; i < floor; i++)
+        int start = upper.length();
+        if (start == n - 1)
         {
-            if (auto it = lookup.find(pyramid[floor].substr(i, 2)); it == lookup.end())
-            {
-                return false;
-            }
-            else
-            {
-                limit.emplace_back(it->second);
-            }
+            string temp;
+            return dfs(upper, temp);
         }
 
-        do
+        if (auto it = lookup.find(bottom.substr(start, 2)); it != lookup.end())
         {
-            for (int i = 0; i < floor; i++)
+            for (auto c : it->second)
             {
-                pyramid[floor - 1][i] = limit[i][state[i]];
-            }
-            if (dfs(floor - 1))
-                return true;
-        } while (next(limit, state));
-
-        return false;
-    }
-
-private:
-    bool next(const vector<vector<char>> &limit, vector<int>& state)
-    {
-        for (int i = 0; i < limit.size(); i++)
-        {
-            state[i]++;
-            if (state[i] == limit[i].size())
-            {
-                state[i] = 0;
-            }
-            else
-            {
-                return true;
+                upper.push_back(c);
+                if (dfs(bottom, upper))
+                    return true;
+                upper.pop_back();
             }
         }
         return false;
