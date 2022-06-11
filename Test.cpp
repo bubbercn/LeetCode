@@ -1,4 +1,4 @@
-#include "757_SetIntersectionSizeAtLeastTwo.h"
+#include "761_SpecialBinaryString.h"
 
 int main(int argc, char *argv[])
 {
