@@ -4,9 +4,35 @@
 class Solution
 {
 public:
-    string makeLargestSpecial(string s)
+    string makeLargestSpecial(string_view s)
     {
-        return {};
+        using StringSet = multiset<string, greater<string>>;
+        stack<StringSet> stateStack;
+        stateStack.emplace(StringSet());
+        for (auto c : s)
+        {
+            if (c == '1')
+            {
+                stateStack.emplace(StringSet());
+            }
+            else
+            {
+                string temp = "1";
+                for (auto &s : stateStack.top())
+                {
+                    temp += s;
+                }
+                temp += '0';
+                stateStack.pop();
+                stateStack.top().emplace(temp);
+            }
+        }
+        string result;
+        for (auto &s : stateStack.top())
+        {
+            result += s;
+        }
+        return result;
     }
 };
 
@@ -24,4 +50,9 @@ TEST_F(LeetCodeTest, Example1)
 TEST_F(LeetCodeTest, Example2)
 {
     EXPECT_EQ(solution.makeLargestSpecial("10"), "10");
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.makeLargestSpecial("101010"), "101010");
 }

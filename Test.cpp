@@ -1,4 +1,4 @@
-#include "761_SpecialBinaryString.h"
+#include "763_PartitionLabels.h"
 
 int main(int argc, char *argv[])
 {
