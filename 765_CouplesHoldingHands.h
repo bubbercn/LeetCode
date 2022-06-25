@@ -7,42 +7,27 @@ public:
     int minSwapsCouples(vector<int> &row)
     {
         int n = row.size();
-        unordered_map<int, int> person2SlotMap;
-        unordered_map<int, set<int>> slot2PersonMap;
+        unordered_map<int, int> person2IndexMap;
         for (int i = 0; i < n; i++)
         {
-            int slot = i / 2;
-            person2SlotMap.emplace(row[i], slot);
-            slot2PersonMap[slot].emplace(row[i]);
+            person2IndexMap.emplace(row[i], i);
         }
-        vector<bool> visited(n, false);
         int result = 0;
-        auto helper = [&](int person)
+        for (int i = 0; i < n; i += 2)
         {
-            unordered_set<int> slots;
-            while (true)
+            if (row[i] > row[i + 1])
             {
-                visited[person] = true;
-                int slot = person2SlotMap[person];
-                int other = person % 2 == 0 ? person + 1 : person - 1;
-                visited[other] = true;
-                if (slots.emplace(slot).second)
-                {
-                    set<int>& couple = slot2PersonMap[person2SlotMap[other]] ;
-                    person = other == *couple.begin() ? *couple.rbegin() : *couple.begin();
-                }
-                else
-                {
-                    break;
-                }
+                swap(row[i], row[i + 1]);
+                swap(person2IndexMap[row[i]], person2IndexMap[row[i + 1]]);
             }
-            return slots.size() - 1;
-        };
-        for (int i = 0; i < n; i++)
-        {
-            if (visited[i])
+            if (row[i] % 2 == 0 && row[i] + 1 == row[i + 1])
                 continue;
-            result += helper(i);
+
+            int sourceIndex = i + 1;
+            int targetIndex = row[i] % 2 == 0 ? person2IndexMap[row[i] + 1] : person2IndexMap[row[i] - 1];
+            swap(row[sourceIndex], row[targetIndex]);
+            swap(person2IndexMap[row[sourceIndex]], person2IndexMap[row[targetIndex]]);
+            result++;
         }
         return result;
     }
@@ -64,4 +49,16 @@ TEST_F(LeetCodeTest, Example2)
 {
     vector<int> row = {3, 2, 0, 1};
     EXPECT_EQ(solution.minSwapsCouples(row), 0);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    vector<int> row = {5, 3, 4, 2, 1, 0};
+    EXPECT_EQ(solution.minSwapsCouples(row), 1);
+}
+
+TEST_F(LeetCodeTest, Failure2)
+{
+    vector<int> row = {6, 2, 1, 7, 4, 5, 3, 8, 0, 9};
+    EXPECT_EQ(solution.minSwapsCouples(row), 3);
 }
