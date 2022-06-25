@@ -1,4 +1,4 @@
-#include "766_ToeplitzMatrix.h"
+#include "767_ReorganizeString.h"
 
 int main(int argc, char *argv[])
 {
