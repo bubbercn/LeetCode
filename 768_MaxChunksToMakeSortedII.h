@@ -6,7 +6,15 @@ class Solution
 public:
     int maxChunksToSorted(vector<int> &arr)
     {
-        return 0;
+        vector<int> sortedArr(arr);
+        sort(sortedArr.begin(), sortedArr.end());
+        int result = 1;
+        for (int i = 1; i < arr.size(); i++)
+        {
+            if (arr[i] == sortedArr[i])
+                result++;
+        }
+        return result;
     }
 };
 
