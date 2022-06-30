@@ -6,7 +6,52 @@ class Solution
 public:
     vector<string> basicCalculatorIV(string_view expression, vector<string> &evalvars, vector<int> &evalints)
     {
+        unordered_map<string, int> variable2Int;
+        for (int i = 0; i < evalvars.size(); i++)
+        {
+            variable2Int.emplace(evalvars[i], evalints[i]);
+        }
+        vector<string> tokens = tokenize(expression);
         return {};
+    }
+
+private:
+    vector<string> tokenize(string_view expression)
+    {
+        vector<string> result;
+        int begin = -1;
+        for (int i = 0; i < expression.size(); i++)
+        {
+            if (expression[i] == ' ')
+            {
+                if (begin != -1)
+                {
+                    result.emplace_back(expression.substr(begin, i - begin));
+                    begin = -1;
+                }
+            }
+            else if (expression[i] >= 'a' && expression[i] <= 'z')
+            {
+                if (begin == -1)
+                {
+                    begin = i;
+                }
+            }
+            else
+            {
+                if (begin != -1)
+                {
+                    result.emplace_back(expression.substr(begin, i - begin));
+                    begin = -1;
+                }
+                result.emplace_back(1, expression[i]);
+            }
+        }
+        if (begin != -1)
+        {
+            result.emplace_back(expression.substr(begin));
+        }
+        return result;
     }
 };
 
