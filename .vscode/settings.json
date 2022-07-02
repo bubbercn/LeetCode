@@ -81,7 +81,8 @@
         "new": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "__cxx_version": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,

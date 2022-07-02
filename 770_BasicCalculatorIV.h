@@ -1,7 +1,7 @@
 #pragma once
 #include "Common.h"
 
-class cmp
+class str_cmp
 {
 public:
     bool operator()(const string &v1, const string &v2) const
@@ -12,19 +12,58 @@ public:
     }
 };
 
+class map_cmp
+{
+public:
+    bool operator()(const multiset<string, str_cmp> &v1, const multiset<string, str_cmp> &v2) const
+    {
+        if (v1.size() == v2.size())
+            return v1 < v2;
+        return v1.size() > v2.size();
+    }
+};
+
 struct Polynomial
 {
-    map<string, int, cmp> terms;
+    map<multiset<string, str_cmp>, int, map_cmp> terms;
     Polynomial &operator+(const Polynomial &other)
     {
+        for (auto &term : other.terms)
+        {
+            if (terms.find(term.first) == terms.end())
+                terms[term.first] = term.second;
+            else
+                terms[term.first] += term.second;
+        }
         return *this;
     }
     Polynomial &operator-(const Polynomial &other)
     {
+        for (auto &term : other.terms)
+        {
+            if (terms.find(term.first) == terms.end())
+                terms[term.first] = -term.second;
+            else
+                terms[term.first] -= term.second;
+        }
         return *this;
     }
     Polynomial &operator*(const Polynomial &other)
     {
+        Polynomial result;
+        for (auto &term : other.terms)
+        {
+            for (auto &term2 : terms)
+            {
+                multiset<string, str_cmp> key = term.first;
+                key.insert(term2.first.begin(), term2.first.end());
+                if (result.terms.find(key) == result.terms.end())
+                    result.terms[key] = term.second * term2.second;
+                else
+                    result.terms[key] += term.second * term2.second;
+            }
+        }
+        result.terms.swap(terms);
         return *this;
     }
 };
@@ -60,14 +99,7 @@ private:
                     begin = -1;
                 }
             }
-            else if (expression[i] >= 'a' && expression[i] <= 'z')
-            {
-                if (begin == -1)
-                {
-                    begin = i;
-                }
-            }
-            else
+            else if (expression[i] == '(' || expression[i] == ')')
             {
                 if (begin != -1)
                 {
@@ -75,6 +107,13 @@ private:
                     begin = -1;
                 }
                 result.emplace_back(1, expression[i]);
+            }
+            else
+            {
+                if (begin == -1)
+                {
+                    begin = i;
+                }
             }
         }
         if (begin != -1)
@@ -85,8 +124,9 @@ private:
     }
     pair<Polynomial, vector<string>::const_iterator> calculate(vector<string>::const_iterator begin, vector<string>::const_iterator end)
     {
-        vector<Polynomial> polynomials(2);
+        vector<Polynomial> polynomials(3);
         string op;
+        string op2;
         auto it = begin;
         while (it != end)
         {
@@ -105,21 +145,34 @@ private:
                 }
                 else
                 {
-                    auto temp = calculate(it - 1, end);
-                    polynomials[1] = temp.first;
-                    it = temp.second;
+                    op2 = *it;
+                    it++;
                 }
             }
             else if (*it == "(")
             {
                 auto temp = calculate(it + 1, end);
-                if (op.empty())
+                if (op2.empty())
                 {
-                    polynomials[0] = temp.first;
+                    if (op.empty())
+                    {
+                        polynomials[0] = temp.first;
+                    }
+                    else
+                    {
+                        polynomials[1] = temp.first;
+                    }
+                    if (op == "*")
+                    {
+                        polynomials[0] = polynomials[0] * polynomials[1];
+                        op.clear();
+                    }
                 }
                 else
                 {
-                    polynomials[1] = temp.first;
+                    polynomials[2] = temp.first;
+                    polynomials[1] = polynomials[1] * polynomials[2];
+                    op2.clear();
                 }
                 it = temp.second;
             }
@@ -130,18 +183,27 @@ private:
             }
             else
             {
-                if (op.empty())
+                if (op2.empty())
                 {
-                    polynomials[0] = token2Polynomial(*it);
+                    if (op.empty())
+                    {
+                        polynomials[0] = token2Polynomial(*it);
+                    }
+                    else
+                    {
+                        polynomials[1] = token2Polynomial(*it);
+                    }
+                    if (op == "*")
+                    {
+                        polynomials[0] = polynomials[0] * polynomials[1];
+                        op.clear();
+                    }
                 }
                 else
                 {
-                    polynomials[1] = token2Polynomial(*it);
-                }
-                if (op == "*")
-                {
-                    polynomials[0] = polynomials[0] * polynomials[1];
-                    op.clear();
+                    polynomials[2] = token2Polynomial(*it);
+                    polynomials[1] = polynomials[1] * polynomials[2];
+                    op2.clear();
                 }
                 it++;
             }
@@ -158,24 +220,43 @@ private:
         try
         {
             int value = stoi(token.data());
-            result.terms.emplace("", value);
+            result.terms.insert({{}, value});
         }
         catch (const exception &e)
         {
             if (auto it = variable2Int.find(token.data()); it != variable2Int.end())
             {
-                result.terms.emplace("", it->second);
+                result.terms.insert({{}, it->second});
             }
             else
             {
-                result.terms.emplace(token, 1);
+                result.terms.insert({{token.data()}, 1});
             }
         }
         return result;
     }
     vector<string> polynomial2String(const Polynomial &input)
     {
-        return {};
+        vector<string> result;
+        for (auto &term : input.terms)
+        {
+            if (term.second == 0)
+                continue;
+            string unit;
+            for (auto &key : term.first)
+            {
+                unit += "*" + key;
+            }
+            if (term.second > 0)
+            {
+                result.emplace_back(to_string(term.second) + unit);
+            }
+            else
+            {
+                result.emplace_back("-" + to_string(-term.second) + unit);
+            }
+        }
+        return result;
     }
 };
 
@@ -207,4 +288,20 @@ TEST_F(LeetCodeTest, Example3)
     vector<int> evalints = {};
     vector<string> output = {"1*e*e", "-64"};
     EXPECT_EQ(solution.basicCalculatorIV("(e + 8) * (e - 8)", evalvars, evalints), output);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    vector<string> evalvars = {};
+    vector<int> evalints = {};
+    vector<string> output = {"-1*a*a*b*b", "2*a*a*b*c", "-1*a*a*c*c", "1*a*b*b*b", "-1*a*b*b*c", "-1*a*b*c*c", "1*a*c*c*c", "-1*b*b*b*c", "2*b*b*c*c", "-1*b*c*c*c", "2*a*a*b", "-2*a*a*c", "-2*a*b*b", "2*a*c*c", "1*b*b*b", "-1*b*b*c", "1*b*c*c", "-1*c*c*c", "-1*a*a", "1*a*b", "1*a*c", "-1*b*c"};
+    EXPECT_EQ(solution.basicCalculatorIV("((a - b) * (b - c) + (c - a)) * ((a - b) + (b - c) * (c - a))", evalvars, evalints), output);
+}
+
+TEST_F(LeetCodeTest, Failure2)
+{
+    vector<string> evalvars = {};
+    vector<int> evalints = {};
+    vector<string> output = {"137"};
+    EXPECT_EQ(solution.basicCalculatorIV("137", evalvars, evalints), output);
 }
