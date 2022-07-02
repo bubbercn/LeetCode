@@ -1,6 +1,18 @@
 #pragma once
 #include "Common.h"
 
+bool cmp(const pair<int, string>& v1, const pair<int, string>& v2)
+{
+    if (v1.second.length() == v2.second.length())
+        return v1.second < v2.second;
+    return v1.second.length() > v2.second.length();
+}
+
+struct Polynomial
+{
+    set<pair<int, string>, decltype(cmp)> terms;
+};
+
 class Solution
 {
 public:
