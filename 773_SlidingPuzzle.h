@@ -33,3 +33,12 @@ TEST_F(LeetCodeTest, Example2)
     };
     EXPECT_EQ(solution.slidingPuzzle(board), -1);
 }
+
+TEST_F(LeetCodeTest, Example3)
+{
+    vector<vector<int>> board = {
+        {4, 1, 2},
+        {5, 0, 3},
+    };
+    EXPECT_EQ(solution.slidingPuzzle(board), 5);
+}
