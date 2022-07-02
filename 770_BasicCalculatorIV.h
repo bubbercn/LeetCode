@@ -1,16 +1,32 @@
 #pragma once
 #include "Common.h"
 
-bool cmp(const pair<int, string>& v1, const pair<int, string>& v2)
+class cmp
 {
-    if (v1.second.length() == v2.second.length())
-        return v1.second < v2.second;
-    return v1.second.length() > v2.second.length();
-}
+public:
+    bool operator()(const string &v1, const string &v2) const
+    {
+        if (v1.length() == v2.length())
+            return v1 < v2;
+        return v1.length() > v2.length();
+    }
+};
 
 struct Polynomial
 {
-    set<pair<int, string>, decltype(cmp)> terms;
+    map<string, int, cmp> terms;
+    Polynomial &operator+(const Polynomial &other)
+    {
+        return *this;
+    }
+    Polynomial &operator-(const Polynomial &other)
+    {
+        return *this;
+    }
+    Polynomial &operator*(const Polynomial &other)
+    {
+        return *this;
+    }
 };
 
 class Solution
@@ -18,16 +34,18 @@ class Solution
 public:
     vector<string> basicCalculatorIV(string_view expression, vector<string> &evalvars, vector<int> &evalints)
     {
-        unordered_map<string, int> variable2Int;
+        variable2Int.clear();
         for (int i = 0; i < evalvars.size(); i++)
         {
             variable2Int.emplace(evalvars[i], evalints[i]);
         }
         vector<string> tokens = tokenize(expression);
-        return {};
+        Polynomial result = calculate(tokens.begin(), tokens.end()).first;
+        return polynomial2String(result);
     }
 
 private:
+    unordered_map<string, int> variable2Int;
     vector<string> tokenize(string_view expression)
     {
         vector<string> result;
@@ -64,6 +82,100 @@ private:
             result.emplace_back(expression.substr(begin));
         }
         return result;
+    }
+    pair<Polynomial, vector<string>::const_iterator> calculate(vector<string>::const_iterator begin, vector<string>::const_iterator end)
+    {
+        vector<Polynomial> polynomials(2);
+        string op;
+        auto it = begin;
+        while (it != end)
+        {
+            if (*it == "+" || *it == "-" || *it == "*")
+            {
+                if (op.empty())
+                {
+                    op = *it;
+                    it++;
+                }
+                else if (*it == "+" || *it == "-")
+                {
+                    polynomials[0] = op == "+" ? polynomials[0] + polynomials[1] : polynomials[0] - polynomials[1];
+                    op = *it;
+                    it++;
+                }
+                else
+                {
+                    auto temp = calculate(it - 1, end);
+                    polynomials[1] = temp.first;
+                    it = temp.second;
+                }
+            }
+            else if (*it == "(")
+            {
+                auto temp = calculate(it + 1, end);
+                if (op.empty())
+                {
+                    polynomials[0] = temp.first;
+                }
+                else
+                {
+                    polynomials[1] = temp.first;
+                }
+                it = temp.second;
+            }
+            else if (*it == ")")
+            {
+                it++;
+                break;
+            }
+            else
+            {
+                if (op.empty())
+                {
+                    polynomials[0] = token2Polynomial(*it);
+                }
+                else
+                {
+                    polynomials[1] = token2Polynomial(*it);
+                }
+                if (op == "*")
+                {
+                    polynomials[0] = polynomials[0] * polynomials[1];
+                    op.clear();
+                }
+                it++;
+            }
+        }
+        if (!op.empty())
+        {
+            polynomials[0] = op == "+" ? polynomials[0] + polynomials[1] : polynomials[0] - polynomials[1];
+        }
+        return {polynomials[0], it};
+    }
+    Polynomial token2Polynomial(string_view token)
+    {
+        Polynomial result;
+        try
+        {
+            int value = stoi(token.data());
+            result.terms.emplace("", value);
+        }
+        catch (const exception &e)
+        {
+            if (auto it = variable2Int.find(token.data()); it != variable2Int.end())
+            {
+                result.terms.emplace("", it->second);
+            }
+            else
+            {
+                result.terms.emplace(token, 1);
+            }
+        }
+        return result;
+    }
+    vector<string> polynomial2String(const Polynomial &input)
+    {
+        return {};
     }
 };
 
