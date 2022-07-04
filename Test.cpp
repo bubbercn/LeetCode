@@ -1,4 +1,4 @@
-#include "773_SlidingPuzzle.h"
+#include "775_GlobalAndLocalInversions.h"
 
 int main(int argc, char *argv[])
 {
