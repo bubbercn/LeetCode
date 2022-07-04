@@ -1,4 +1,4 @@
-#include "775_GlobalAndLocalInversions.h"
+#include "777_SwapAdjacentInLRString.h"
 
 int main(int argc, char *argv[])
 {

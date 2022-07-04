@@ -6,7 +6,17 @@ class Solution
 public:
     bool isIdealPermutation(vector<int> &nums)
     {
-        return false;
+        int n = nums.size();
+        if (n <= 2)
+            return true;
+        int min = nums[n - 1];
+        for (int i = n - 3; i >= 0; i--)
+        {
+            if (nums[i] > min)
+                return false;
+            min = ::min(min, nums[i + 1]);
+        }
+        return true;
     }
 };
 
