@@ -6,60 +6,32 @@ class Solution
 public:
     bool canTransform(string_view start, string_view end)
     {
-        int n = start.size();
-        int xIndex1 = -1, xIndex2 = -1;
-        for (int i = 0; i < n; ++i)
+        int n = start.length();
+        string s, t;
+        vector<int> s_pos, t_pos;
+        for (int i = 0; i < n; i++)
         {
-            if (start[i] == end[i])
-                continue;
-
-            if (start[i] == 'X')
+            if (start[i] != 'X')
             {
-                if (xIndex1 == -1)
-                {
-                    xIndex1 = i;
-                }
-                else
-                {
-                    return false;
-                }
+                s.push_back(start[i]);
+                s_pos.push_back(i);
             }
-            if (end[i] == 'X')
+            if (end[i] != 'X')
             {
-                if (xIndex2 == -1)
-                {
-                    xIndex2 = i;
-                }
-                else
-                {
-                    return false;
-                }
+                t.push_back(end[i]);
+                t_pos.push_back(i);
             }
-            if (xIndex1 != -1 && xIndex2 != -1)
-            {
-                if (xIndex1 < xIndex2)
-                {
-                    if (start.substr(xIndex1 + 1, xIndex2 - xIndex1) != end.substr(xIndex1, xIndex2 - xIndex1))
-                        return false;
-                    
-                }
-                else
-                {
-
-                }
-                xIndex1 = -1;
-                xIndex2 = -1;
-            }
-            else if (xIndex1 != -1 || xIndex2 != -1)
-            {
+        }
+        if (s != t)
+            return false;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] == 'L' && s_pos[i] < t_pos[i])
                 return false;
-            }
+            if (s[i] == 'R' && s_pos[i] > t_pos[i])
+                return false;
         }
-        if (xIndex1 == -1 && xIndex2 == -1)
-        {
-            return true;
-        }
-        return false;
+        return true;
     }
 };
 
@@ -77,4 +49,24 @@ TEST_F(LeetCodeTest, Example1)
 TEST_F(LeetCodeTest, Example2)
 {
     EXPECT_EQ(solution.canTransform("X", "L"), false);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.canTransform("LLR", "RRL"), false);
+}
+
+TEST_F(LeetCodeTest, Failure2)
+{
+    EXPECT_EQ(solution.canTransform("LXXLXRLXXL", "XLLXRXLXLX"), false);
+}
+
+TEST_F(LeetCodeTest, Failure3)
+{
+    EXPECT_EQ(solution.canTransform("XXXXXLXXXX", "LXXXXXXXXX"), true);
+}
+
+TEST_F(LeetCodeTest, Failure4)
+{
+    EXPECT_EQ(solution.canTransform("XLXRRXXRXX", "LXXXXXXRRR"), true);
 }
