@@ -6,17 +6,14 @@ class Solution
 public:
     int pivotIndex(vector<int> &nums)
     {
-        int sum = accumulate(nums.begin(), nums.end(), 0);
-        int left = 0;
-        int right = sum - nums[0];
-        if (left == right)
-            return 0;
-        for (int i = 1; i < nums.size(); i++)
+        int leftSum = 0;
+        int rightSum = accumulate(nums.begin(), nums.end(), 0);
+        for (int i = 0; i < nums.size(); i++)
         {
-            left += nums[i - 1];
-            right -= nums[i];
-            if (left == right)
+            rightSum -= nums[i];
+            if (leftSum == rightSum)
                 return i;
+            leftSum += nums[i];
         }
         return -1;
     }
