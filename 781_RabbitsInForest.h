@@ -14,7 +14,8 @@ public:
         int result = 0;
         for (auto [otherCount, answerCount] : lookup)
         {
-            result += (answerCount % (otherCount + 1)) * otherCount + answerCount;
+            int temp = otherCount + 1;
+            result += answerCount % temp ? (answerCount / temp + 1) * temp : answerCount / temp * temp;
         }
         return result;
     }
