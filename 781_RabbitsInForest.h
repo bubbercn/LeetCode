@@ -6,7 +6,17 @@ class Solution
 public:
     int numRabbits(vector<int> &answers)
     {
-        return 0;
+        unordered_map<int, int> lookup;
+        for (int i = 0; i < answers.size(); i++)
+        {
+            lookup[answers[i]]++;
+        }
+        int result = 0;
+        for (auto [otherCount, answerCount] : lookup)
+        {
+            result += (answerCount % (otherCount + 1)) * otherCount + answerCount;
+        }
+        return result;
     }
 };
 
