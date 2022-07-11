@@ -1,4 +1,4 @@
-#include "785_IsGraphBipartite.h"
+#include "789_EscapeTheGhosts.h"
 
 int main(int argc, char *argv[])
 {
