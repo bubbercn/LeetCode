@@ -6,7 +6,14 @@ class Solution
 public:
     bool escapeGhosts(vector<vector<int>> &ghosts, vector<int> &target)
     {
-        return false;
+        int dis = abs(target[0]) + abs(target[1]);
+        for (auto &ghost : ghosts)
+        {
+            int dis2 = abs(ghost[0] - target[0]) + abs(ghost[1] - target[1]);
+            if (dis2 <= dis)
+                return false;
+        }
+        return true;
     }
 };
 
