@@ -6,7 +6,26 @@ class Solution
 public:
     vector<string> letterCasePermutation(string_view s)
     {
-        return {};
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] < '0' || s[i] > '9')
+            {
+                vector<string> cur;
+                cur.emplace_back(string(s.substr(0, i)) + static_cast<char>(tolower(s[i])));
+                cur.emplace_back(string(s.substr(0, i)) + static_cast<char>(toupper(s[i])));
+                vector<string> next = letterCasePermutation(s.substr(i + 1));
+                vector<string> result;
+                for (const auto &str : cur)
+                {
+                    for (const auto &str2 : next)
+                    {
+                        result.emplace_back(str + str2);
+                    }
+                }
+                return result;
+            }
+        }
+        return {string(s)};
     }
 };
 
