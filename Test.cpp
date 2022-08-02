@@ -1,4 +1,4 @@
-#include "797_AllPathsFromSourceToTarget.h"
+#include "798_SmallestRotationWithHighestScore.h"
 
 int main(int argc, char *argv[])
 {

@@ -6,7 +6,28 @@ class Solution
 public:
     vector<vector<int>> allPathsSourceTarget(vector<vector<int>> &graph)
     {
-        return {};
+        vector<vector<int>> result;
+        vector<int> path;
+        dfs(graph, 0, path, result);
+        return result;
+    }
+
+private:
+    void dfs(vector<vector<int>> &graph, int cur, vector<int> &path, vector<vector<int>> &result)
+    {
+        path.push_back(cur);
+        if (cur == graph.size() - 1)
+        {
+            result.push_back(path);
+        }
+        else
+        {
+            for (int next : graph[cur])
+            {
+                dfs(graph, next, path, result);
+            }
+        }
+        path.pop_back();
     }
 };
 
