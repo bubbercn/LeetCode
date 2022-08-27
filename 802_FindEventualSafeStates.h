@@ -6,7 +6,48 @@ class Solution
 public:
     vector<int> eventualSafeNodes(vector<vector<int>> &graph)
     {
-        return {};
+        unordered_map<int, unordered_set<int>> graphMap;
+        unordered_map<int, unordered_set<int>> lookup;
+        vector<int> safeNodes;
+        for (int i = 0; i < graph.size(); i++)
+        {
+            if (graph[i].empty())
+            {
+                safeNodes.emplace_back(i);
+                continue;
+            }
+            unordered_set<int> &nodes = graphMap[i];
+            for (int j = 0; j < graph[i].size(); j++)
+            {
+                nodes.emplace(graph[i][j]);
+                lookup[graph[i][j]].emplace(i);
+            }
+        }
+        vector<int> result;
+        while (!safeNodes.empty())
+        {
+            result.insert(result.end(), safeNodes.begin(), safeNodes.end());
+            vector<int> nextSafeNodes;
+            for (auto node : safeNodes)
+            {
+                if (auto it = lookup.find(node); it != lookup.end())
+                {
+                    for (auto neighbor : it->second)
+                    {
+                        graphMap[neighbor].erase(node);
+                        if (graphMap[neighbor].empty())
+                        {
+                            nextSafeNodes.emplace_back(neighbor);
+                            graphMap.erase(neighbor);
+                            lookup.erase(neighbor);
+                        }
+                    }
+                }
+            }
+            safeNodes.swap(nextSafeNodes);
+        }
+        sort(result.begin(), result.end());
+        return result;
     }
 };
 
