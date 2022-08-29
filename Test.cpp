@@ -1,4 +1,4 @@
-#include "803_BricksFallingWhenHit.h"
+#include "805_SplitArrayWithSameAverage.h"
 
 int main(int argc, char *argv[])
 {
