@@ -6,7 +6,41 @@ class Solution
 public:
     int maxIncreaseKeepingSkyline(vector<vector<int>> &grid)
     {
-        return 0;
+        int m = grid.size();
+        int n = grid[0].size();
+
+        vector<int> maxRow(m, 0);
+        for (int i = 0; i < m; i++)
+        {
+            int max = 0;
+            for (int j = 0; j < n; j++)
+            {
+                max = ::max(max, grid[i][j]);
+            }
+            maxRow[i] = max;
+        }
+
+        vector<int> maxColum(n, 0);
+        for (int j = 0; j < n; j++)
+        {
+            int max = 0;
+            for (int i = 0; i < m; i++)
+            {
+                max = ::max(max, grid[i][j]);
+            }
+            maxColum[j] = max;
+        }
+
+        int result = 0;
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                result += min(maxRow[i], maxColum[j]) - grid[i][j];
+            }
+        }
+
+        return result;
     }
 };
 
