@@ -6,21 +6,24 @@ class Solution
 public:
     double soupServings(int n)
     {
+        if (n >= 5000)
+            return 1;
         lookup.clear();
         return helper(n, n, 1);
     }
+
 private:
     double helper(int a, int b, double p)
     {
         if (a <= 0 && b <= 0)
             return p / 2;
-        
+
         if (a <= 0)
             return p;
 
         if (b <= 0)
             return 0;
-        
+
         if (auto it1 = lookup.find(a); it1 != lookup.end())
         {
             if (auto it2 = it1->second.find(b); it2 != it1->second.end())
@@ -29,7 +32,7 @@ private:
             }
         }
 
-        double result = helper(a -100, b, p * 0.25) + helper(a -75, b - 25, p * 0.25) + helper(a - 50, b - 50, p * 0.25) + helper(a -25, b - 75, p * 0.25);
+        double result = helper(a - 100, b, p * 0.25) + helper(a - 75, b - 25, p * 0.25) + helper(a - 50, b - 50, p * 0.25) + helper(a - 25, b - 75, p * 0.25);
         lookup[a][b] = result / p;
         return result;
     }
