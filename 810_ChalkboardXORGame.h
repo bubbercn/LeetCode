@@ -6,7 +6,15 @@ class Solution
 public:
     bool xorGame(vector<int> &nums)
     {
-        return false;
+        int temp = 0;
+        for (auto num : nums)
+        {
+            temp ^= num;
+        }
+        if (temp == 0)
+            return true;
+        
+        return (nums.size() & 1) == 0;
     }
 };
 
