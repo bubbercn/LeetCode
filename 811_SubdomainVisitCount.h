@@ -6,7 +6,27 @@ class Solution
 public:
     vector<string> subdomainVisits(vector<string> &cpdomains)
     {
-        return {};
+        unordered_map<string, int> lookup;
+        for (auto& cpdomain : cpdomains)
+        {
+            int count = 0;
+            int begin = 0, end = 0;
+            end = cpdomain.find(' ');
+            count = stoi(cpdomain.substr(0, end));
+            do
+            {
+                begin = end + 1;
+                lookup[cpdomain.substr(begin)] += count;
+                end = cpdomain.find('.', begin);
+            } while (end != string::npos);
+        }
+        vector<string> result;
+        for (auto& [s, c] : lookup)
+        {
+            string temp = to_string(c) + ' ' + s;
+            result.emplace_back(temp);
+        }
+        return result;
     }
 };
 
