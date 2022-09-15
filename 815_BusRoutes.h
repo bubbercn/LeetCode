@@ -6,7 +6,55 @@ class Solution
 public:
     int numBusesToDestination(vector<vector<int>> &routes, int source, int target)
     {
-        return 0;
+        int n = routes.size();
+        unordered_map<int, unordered_set<int>> stop2Buses;
+        vector<unordered_set<int>> bus2Stops(n);
+        for (int i = 0; i < n; i++)
+        {
+            auto& route = routes[i];
+            for (auto stop : route)
+            {
+                stop2Buses[stop].emplace(i);
+                bus2Stops[i].emplace(stop);
+            }
+        }
+
+        if (source == target)
+            return 0;
+        
+        int result = 1;
+        vector<bool> visited(n, false);
+        list<int> cur;
+        for (auto bus : stop2Buses[source])
+        {
+            cur.emplace_back(bus);
+            visited[bus] = true;
+        }
+        while (!cur.empty())
+        {
+            list<int> next;
+            for (auto bus : cur)
+            {
+                auto& stops = bus2Stops[bus];
+                if (auto it = stops.find(target); it != stops.end())
+                    return result;
+                
+                for (auto stop : stops)
+                {
+                    for (auto bus : stop2Buses[stop])
+                    {
+                        if (visited[bus])
+                            continue;
+                        
+                        next.emplace_back(bus);
+                        visited[bus] = true;
+                    }
+                }
+            }
+            result++;
+            cur.swap(next);
+        }
+        return -1;
     }
 };
 
