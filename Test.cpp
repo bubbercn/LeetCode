@@ -1,4 +1,4 @@
-#include "820_ShortEncodingOfWords.h"
+#include "822_CardFlippingGame.h"
 
 int main(int argc, char *argv[])
 {
