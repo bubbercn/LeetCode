@@ -6,7 +6,33 @@ class Solution
 public:
     int flipgame(vector<int> &fronts, vector<int> &backs)
     {
-        return 0;
+        vector<int> cards;
+        unordered_set<int> ban;
+        for (int i = 0; i < fronts.size(); i++)
+        {
+            if (fronts[i] == backs[i])
+            {
+                ban.emplace(fronts[i]);
+            }
+        }
+
+        int result = numeric_limits<int>::max();
+        for (int i = 0; i < fronts.size(); i++)
+        {
+            if (ban.count(fronts[i]) == 0)
+            {
+                result = min(result, fronts[i]);
+            }
+        }
+        for (int i = 0; i < backs.size(); i++)
+        {
+            if (ban.count(backs[i]) == 0)
+            {
+                result = min(result, backs[i]);
+            }
+        }
+
+        return result == numeric_limits<int>::max() ? 0 : result;
     }
 };
 
