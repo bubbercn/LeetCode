@@ -6,7 +6,35 @@ class Solution
 public:
     int numFriendRequests(vector<int> &ages)
     {
-        return 0;
+        int n = ages.size();
+        sort(ages.begin(), ages.end());
+        int result = 0;
+        for (int i = 0; i < n; i++)
+        {
+            size_t low = -1;
+            size_t high = -1;
+            // case 1
+            auto it = upper_bound(ages.begin(), ages.end(), (ages[i] >> 1) + 7);
+            low = distance(ages.begin(), it);
+
+            // case 2            
+            it = upper_bound(ages.begin(), ages.end(), ages[i]);
+            high = distance(ages.begin(), it);
+
+            if (ages[i] < 100)
+            {
+                it = upper_bound(ages.begin(), ages.end(), 100);
+                high = min(high, static_cast<size_t>(distance(ages.begin(), it)));
+            }
+
+            if (high > low)
+            {
+                result += high - low;
+                if (i >= low && i < high)
+                    result--;
+            }
+        }
+        return result;
     }
 };
 
