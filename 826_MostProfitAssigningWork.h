@@ -1,12 +1,40 @@
 #pragma once
 #include "Common.h"
 
+struct Job
+{
+    int difficulty;
+    int profit;
+    bool operator < (const Job& another)
+    {
+        return this->profit < another.profit;
+    }
+};
+
 class Solution
 {
 public:
     int maxProfitAssignment(vector<int> &difficulty, vector<int> &profit, vector<int> &worker)
     {
-        return 0;
+        int jobCount = difficulty.size();
+        vector<Job> jobs(jobCount);
+        for (int i = 0; i < jobCount; i++)
+        {
+            jobs[i].difficulty = difficulty[i];
+            jobs[i].profit = profit[i];
+        }
+        
+        sort(jobs.begin(), jobs.end());
+        sort(worker.begin(), worker.end());
+
+        int result = 0;
+        for (int i = jobCount - 1; i >= 0 && !worker.empty(); i--)
+        {
+            auto it = lower_bound(worker.begin(), worker.end(), jobs[i].difficulty);
+            result += distance(it, worker.end()) * jobs[i].profit;
+            worker.erase(it, worker.end());
+        }
+        return result;
     }
 };
 
