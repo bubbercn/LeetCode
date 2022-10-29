@@ -6,7 +6,23 @@ class Solution
 public:
     int uniqueLetterString(string_view s)
     {
-        return 0;
+        int n= s.length();
+        vector<list<int>> pos(26);
+        for (int i = 0; i < n; i++)
+        {
+            pos[s[i] - 'A'].emplace_back(i);
+        }
+        int result = 0;
+        for (auto& posList : pos)
+        {
+            for (auto it = posList.begin(); it != posList.end(); it++)
+            {
+                int left = it == posList.begin() ? -1 : *prev(it);
+                int right = next(it) == posList.end() ? n : *next(it);
+                result += (*it - left) * (right - *it);
+            }
+        }
+        return result;
     }
 };
 
