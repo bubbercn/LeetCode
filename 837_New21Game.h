@@ -6,7 +6,22 @@ class Solution
 public:
     double new21Game(int n, int k, int maxPts)
     {
-        return 0;
+        if (n - k + 1 >= maxPts)
+            return 1;
+
+        vector<double> dp(k + maxPts);
+        for (int i = k; i <= n; i++)
+        {
+            dp[i] = 1.0;
+        }
+        double sumProb = n - k + 1;
+        for (int i = k - 1; i >= 0; i--)
+        {
+            dp[i] = sumProb / maxPts;
+            sumProb = sumProb - dp[i + maxPts] + dp[i];
+        }
+
+        return dp[0];
     }
 };
 
@@ -29,4 +44,9 @@ TEST_F(LeetCodeTest, Example2)
 TEST_F(LeetCodeTest, Example3)
 {
     EXPECT_EQ(solution.new21Game(21, 17, 10), 0.73278);
+}
+
+TEST_F(LeetCodeTest, Case1)
+{
+    EXPECT_EQ(solution.new21Game(10, 2, 10), 0.99);
 }
