@@ -6,7 +6,32 @@ class Solution
 public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
-        return false;
+        int n = rooms.size();
+        vector<bool> visited(n);
+        list<int> keys = {0};
+        visited[0] = true;
+        while (not keys.empty())
+        {
+            list<int> next;
+            for (auto key : keys)
+            {
+                for (auto nextKey : rooms[key])
+                {
+                    if (visited[nextKey])
+                        continue;
+                    visited[nextKey] = true;
+                    next.emplace_back(nextKey);
+                }
+            }
+            next.swap(keys);
+        }
+        int count = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (visited[i])
+                count++;
+        }
+        return count == n;
     }
 };
 
