@@ -19,13 +19,6 @@ private:
         if (length < 2)
             return {};
 
-        if (length == 2)
-        {
-            int n1 = num[0] - '0';
-            int n2 = num[1] - '0';
-                return {{n1, n2}};
-        }
-
         if (auto it = lookup.find(length); it != lookup.end())
             return it->second;
 
@@ -33,14 +26,25 @@ private:
         vector<vector<int>> result;
         for (int i = 1; i <= limit; i++)
         {
-            if (i != 1 and num[length - i] == '0')
+            int n3 = string2Int(num, length - i, i);
+            if (n3 == -1)
                 continue;
 
-            int n3 = stoi(string(num.substr(length - i, i)));
+            for (int j = 1; j < length - i; j++)
+            {
+                int n1 = string2Int(num, 0, j);
+                if (n1 == -1)
+                    continue;
+                int n2 = string2Int(num, j, length - i - j);
+                if (n2 == -1)
+                    continue;
+                if (n3 - n1 == n2)
+                    result.push_back({n1, n2, n3});
+            }
             vector<vector<int>> temp = helper(num, length - i);
             for (auto pre : temp)
             {
-                if (*pre.rbegin() + *(++pre.rbegin()) == n3)
+                if (*(++pre.rbegin()) == n3 - *pre.rbegin())
                 {
                     pre.emplace_back(n3);
                     result.emplace_back(pre);
@@ -49,6 +53,22 @@ private:
         }
         lookup[length] = result;
         return result;
+    }
+
+    int string2Int(string_view num, int begin, int length)
+    {
+        if (length != 1 and num[begin] == '0')
+            return -1;
+        if (length > 10)
+            return -1;
+        try
+        {
+            return stoi(string(num.substr(begin, length)));
+        }
+        catch(const std::out_of_range&)
+        {
+            return -1;
+        }
     }
 
     unordered_map<int, vector<vector<int>>> lookup;
@@ -76,4 +96,10 @@ TEST_F(LeetCodeTest, Example3)
 {
     vector<int> output = {};
     EXPECT_EQ(solution.splitIntoFibonacci("0123"), output);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    vector<int> output = {};
+    EXPECT_EQ(solution.splitIntoFibonacci("214748364721474836422147483641"), output);
 }
