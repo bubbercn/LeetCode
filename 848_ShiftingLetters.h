@@ -6,7 +6,17 @@ class Solution
 public:
     string shiftingLetters(string_view s, vector<int> &shifts)
     {
-        return {};
+        int n = s.length();
+        string result;
+        result.resize(n);
+        int shift = 0;
+        for (int i = n - 1; i >= 0; i--)
+        {
+            shift += shifts[i];
+            shift %= 26;
+            result[i] = (s[i] - 'a' + shift) % 26 + 'a';
+        }
+        return result;
     }
 };
 
