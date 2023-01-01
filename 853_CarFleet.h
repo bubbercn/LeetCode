@@ -1,12 +1,52 @@
 #pragma once
 #include "Common.h"
 
+struct Car
+{
+    int position;
+    int speed;
+};
+
 class Solution
 {
 public:
     int carFleet(int target, vector<int> &position, vector<int> &speed)
     {
-        return 0;
+
+        int n = position.size();
+        vector<Car> cars(n);
+        for (int i = 0; i < n; i++)
+        {
+            cars[i].position = position[i];
+            cars[i].speed = speed[i];
+        }
+        sort(cars.begin(), cars.end(), [](const Car &car1, const Car &car2)
+             { return car1.position < car2.position; });
+        stack<Car> fleets;
+        for (auto &car : cars)
+        {
+            while (!fleets.empty())
+            {
+                if (canMerge(fleets.top(), car, target))
+                {
+                    fleets.pop();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            fleets.emplace(car);
+        }
+        return fleets.size();
+    }
+
+private:
+    bool canMerge(const Car &car1, const Car &car2, int target)
+    {
+        long v1 = target - car1.position;
+        long v2 = target - car2.position;
+        return v1 * car2.speed <= v2 * car1.speed;
     }
 };
 

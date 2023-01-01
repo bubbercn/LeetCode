@@ -4,7 +4,7 @@
 class Solution
 {
 public:
-    int XXX()
+    int kSimilarity(string_view s1, string_view s2)
     {
         return 0;
     }
@@ -18,5 +18,10 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    EXPECT_EQ(solution.XXX(), 0);
+    EXPECT_EQ(solution.kSimilarity("ab", "ba"), 1);
+}
+
+TEST_F(LeetCodeTest, Example2)
+{
+    EXPECT_EQ(solution.kSimilarity("abc", "cba"), 1);
 }
