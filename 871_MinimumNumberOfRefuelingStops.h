@@ -6,7 +6,27 @@ class Solution
 public:
     int minRefuelStops(int target, int startFuel, vector<vector<int>> &stations)
     {
-        return 0;
+        int fuel = startFuel;
+        sort(stations.begin(), stations.end(), [](const vector<int>&v1, const vector<int>& v2){
+            return v1[0] < v2[0];
+        });
+        priority_queue<int> pq;
+        int i = 0;
+        int result = 0;
+        while (fuel < target)
+        {
+            while (i < stations.size() && fuel >= stations[i][0])
+            {
+                pq.emplace(stations[i][1]);
+                i++;
+            }
+            if (pq.empty())
+                return -1;
+            fuel += pq.top();
+            pq.pop();
+            result++;
+        }
+        return result;
     }
 };
 
