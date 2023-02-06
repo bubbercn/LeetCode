@@ -1,4 +1,4 @@
-#include "875_KokoEatingBananas.h"
+#include "877_StoneGame.h"
 
 int main(int argc, char *argv[])
 {
