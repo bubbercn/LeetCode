@@ -1,4 +1,4 @@
-#include "878_NthMagicalNumber.h"
+#include "879_ProfitableSchemes.h"
 
 int main(int argc, char *argv[])
 {
