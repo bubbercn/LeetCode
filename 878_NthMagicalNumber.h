@@ -4,9 +4,9 @@
 class Solution
 {
 public:
-    bool stoneGame(vector<int> &piles)
+    int nthMagicalNumber(int n, int a, int b)
     {
-        return true;
+        return 0;
     }
 };
 
@@ -18,12 +18,10 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    vector<int> piles = {5, 3, 4, 5};
-    EXPECT_EQ(solution.stoneGame(piles), true);
+    EXPECT_EQ(solution.nthMagicalNumber(1, 2, 3), 2);
 }
 
 TEST_F(LeetCodeTest, Example2)
 {
-    vector<int> piles = {3, 7, 2, 3};
-    EXPECT_EQ(solution.stoneGame(piles), true);
+    EXPECT_EQ(solution.nthMagicalNumber(4, 2, 3), 6);
 }

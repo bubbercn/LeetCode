@@ -1,4 +1,4 @@
-#include "877_StoneGame.h"
+#include "878_NthMagicalNumber.h"
 
 int main(int argc, char *argv[])
 {
