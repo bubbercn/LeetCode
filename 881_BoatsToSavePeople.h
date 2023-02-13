@@ -6,7 +6,19 @@ class Solution
 public:
     int numRescueBoats(vector<int> &people, int limit)
     {
-        return 0;
+        multiset<int> peopleSet(people.begin(), people.end());
+        int result = 0;
+        while (!peopleSet.empty())
+        {
+            int target = limit - *peopleSet.begin();
+            peopleSet.erase(peopleSet.begin());
+            if (auto it = peopleSet.upper_bound(target); it != peopleSet.begin())
+            {
+                peopleSet.erase(--it);
+            }
+            result++;
+        }
+        return result;
     }
 };
 
