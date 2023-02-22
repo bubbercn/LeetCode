@@ -6,50 +6,79 @@ class Solution
 public:
     int reachableNodes(vector<vector<int>> &edges, int maxMoves, int n)
     {
-        unordered_map<int, unordered_map<int, int>> lookup;
+        vector<vector<int>> lookup(n, vector<int>(n, numeric_limits<int>::max()));
         for (auto &edge : edges)
         {
-            lookup[edge[0]].emplace(edge[1], edge[2] + 1);
-            lookup[edge[1]].emplace(edge[0], edge[2] + 1);
+            lookup[edge[0]][edge[1]] = edge[2] + 1;
+            lookup[edge[1]][edge[0]] = edge[2] + 1;
         }
-        vector<vector<int>> visited(n, vector<int>(n));
-        visited[0][0] = 1;
-        map<int, int, std::greater<int>> next;
-        next.emplace(maxMoves, 0);
-        while (!next.empty())
-        {
-            map<int, int, std::greater<int>> temp;
-            for (auto [left, from] : next)
-            {
-                if (auto it = lookup.find(from); it != lookup.end())
-                {
-                    for (auto [to, distance] : it->second)
-                    {
-                        if (visited[to][from] >= distance)
-                           continue;
-
-                        if (left >= distance)
-                        {
-                            visited[from][to] = distance;
-                            visited[to][to] = 1;
-                            temp.emplace(left - distance, to);
-                        }
-                        else
-                        {
-                            visited[from][to] = max(left, visited[from][to]);
-                        }
-                    }
-                }
-            }
-            next.swap(temp);
-        }
-        int result = 0;
         for (int i = 0; i < n; i++)
         {
-            result += visited[i][i];
+            lookup[i][i] = 0;
+        }
+        vector<int> minDistance(n, numeric_limits<int>::max());
+        for (int i = 0; i < n; i++)
+        {
+            minDistance[i] = lookup[0][i];
+        }
+        unordered_set<int> visited;
+        visited.emplace(0);
+        auto cmp = [&minDistance](int i1, int i2) {
+            return i1 < i2;
+        };
+        unordered_set<int> unVisited;
+        for (int i = 1; i < n; i++)
+        {
+            unVisited.emplace(i);
+        }
+        
+        while (!unVisited.empty())
+        {
+            int v = 0;
+            int m = numeric_limits<int>::max();
+            for (auto to : unVisited)
+            {
+                if (minDistance[to] < m)
+                {
+                    m = minDistance[to];
+                    v = to;
+                }
+            }
+            if (m > maxMoves)
+                break;
+            
+            for (int to = 0; to < n; to++)
+            {
+                if (lookup[v][to] == numeric_limits<int>::max())
+                    continue;
+                minDistance[to] = min(minDistance[to], minDistance[v] + lookup[v][to]);
+            }
+            unVisited.erase(v);
+            visited.emplace(v);
+        }
+
+        int result = 0;
+        vector<vector<int>> go(n, vector<int>(n));
+        for (int i = 0; i < n; i++)
+        {
+            if (minDistance[i] <= maxMoves)
+            {
+                result++;
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == i)
+                        continue;
+                    go[i][j] = min(maxMoves - minDistance[i], lookup[i][j]);
+                }
+            }
+        }
+        for (int i = 0; i < n; i++)
+        {
             for (int j = i + 1; j < n; j++)
             {
-                int temp = visited[i][j] + visited[j][i];
+                if (lookup[i][j] == numeric_limits<int>::max())
+                    continue;
+                int temp = go[i][j] + go[j][i];
                 if (temp != 0)
                 {
                     result += min(temp, lookup[i][j] - 1);
