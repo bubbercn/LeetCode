@@ -6,7 +6,23 @@ class Solution
 public:
     int projectionArea(vector<vector<int>> &grid)
     {
-        return 0;
+        int n = grid.size();
+        int result = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int max1 = 0;
+            int max2 = 0;
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j])
+                    result++;
+                max1 = ::max(max1, grid[i][j]);
+                max2 = ::max(max2, grid[j][i]);
+            }
+            result += max1;
+            result += max2;
+        }
+        return result;
     }
 };
 
