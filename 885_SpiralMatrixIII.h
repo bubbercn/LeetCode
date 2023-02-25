@@ -6,7 +6,46 @@ class Solution
 public:
     vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart)
     {
-        return {};
+        int x = rStart;
+        int y = cStart;
+        vector<vector<int>> result;
+        result.push_back({x, y});
+        int total = rows * cols;
+        auto addPoint = [&]()
+        {
+            if (x >= 0 && x < rows && y >= 0 && y < cols)
+            {
+                result.push_back({x, y});
+            }
+        };
+        int length = 2;
+        while (result.size() < total)
+        {
+            y++;
+            addPoint();
+            for (int i = 0; i < length - 1; i++)
+            {
+                x++;
+                addPoint();
+            }
+            for (int i = 0; i < length; i++)
+            {
+                y--;
+                addPoint();
+            }
+            for (int i = 0; i < length; i++)
+            {
+                x--;
+                addPoint();
+            }
+            for (int i = 0; i < length; i++)
+            {
+                y++;
+                addPoint();
+            }
+            length += 2;
+        }
+        return result;
     }
 };
 
