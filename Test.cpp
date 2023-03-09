@@ -1,4 +1,4 @@
-#include "891_SumOfSubsequenceWidths.h"
+#include "893_GroupsOfSpecialEquivalentStrings.h"
 
 int main(int argc, char *argv[])
 {
