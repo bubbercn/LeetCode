@@ -6,7 +6,34 @@ class Solution
 public:
     int numSpecialEquivGroups(vector<string> &words)
     {
-        return 0;
+        unordered_set<string> result;
+        for (auto &word : words)
+        {
+            string pattern = getPattern(word);
+            result.emplace(pattern);
+        }
+        return result.size();
+    }
+
+private:
+    string getPattern(string_view word)
+    {
+        string s1;
+        string s2;
+        for (int i = 0; i < word.length(); i++)
+        {
+            if (i % 2 == 0)
+            {
+                s1 += word[i];
+            }
+            else
+            {
+                s2 += word[i];
+            }
+        }
+        sort(s1.begin(), s1.end());
+        sort(s2.begin(), s2.end());
+        return s1 + s2;
     }
 };
 
