@@ -6,7 +6,20 @@ class Solution
 public:
     int subarrayBitwiseORs(vector<int> &arr)
     {
-        return 0;
+        int n = arr.size();
+        unordered_set<int> result;
+        for (int i = 0; i < n; i++)
+        {
+            result.emplace(arr[i]);
+            for (int j = i - 1; j >= 0; j--)
+            {
+                if ((arr[j] | arr[i]) == arr[j])
+                    break;
+                arr[j] |= arr[i];
+                result.insert(arr[j]);
+            }
+        }
+        return result.size();
     }
 };
 
