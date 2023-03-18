@@ -10,12 +10,31 @@ public:
 
     void push(int val)
     {
+        int &count = lookup[val];
+        count++;
+        if (count > data.size())
+        {
+            data.emplace_back(stack<int>());
+        }
+        data[count - 1].emplace(val);
     }
 
     int pop()
     {
-        return 0;
+        auto& stack = data.back();
+        int result = stack.top();
+        lookup[result]--;
+        stack.pop();
+        if (stack.empty())
+        {
+            data.pop_back();
+        }
+        return result;
     }
+
+private:
+    deque<stack<int>> data;
+    unordered_map<int, int> lookup;
 };
 
 class Solution
