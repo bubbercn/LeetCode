@@ -7,27 +7,28 @@ public:
     int totalFruit(vector<int> &fruits)
     {
         unordered_map<int, int> lookup;
-        queue<unordered_map<int, int>::const_iterator> q;
+        lookup[fruits[0]]++;
         int result = 0;
-        int sum = 0;
-        for (auto type : fruits)
+        int left = 0;
+        int right = 0;
+        while (true)
         {
-            sum++;
-            if (auto it = lookup.find(type); it != lookup.end())
+            if (lookup.size() <= 2)
             {
-                it->second++;
+                result = max(result, right - left + 1);
+                right++;
+                if (right == fruits.size())
+                    return result;               
+                lookup[fruits[right]]++;
             }
             else
             {
-                q.emplace(lookup.emplace(type, 1).first);
+                auto it = lookup.find(fruits[left]);
+                it->second--;
+                if (it->second == 0)
+                    lookup.erase(it);
+                left++;
             }
-            if (q.size() > 2)
-            {
-                sum -= q.front()->second;
-                lookup.erase(q.front());
-                q.pop();
-            }
-            result = max(result, sum);
         }
         return result;
     }
