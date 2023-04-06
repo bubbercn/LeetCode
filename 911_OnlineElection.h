@@ -6,12 +6,33 @@ class TopVotedCandidate
 public:
     TopVotedCandidate(vector<int> &persons, vector<int> &times)
     {
+        multimap<int, int> state;
+        unordered_map<int, multimap<int, int>::const_iterator> lookup;
+        int n = persons.size();
+        for (int i = 0; i < n; i++)
+        {
+            int time = times[i];
+            int person = persons[i];
+            int votes = 0;
+            if (auto it = lookup.find(person); it != lookup.end())
+            {
+                votes = it->second->first;
+                state.erase(it->second);
+                lookup.erase(it);
+            }
+            votes++;
+            lookup.emplace(person, state.emplace(votes, person));
+            winner.emplace(time, state.rbegin()->second);
+        }
     }
 
     int q(int t)
     {
-        return 0;
+        return (--winner.upper_bound(t))->second;
     }
+
+private:
+    map<int, int> winner;
 };
 
 class Solution
