@@ -17,21 +17,31 @@ private:
             return;
         
         auto middle = begin + (end - begin) / 2;
-        int target = *begin;
-        auto left = begin;
-        auto right = end - 1;
-        while (left < right)
-        {
-            while (*left < target)
-                left++;
-            while (*right > target)
-                right--;
-            if (left < right)
-                swap(*left, *right);
-        }
         swap(*begin, *middle);
-        helper(begin, middle);
-        helper(middle + 1, end);
+        int target = *begin;
+        auto left = begin + 1;
+        auto right = end - 1;
+        for (auto it = left; it < right;)
+        {
+            if (*it < target)
+            {
+                swap(*it, *left);
+                left++;
+                it++;
+            }
+            else if (*it > target)
+            {
+                swap(*it, *right);
+                right--;
+            }
+            else
+            {
+                it++;
+            }
+        }
+        swap(*begin, *left);
+        helper(begin, left);
+        helper(right + 1, end);
     }
 };
 
@@ -52,5 +62,12 @@ TEST_F(LeetCodeTest, Example2)
 {
     vector<int> nums = {5, 1, 1, 2, 0, 0};
     vector<int> output = {0, 0, 1, 1, 2, 5};
+    EXPECT_EQ(solution.sortArray(nums), output);
+}
+
+TEST_F(LeetCodeTest, Case1)
+{
+    vector<int> nums = {1, 1, 1, 1, 1};
+    vector<int> output = {1, 1, 1, 1, 1};
     EXPECT_EQ(solution.sortArray(nums), output);
 }
