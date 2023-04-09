@@ -15,31 +15,31 @@ private:
     {
         if (begin == end or begin + 1 == end)
             return;
-        
+
         auto middle = begin + (end - begin) / 2;
         swap(*begin, *middle);
         int target = *begin;
         auto left = begin + 1;
-        auto right = end - 1;
-        for (auto it = left; it < right;)
+        for (auto it = left; it != end; it++)
         {
             if (*it < target)
             {
-                swap(*it, *left);
-                left++;
-                it++;
+                swap(*it, *left++);
             }
-            else if (*it > target)
+        }
+        swap(*begin, *(--left));
+        auto right = end - 1;
+        for (auto it = left; it <= right;)
+        {
+            if (*it > target)
             {
-                swap(*it, *right);
-                right--;
+                swap(*it, *right--);
             }
             else
             {
                 it++;
             }
         }
-        swap(*begin, *left);
         helper(begin, left);
         helper(right + 1, end);
     }
