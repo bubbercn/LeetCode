@@ -6,7 +6,25 @@ class Solution
 public:
     int partitionDisjoint(vector<int> &nums)
     {
-        return 0;
+        int n = nums.size();
+        vector<int> max(n);
+        vector<int> min(n);
+        max[0] = nums[0];
+        for (int i = 1; i < n; i++)
+        {
+            max[i] = ::max(nums[i], max[i - 1]);
+        }
+        min[n - 1] = nums[n - 1];
+        for (int i = n - 2; i >= 0; i--)
+        {
+            min[i] = ::min(nums[i], min[i + 1]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if (max[i] <= min[i + 1])
+                return i + 1;
+        }
+        return -1;
     }
 };
 
@@ -24,6 +42,6 @@ TEST_F(LeetCodeTest, Example1)
 
 TEST_F(LeetCodeTest, Example2)
 {
-    vector<int> nums = {1,1,1,0,6,12};
+    vector<int> nums = {1, 1, 1, 0, 6, 12};
     EXPECT_EQ(solution.partitionDisjoint(nums), 4);
 }
