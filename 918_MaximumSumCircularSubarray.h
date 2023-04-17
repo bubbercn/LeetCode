@@ -6,7 +6,20 @@ class Solution
 public:
     int maxSubarraySumCircular(vector<int> &nums)
     {
-        return 0;
+        int totalSum = 0;
+        int max = numeric_limits<int>::min();
+        int curMax = 0;
+        int min = numeric_limits<int>::max();
+        int curMin = 0;
+        for (int num : nums)
+        {
+            curMax = ::max(curMax + num, num);
+            max = ::max(max, curMax);
+            curMin = ::min(curMin + num, num);
+            min = ::min(min, curMin);
+            totalSum += num;
+        }
+        return max > 0 ? ::max(max, totalSum - min) : max;
     }
 };
 
