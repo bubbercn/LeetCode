@@ -4,7 +4,7 @@
 class Solution
 {
 public:
-    int numMusicPlaylists(int n, int goal, int k)
+    int minAddToMakeValid(string_view s)
     {
         return 0;
     }
@@ -18,15 +18,10 @@ public:
 
 TEST_F(LeetCodeTest, Example1)
 {
-    EXPECT_EQ(solution.numMusicPlaylists(3, 3, 1), 6);
+    EXPECT_EQ(solution.minAddToMakeValid("())"), 1);
 }
 
 TEST_F(LeetCodeTest, Example2)
 {
-    EXPECT_EQ(solution.numMusicPlaylists(2, 3, 0), 6);
-}
-
-TEST_F(LeetCodeTest, Example3)
-{
-    EXPECT_EQ(solution.numMusicPlaylists(2, 3, 1), 2);
+    EXPECT_EQ(solution.minAddToMakeValid("((("), 3);
 }
