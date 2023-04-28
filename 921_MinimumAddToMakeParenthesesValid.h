@@ -6,7 +6,27 @@ class Solution
 public:
     int minAddToMakeValid(string_view s)
     {
-        return 0;
+        int result = 0;
+        int left = 0;
+        for (auto c : s)
+        {
+            if (c == '(')
+            {
+                left++;
+            }
+            else
+            {
+                if (left > 0)
+                {
+                    left--;
+                }
+                else
+                {
+                    result++;
+                }
+            }
+        }
+        return result + left;
     }
 };
 
