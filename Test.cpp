@@ -1,4 +1,4 @@
-#include "923_3SumWithMultiplicity.h"
+#include "924_MinimizeMalwareSpread.h"
 
 int main(int argc, char *argv[])
 {
