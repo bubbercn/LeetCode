@@ -1,4 +1,4 @@
-#include "928_MinimizeMalwareSpreadII.h"
+#include "930_BinarySubarraysWithSum.h"
 
 int main(int argc, char *argv[])
 {
