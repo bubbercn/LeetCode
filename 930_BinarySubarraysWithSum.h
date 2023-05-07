@@ -6,7 +6,20 @@ class Solution
 public:
     int numSubarraysWithSum(vector<int> &nums, int goal)
     {
-        return 0;
+        int n = nums.size();
+        vector<int> lookup(30001);
+        int sum = 0;
+        int result = 0;
+        lookup[0] = 1;
+        for (int i = 0; i < n; i++)
+        {
+            sum += nums[i];
+            int target = sum - goal;
+            if (target >= 0)
+                result += lookup[target];
+            lookup[sum]++;
+        }
+        return result;
     }
 };
 
