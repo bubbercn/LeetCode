@@ -1,4 +1,4 @@
-#include "931_MinimumFallingPathSum.h"
+#include "932_BeautifulArray.h"
 
 int main(int argc, char *argv[])
 {

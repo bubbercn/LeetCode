@@ -6,7 +6,23 @@ class Solution
 public:
     int minFallingPathSum(vector<vector<int>> &matrix)
     {
-        return 0;
+        int n = matrix.size();
+        vector<int> dp = matrix[0];
+        for (int i = 1; i < n; i++)
+        {
+            vector<int> next(n);
+            for (int j = 0; j < n; j++)
+            {
+                int temp = dp[j];
+                if (j > 0)
+                    temp = min(temp, dp[j - 1]);
+                if (j < n - 1)
+                    temp = min(temp, dp[j + 1]);
+                next[j] = temp + matrix[i][j];
+            }
+            dp.swap(next);
+        }
+        return *min_element(dp.begin(), dp.end());
     }
 };
 
