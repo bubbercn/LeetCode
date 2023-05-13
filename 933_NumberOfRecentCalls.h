@@ -10,8 +10,16 @@ public:
 
     int ping(int t)
     {
-        return 0;
+        while (!data.empty() and data.front() < t - 3000)
+        {
+            data.pop();
+        }
+        data.emplace(t);
+        return data.size();
     }
+
+private:
+    queue<int> data;
 };
 
 class LeetCodeTest : public testing::Test
