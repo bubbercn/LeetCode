@@ -1,4 +1,4 @@
-#include "934_ShortestBridge.h"
+#include "936_StampingTheSequence.h"
 
 int main(int argc, char *argv[])
 {
