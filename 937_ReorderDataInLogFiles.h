@@ -6,7 +6,38 @@ class Solution
 public:
     vector<string> reorderLogFiles(vector<string> &logs)
     {
-        return {};
+        auto cmp = [](const string &s1, const string &s2)
+        {
+            auto pos1 = s1.find(' ');
+            auto pos2 = s2.find(' ');
+            char c1 = s1[pos1 + 1];
+            bool isDigit1 = c1 >= '0' and c1 <= '9';
+            char c2 = s2[pos2 + 1];
+            bool isDigit2 = c2 >= '0' and c2 <= '9';
+            if (isDigit1)
+            {
+                return false;
+            }
+            else
+            {
+                if (isDigit2)
+                {
+                    return true;
+                }
+                else
+                {
+                    string p1 = s1.substr(pos1 + 1);
+                    string p2 = s2.substr(pos2 + 1);
+                    if (p1 == p2)
+                    {
+                        return s1.substr(0, pos1) < s2.substr(0, pos2);
+                    }
+                    return p1 < p2;
+                }
+            }
+        };
+        stable_sort(logs.begin(), logs.end(), cmp);
+        return logs;
     }
 };
 
