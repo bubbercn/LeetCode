@@ -6,7 +6,36 @@ class Solution
 public:
     bool validMountainArray(vector<int> &arr)
     {
-        return false;
+        int i = 0;
+        for (i = 1; i < arr.size(); i++)
+        {
+            if (arr[i] == arr[i - 1])
+                return false;
+            
+            if (arr[i] < arr[i - 1])
+            {
+                i--;
+                break;
+            }
+        }
+        if (i == arr.size())
+            return false;
+        int j = 0;
+        for (j = arr.size() - 2; j >= 0; j--)
+        {
+            if (arr[j] == arr[j + 1])
+                return false;
+            
+            if (arr[j] < arr[j + 1])
+            {
+                j++;
+                break;
+            }
+        }
+        if (j == -1)
+            return false;
+
+        return i == j;
     }
 };
 
