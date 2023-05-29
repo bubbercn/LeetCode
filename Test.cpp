@@ -1,4 +1,4 @@
-#include "946_ValidateStackSequences.h"
+#include "947_MostStonesRemovedWithSameRowOrColumn.h"
 
 int main(int argc, char *argv[])
 {

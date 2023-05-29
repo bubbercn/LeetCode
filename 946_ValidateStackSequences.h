@@ -6,7 +6,19 @@ class Solution
 public:
     bool validateStackSequences(vector<int> &pushed, vector<int> &popped)
     {
-        return false;
+        int in = 0;
+        int out = 0;
+        stack<int> stk;
+        while (in < pushed.size())
+        {
+            stk.emplace(pushed[in++]);
+            while (!stk.empty() and stk.top() == popped[out])
+            {
+                stk.pop();
+                out++;
+            }
+        }
+        return stk.empty();
     }
 };
 
