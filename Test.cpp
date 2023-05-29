@@ -1,4 +1,4 @@
-#include "947_MostStonesRemovedWithSameRowOrColumn.h"
+#include "948_BagOfTokens.h"
 
 int main(int argc, char *argv[])
 {
