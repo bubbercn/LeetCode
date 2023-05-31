@@ -6,7 +6,21 @@ class Solution
 public:
     vector<int> deckRevealedIncreasing(vector<int> &deck)
     {
-        return {};
+        int n = deck.size();
+        sort(deck.begin(), deck.end(), greater<int>());
+        list<int> l(deck.begin(), deck.end());
+        list<int> result;
+        for (auto it = l.begin(); it != l.end(); it++)
+        {
+            if (!result.empty())
+            {
+                int temp = result.back();
+                result.pop_back();
+                result.push_front(temp);
+            }
+            result.push_front(*it);
+        }
+        return {result.begin(), result.end()};
     }
 };
 

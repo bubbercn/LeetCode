@@ -1,4 +1,4 @@
-#include "950_RevealCardsInIncreasingOrder.h"
+#include "952_LargestComponentSizeByCommonFactor.h"
 
 int main(int argc, char *argv[])
 {
