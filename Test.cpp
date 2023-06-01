@@ -1,4 +1,4 @@
-#include "952_LargestComponentSizeByCommonFactor.h"
+#include "954_ArrayOfDoubledPairs.h"
 
 int main(int argc, char *argv[])
 {
