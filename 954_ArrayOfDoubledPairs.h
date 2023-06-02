@@ -6,7 +6,46 @@ class Solution
 public:
     bool canReorderDoubled(vector<int> &arr)
     {
-        return false;
+        multiset<int> nonNegative;
+        multiset<int, greater<int>> negative;
+        for (auto num : arr)
+        {
+            if (num >= 0)
+            {
+                nonNegative.emplace(num);
+            }
+            else
+            {
+                negative.emplace(num);
+            }
+        }
+        while (!nonNegative.empty())
+        {
+            int temp = *nonNegative.begin();
+            nonNegative.erase(nonNegative.begin());
+            if (auto it = nonNegative.find(temp * 2); it != nonNegative.end())
+            {
+                nonNegative.erase(it);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        while (!negative.empty())
+        {
+            int temp = *negative.begin();
+            negative.erase(negative.begin());
+            if (auto it = negative.find(temp * 2); it != negative.end())
+            {
+                negative.erase(it);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 };
 
