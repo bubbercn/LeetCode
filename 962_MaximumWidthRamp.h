@@ -6,7 +6,29 @@ class Solution
 public:
     int maxWidthRamp(vector<int> &nums)
     {
-        return 0;
+        int result = 0;
+        map<int, int> lookup;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (lookup.empty() || nums[i] < lookup.begin()->first)
+            {
+                lookup.emplace(nums[i], i);
+            }
+            else
+            {
+                int left = -1;
+                if (auto it = lookup.lower_bound(nums[i]); it->first == nums[i])
+                {
+                    left = it->second;
+                }
+                else
+                {
+                    left = (--it)->second;
+                }
+                result = max(result, i - left);
+            }
+        }
+        return result;
     }
 };
 
