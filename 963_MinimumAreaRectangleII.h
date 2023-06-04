@@ -1,12 +1,63 @@
 #pragma once
 #include "Common.h"
 
+struct pair_hash
+{
+    template <class T1, class T2>
+    std::size_t operator()(const std::pair<T1, T2> &p) const
+    {
+        auto h1 = std::hash<T1>{}(p.first);
+        auto h2 = std::hash<T2>{}(p.second);
+        return h1 ^ h2;
+    }
+};
+
 class Solution
 {
 public:
     double minAreaFreeRect(vector<vector<int>> &points)
     {
-        return 0;
+        unordered_map<pair<int, int>, unordered_map<int, list<pair<int, int>>>, pair_hash> lookup;
+        int n = points.size();
+        for (int i = 0; i < n; i++)
+        {
+            int x1 = points[i][0];
+            int y1 = points[i][1];
+            for (int j = i + 1; j < n; j++)
+            {
+                int x2 = points[j][0];
+                int y2 = points[j][1];
+                pair<int, int> key1 = {x1 + x2, y1 + y2};
+                int key2 = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+                lookup[key1][key2].emplace_back(i, j);
+            }
+        }
+        double result = numeric_limits<double>::max();
+        for (auto &[key1, value1] : lookup)
+        {
+            for (auto &[key2, value2] : value1)
+            {
+                if (value2.size() > 1)
+                {
+                    for (auto i = value2.begin(); i != value2.end(); i++)
+                    {
+                        int x1 = points[i->first][0];
+                        int y1 = points[i->first][1];
+                        int x2 = points[i->second][0];
+                        int y2 = points[i->second][1];
+                        auto j = i;
+                        for (j++; j != value2.end(); j++)
+                        {
+                            int x3 = points[j->first][0];
+                            int y3 = points[j->first][1];
+                            long temp = static_cast<long>((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3)) * ((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
+                            result = min(result, sqrt(temp));
+                        }
+                    }
+                }
+            }
+        }
+        return result == numeric_limits<double>::max() ? 0 : result;
     }
 };
 
