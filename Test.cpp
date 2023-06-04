@@ -1,4 +1,4 @@
-#include "961_NRepeatedElementInSize2NArray.h"
+#include "962_MaximumWidthRamp.h"
 
 int main(int argc, char *argv[])
 {

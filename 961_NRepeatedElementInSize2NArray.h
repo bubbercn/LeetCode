@@ -6,7 +6,14 @@ class Solution
 public:
     int repeatedNTimes(vector<int> &nums)
     {
-        return 0;
+        vector<bool> lookup(10001);
+        for (auto num : nums)
+        {
+            if (lookup[num])
+                return num;
+            lookup[num] = true;
+        }
+        return -1;
     }
 };
 
