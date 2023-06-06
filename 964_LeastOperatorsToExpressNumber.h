@@ -6,7 +6,48 @@ class Solution
 public:
     int leastOpsExpressTarget(int x, int target)
     {
-        return 0;
+        int a = x;
+        int b = 1;
+        int t = 0;
+        while (a - b <= target)
+        {
+            a *= x;
+            b *= x;
+            t++;
+        }
+        vector<int> dp(b);
+        dp[0] = -1;
+        for (int i = 1; i < dp.size(); i++)
+        {
+            dp[i] = dp[i - 1] + 2;
+        }
+        int cost = 1;
+        int gain = x;
+        while (gain <= b)
+        {
+            for (int i = gain; i < dp.size(); i++)
+            {
+                dp[i] = min(dp[i], dp[i - gain] + cost);
+            }
+            gain *= x;
+            cost += 1;
+        }
+        for (int i = dp.size() - 3; i >= 1; i--)
+        {
+            dp[i] = min(dp[i], dp[i + 1] + 2);
+        }
+        cost = 1;
+        gain = x;
+        while (gain < b)
+        {
+            for (int i = dp.size() - 1 - gain; i >= 1; i--)
+            {
+                dp[i] = min(dp[i], dp[i + gain] + cost);
+            }
+            gain *= x;
+            cost += 1;
+        }
+        return dp[target];
     }
 };
 
