@@ -6,49 +6,53 @@ class Solution
 public:
     int leastOpsExpressTarget(int x, int target)
     {
-        int a = x;
-        int b = 1;
-        int t = 0;
-        while (a - b <= target)
-        {
-            a *= x;
-            b *= x;
-            t++;
-        }
-        vector<int> dp(b);
-        dp[0] = -1;
-        for (int i = 1; i < dp.size(); i++)
-        {
-            dp[i] = dp[i - 1] + 2;
-        }
-        int cost = 1;
-        int gain = x;
-        while (gain <= b)
-        {
-            for (int i = gain; i < dp.size(); i++)
-            {
-                dp[i] = min(dp[i], dp[i - gain] + cost);
-            }
-            gain *= x;
-            cost += 1;
-        }
-        for (int i = dp.size() - 3; i >= 1; i--)
-        {
-            dp[i] = min(dp[i], dp[i + 1] + 2);
-        }
-        cost = 1;
-        gain = x;
-        while (gain < b)
-        {
-            for (int i = dp.size() - 1 - gain; i >= 1; i--)
-            {
-                dp[i] = min(dp[i], dp[i + gain] + cost);
-            }
-            gain *= x;
-            cost += 1;
-        }
-        return dp[target];
+        lookup.clear();
+        return helper(x, target) - 1;
     }
+
+private:
+    int helper(int x, int target)
+    {
+        if (auto i = lookup.find(x); i != lookup.end())
+        {
+            if (auto j = i->second.find(target); j != i->second.end())
+            {
+                return j->second;
+            }
+        }
+
+        if (target < x)
+        {
+            return min(2 * target, (x - target) * 2 + 1);
+        }
+
+        long gain = x;
+        int cost = 1;
+        while (gain <= target)
+        {
+            if (gain == target)
+            {
+                lookup[x][target] = cost;
+                return cost;
+            }
+            gain *= x;
+            cost++;
+        }
+        gain /= x;
+        cost--;
+        int result = helper(x, target - gain) + cost;
+        gain *= x;
+        cost++;
+        if (gain - target < target)
+        {
+            int temp = helper(x, gain - target) + cost;
+            result = min(result, temp);
+        }
+        lookup[x][target] = result;
+        return result;
+    }
+
+    static inline unordered_map<int, unordered_map<int, int>> lookup;
 };
 
 class LeetCodeTest : public testing::Test
@@ -70,4 +74,9 @@ TEST_F(LeetCodeTest, Example2)
 TEST_F(LeetCodeTest, Example3)
 {
     EXPECT_EQ(solution.leastOpsExpressTarget(100, 100000000), 3);
+}
+
+TEST_F(LeetCodeTest, Failure1)
+{
+    EXPECT_EQ(solution.leastOpsExpressTarget(3, 365), 17);
 }
