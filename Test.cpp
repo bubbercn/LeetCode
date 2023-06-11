@@ -1,4 +1,4 @@
-#include "970_PowerfulIntegers.h"
+#include "972_EqualRationalNumbers.h"
 
 int main(int argc, char *argv[])
 {
