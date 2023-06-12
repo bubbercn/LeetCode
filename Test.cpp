@@ -1,4 +1,4 @@
-#include "972_EqualRationalNumbers.h"
+#include "973_KClosestPointsToOrigin.h"
 
 int main(int argc, char *argv[])
 {
