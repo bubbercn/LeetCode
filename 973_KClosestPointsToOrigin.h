@@ -6,7 +6,26 @@ class Solution
 public:
     vector<vector<int>> kClosest(vector<vector<int>> &points, int k)
     {
-        return {};
+        auto cmp = [](const pair<int, int> &v1, const pair<int, int> &v2)
+        {
+            return v1.first < v2.first;
+        };
+        priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> maxHeap(cmp);
+        for (int i = 0; i < points.size(); i++)
+        {
+            maxHeap.emplace(points[i][0] * points[i][0] + points[i][1] * points[i][1], i);
+            if (maxHeap.size() > k)
+            {
+                maxHeap.pop();
+            }
+        }
+        vector<vector<int>> result;
+        while (!maxHeap.empty())
+        {
+            result.emplace_back(points[maxHeap.top().second]);
+            maxHeap.pop();
+        }
+        return result;
     }
 };
 
@@ -26,6 +45,6 @@ TEST_F(LeetCodeTest, Example1)
 TEST_F(LeetCodeTest, Example2)
 {
     vector<vector<int>> points = {{3, 3}, {5, -1}, {-2, 4}};
-    vector<vector<int>> output = {{3, 3}, {-2, 4}};
+    vector<vector<int>> output = {{-2, 4}, {3, 3}};
     EXPECT_EQ(solution.kClosest(points, 2), output);
 }
