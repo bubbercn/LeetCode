@@ -6,7 +6,23 @@ class Solution
 public:
     int subarraysDivByK(vector<int> &nums, int k)
     {
-        return 0;
+        int n = nums.size();
+        vector<int> prefixSum(n + 1);
+        for (int i = 0; i < n; i++)
+        {
+            prefixSum[i + 1] = prefixSum[i] + nums[i];
+        }
+        int result = 0;
+        unordered_map<int, int> count;
+        for (int i = 0; i <= n; i++)
+        {
+            int remainder = prefixSum[i] % k;
+            if (remainder < 0)
+                remainder += k;
+            result += count[remainder];
+            count[remainder]++;
+        }
+        return result;
     }
 };
 
