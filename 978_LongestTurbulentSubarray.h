@@ -6,7 +6,36 @@ class Solution
 public:
     int maxTurbulenceSize(vector<int> &arr)
     {
-        return 0;
+        int result = 1;
+        int count = 1;
+        int cmp = 0;
+        for (int i = 1; i < arr.size(); i++)
+        {
+            int newCmp = arr[i] - arr[i - 1];
+            if (newCmp > 0)
+            {
+                newCmp = 1;
+            }
+            else if (newCmp < 0)
+            {
+                newCmp = -1;
+            }
+            if (newCmp == 0)
+            {
+                count = 1;
+            }
+            else if (cmp * newCmp < 0)
+            {
+                count++;
+            }
+            else
+            {
+                count = 2;
+            }
+            cmp = newCmp;
+            result = max(result, count);
+        }
+        return result;
     }
 };
 

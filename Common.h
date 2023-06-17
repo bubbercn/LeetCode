@@ -32,6 +32,17 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+void releaseTree(TreeNode *root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+    releaseTree(root->left);
+    releaseTree(root->right);
+    delete root;
+}
+
 // Definition for singly-linked list.
 struct ListNode
 {
