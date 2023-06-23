@@ -1,4 +1,4 @@
-#include "980_UniquePathsIII.h"
+#include "982_TriplesWithBitwiseAndEqualToZero.h"
 
 int main(int argc, char *argv[])
 {
