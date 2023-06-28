@@ -6,7 +6,26 @@ class Solution
 public:
     int countTriplets(vector<int> &nums)
     {
-        return 0;
+        unordered_map<int, int> lookup;
+        for (auto i : nums)
+        {
+            for (auto j : nums)
+            {
+                lookup[i & j]++;
+            }
+        }
+        int result = 0;
+        for (auto k : nums)
+        {
+            for (auto [ij, count] : lookup)
+            {
+                if ((k & ij) == 0)
+                {
+                    result += count;
+                }
+            }
+        }
+        return result;
     }
 };
 

@@ -1,4 +1,4 @@
-#include "982_TriplesWithBitwiseAndEqualToZero.h"
+#include "984_StringWithoutAAAOrBBB.h"
 
 int main(int argc, char *argv[])
 {
