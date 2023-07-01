@@ -6,7 +6,28 @@ class Solution
 public:
     vector<vector<int>> verticalTraversal(TreeNode *root)
     {
-        return {};
+        map<int, map<int, multiset<int>>> lookup;
+        dfs(root, 0, 0, lookup);
+        vector<vector<int>> result;
+        for (auto &col : lookup)
+        {
+            result.emplace_back();
+            for (auto &row : col.second)
+            {
+                result.back().insert(result.back().end(), row.second.begin(), row.second.end());
+            }
+        }
+        return result;
+    }
+
+private:
+    void dfs(TreeNode *root, int row, int col, map<int, map<int, multiset<int>>> &lookup)
+    {
+        if (root == nullptr)
+            return;
+        lookup[col][row].emplace(root->val);
+        dfs(root->left, row + 1, col - 1, lookup);
+        dfs(root->right, row + 1, col + 1, lookup);
     }
 };
 
