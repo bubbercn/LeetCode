@@ -6,7 +6,31 @@ class Solution
 public:
     int minKBitFlips(vector<int> &nums, int k)
     {
-        return 0;
+        int n = nums.size();
+        int result = 0;
+        queue<int> q;
+        for (int i = 0; i <= n - k; i++)
+        {
+            if (!q.empty() and i - q.front() >= k)
+                q.pop();
+            
+            if ((q.size() + nums[i]) % 2 == 0)
+            {
+                result++;
+                q.emplace(i);
+            }
+        }
+        for (int i = n - k + 1; i < n; i++)
+        {
+            if (!q.empty() and i - q.front() >= k)
+                q.pop();
+            
+            if ((q.size() + nums[i]) % 2 == 0)
+            {
+                return -1;
+            }
+        }
+        return result;
     }
 };
 

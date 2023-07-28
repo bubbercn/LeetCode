@@ -1,4 +1,4 @@
-#include "995_MinimumNumberOfKConsecutiveBitFlips.h"
+#include "996_NumberOfSquarefulArrays.h"
 
 int main(int argc, char *argv[])
 {
