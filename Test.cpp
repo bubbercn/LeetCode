@@ -1,4 +1,4 @@
-#include "996_NumberOfSquarefulArrays.h"
+#include "1000_MinimumCostToMergeStones.h"
 
 int main(int argc, char *argv[])
 {
