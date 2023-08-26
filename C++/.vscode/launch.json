@@ -29,7 +29,7 @@
             "request": "launch",
             "program": "enter program name, for example ${workspaceFolder}/a.out",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}"
         },
         {
             "name": "(Windows) Launch",
@@ -41,6 +41,6 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false
-        },
+        }
     ]
 }

@@ -13,3 +13,4 @@ UserInterface.xcuserstate
 *.out
 *.dSYM
 build/
+lib/

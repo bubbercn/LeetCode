@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 # include(CTest)
 enable_testing()
-    
+
 find_package(GTest CONFIG REQUIRED)
 
 add_executable(LeetCode Test.cpp)

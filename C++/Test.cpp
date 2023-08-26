@@ -1,4 +1,4 @@
-#include "1000_MinimumCostToMergeStones.h"
+#include "PlayGround.h"
 
 int main(int argc, char *argv[])
 {
