@@ -29,4 +29,12 @@ public class Solution1001Test {
         int[] output = { 1, 1, 0 };
         assertArrayEquals(solution.gridIllumination(5, lamps, queries), output);
     }
+
+    @Test
+    public void Failure1() {
+        int[][] lamps = { { 2, 5 }, { 4, 2 }, { 0, 3 }, { 0, 5 }, { 1, 4 }, { 4, 2 }, { 3, 3 }, { 1, 0 } };
+        int[][] queries = { { 4, 3 }, { 3, 1 }, { 5, 3 }, { 0, 5 }, { 4, 4 }, { 3, 3 } };
+        int[] output = { 1, 0, 1, 1, 0, 1 };
+        assertArrayEquals(solution.gridIllumination(6, lamps, queries), output);
+    }
 }
