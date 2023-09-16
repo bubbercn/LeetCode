@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class Solution1002Test {
+public class Test1002 {
 
     Solution1002 solution = new Solution1002();
 

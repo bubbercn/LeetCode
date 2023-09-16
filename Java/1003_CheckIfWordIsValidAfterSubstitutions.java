@@ -1,16 +1,20 @@
+import java.util.Stack;
+
 class Solution1003 {
     public boolean isValid(String s) {
-        StringBuffer sb = new StringBuffer(s);
-        for (int i = 0; i < sb.length(); i++) {
-            if (sb.charAt(i) == 'c') {
-                if (i < 2)
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != 'c') {
+                stack.push(s.charAt(i));
+            } else {
+                if (stack.isEmpty() || stack.pop() != 'b') {
                     return false;
-                if (sb.charAt(i - 1) != 'b' || sb.charAt(i - 2) != 'a')
+                }
+                if (stack.isEmpty() || stack.pop() != 'a') {
                     return false;
-                sb.replace(i - 2, i + 1, "");
-                i -= 3;
+                }
             }
         }
-        return sb.isEmpty();
+        return stack.isEmpty();
     }
 }

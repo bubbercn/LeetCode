@@ -2,7 +2,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-public class Solution1001Test {
+public class Test1001 {
 
     Solution1001 solution = new Solution1001();
 
