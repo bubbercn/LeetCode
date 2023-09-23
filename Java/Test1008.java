@@ -1,5 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 public class Test1008 {
@@ -14,6 +12,12 @@ public class Test1008 {
     @Test
     public void Example2() {
         int[] preorder = { 1, 3 };
+        solution.bstFromPreorder(preorder);
+    }
+
+    @Test
+    public void Failure1() {
+        int[] preorder = { 4, 2 };
         solution.bstFromPreorder(preorder);
     }
 }
