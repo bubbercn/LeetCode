@@ -19,4 +19,9 @@ public class Test1009 {
     public void Example3() {
         assertEquals(solution.bitwiseComplement(10), 5);
     }
+
+    @Test
+    public void Failure1() {
+        assertEquals(solution.bitwiseComplement(0), 1);
+    }
 }
