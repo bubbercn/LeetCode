@@ -17,6 +17,7 @@ public class Test1011 {
         assertEquals(solution.shipWithinDays(weights, 3), 6);
     }
 
+    @Test
     public void Example3() {
         int[] weights = { 1, 2, 3, 1, 1 };
         assertEquals(solution.shipWithinDays(weights, 4), 3);
