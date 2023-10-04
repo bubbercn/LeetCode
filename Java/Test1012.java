@@ -19,4 +19,24 @@ public class Test1012 {
     public void Example3() {
         assertEquals(solution.numDupDigitsAtMostN(1000), 262);
     }
+
+    @Test
+    public void Failure1() {
+        assertEquals(solution.numDupDigitsAtMostN(1), 0);
+    }
+
+    @Test
+    public void Failure2() {
+        assertEquals(solution.numDupDigitsAtMostN(12), 1);
+    }
+
+    @Test
+    public void Failure3() {
+        assertEquals(solution.numDupDigitsAtMostN(11), 1);
+    }
+
+    @Test
+    public void Failure4() {
+        assertEquals(solution.numDupDigitsAtMostN(111), 13);
+    }
 }
