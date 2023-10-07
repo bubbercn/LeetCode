@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution1013 {
     public boolean canThreePartsEqualSum(int[] arr) {
         int sum = 0;
