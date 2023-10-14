@@ -23,4 +23,10 @@ public class Test1024 {
                 { 1, 4 }, { 2, 5 }, { 2, 6 }, { 3, 4 }, { 4, 5 }, { 5, 7 }, { 6, 9 } };
         assertEquals(3, solution.videoStitching(clips, 9));
     }
+
+    @Test
+    public void Failure1() {
+        int[][] clips = { { 0, 2 }, { 4, 8 } };
+        assertEquals(-1, solution.videoStitching(clips, 5));
+    }
 }
