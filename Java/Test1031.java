@@ -22,4 +22,10 @@ public class Test1031 {
         int[] nums = { 2, 1, 5, 6, 0, 9, 5, 0, 3, 8 };
         assertEquals(31, solution1031.maxSumTwoNoOverlap(nums, 4, 3));
     }
+
+    @Test
+    public void Failure1() {
+        int[] nums = { 1, 0, 3 };
+        assertEquals(4, solution1031.maxSumTwoNoOverlap(nums, 1, 2));
+    }
 }
