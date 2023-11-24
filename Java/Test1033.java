@@ -14,7 +14,7 @@ public class Test1033 {
     @Test
     public void Example2() {
         int[] expected = { 0, 0 };
-        assertArrayEquals(expected, solution.numMovesStones(4, 3, 2);
+        assertArrayEquals(expected, solution.numMovesStones(4, 3, 2));
     }
 
     @Test
