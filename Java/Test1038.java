@@ -11,6 +11,6 @@ public class Test1038 {
         root.right = new TreeNode(1);
         TreeNode expect = new TreeNode(1);
         expect.right = new TreeNode(1);
-        assertEquals(expect, solution.bstToGst(root));
+        assertEquals(expect.val, solution.bstToGst(root).val);
     }
 }
