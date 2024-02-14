@@ -18,4 +18,18 @@ public class Test1040 {
         int[] expected = new int[] { 2, 3 };
         assertArrayEquals(expected, solution.numMovesStonesII(stones));
     }
+
+    @Test
+    public void Failure1() {
+        int[] stones = new int[] { 8, 7, 6, 5, 2 };
+        int[] expected = new int[] { 2, 2 };
+        assertArrayEquals(expected, solution.numMovesStonesII(stones));
+    }
+
+    @Test
+    public void Failure2() {
+        int[] stones = new int[] { 1, 500000000, 1000000000 };
+        int[] expected = new int[] { 2, 499999999 };
+        assertArrayEquals(expected, solution.numMovesStonesII(stones));
+    }
 }
