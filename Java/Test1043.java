@@ -13,7 +13,7 @@ public class Test1043 {
 
     @Test
     public void Example2() {
-        int[] arr = new int[] { 1, 4, 1, 5, 7, 3, 6, 1 };
+        int[] arr = new int[] { 1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3 };
         assertEquals(83, solution.maxSumAfterPartitioning(arr, 4));
     }
 
