@@ -16,4 +16,9 @@ public class Test1044 {
         String s = "abcd";
         assertEquals("", solution.longestDupSubstring(s));
     }
+
+    @Test public void Failure1() {
+        String s = "xnahfslefuigqaaaaaaaaaaaaa";
+        assertEquals("aaaaaaaaaaaa", solution.longestDupSubstring(s));
+    }
 }
