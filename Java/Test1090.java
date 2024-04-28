@@ -23,6 +23,6 @@ public class Test1090 {
     public void Example3() {
         int[] values = { 9, 8, 8, 7, 6 };
         int[] labels = { 0, 0, 0, 1, 1 };
-        assertEquals(16, solution.largestValsFromLabels(values, labels, 3, 2));
+        assertEquals(16, solution.largestValsFromLabels(values, labels, 3, 1));
     }
 }
