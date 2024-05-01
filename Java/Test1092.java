@@ -14,4 +14,9 @@ public class Test1092 {
     public void Example2() {
         assertEquals("aaaaaaaa", solution.shortestCommonSupersequence("aaaaaaaa", "aaaaaaaa"));
     }
+
+    @Test
+    public void Failure1() {
+        assertEquals("bbbaaababbb", solution.shortestCommonSupersequence("bbbaaaba", "bbababbb"));
+    }
 }
