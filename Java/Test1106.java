@@ -7,7 +7,7 @@ public class Test1106 {
 
     @Test
     public void Example1() {
-        assertEquals(false, solution.parseBoolExpr("!(f)"));
+        assertEquals(false, solution.parseBoolExpr("&(|(f))"));
     }
 
     @Test
@@ -18,5 +18,20 @@ public class Test1106 {
     @Test
     public void Example3() {
         assertEquals(true, solution.parseBoolExpr("!(&(f,t))"));
+    }
+
+    @Test
+    public void Case1() {
+        assertEquals(false, solution.parseBoolExpr("f"));
+    }
+
+    @Test
+    public void Case2() {
+        assertEquals(true, solution.parseBoolExpr("t"));
+    }
+
+    @Test
+    public void Failure1() {
+        assertEquals(true, solution.parseBoolExpr("&(t,t,t)"));
     }
 }
