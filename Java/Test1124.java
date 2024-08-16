@@ -22,4 +22,10 @@ public class Test1124 {
         int[] hours = new int[] {6, 9, 9};
         assertEquals(3, solution.longestWPI(hours));
     }
+
+    @Test
+    public void Failure2() {
+        int[] hours = new int[] {9, 6, 9};
+        assertEquals(3, solution.longestWPI(hours));
+    }
 }

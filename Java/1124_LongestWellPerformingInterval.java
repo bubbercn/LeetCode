@@ -1,23 +1,27 @@
 class Solution1124 {
     public int longestWPI(int[] hours) {
+        int n = hours.length;
+        int[] preSum = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            preSum[i + 1] = preSum[i] + (hours[i] > 8 ? 1 : -1);
+        }
         int result = 0;
-        int length = 0;
-        int count = 0;
-        for (int i = 0; i < hours.length; i++) {
-            if (hours[i] > 8) {
-                count++;
-            } else {
-                count--;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (preSum[i] < min) {
+                min = preSum[i];
             }
-            if (count < 0) {
-                count = 0;
+            else {
+                continue;
             }
-            if (count > 0) {
-                length++;
-            } else {
-                length = 0;
+            for (int j = n; j > i; j--) {
+                if (preSum[j] - preSum[i] > 0) {
+                    if (j - i > result) {
+                        result = j - i;
+                    }
+                    break;
+                }
             }
-            result = Math.max(result, length);
         }
         return result;
     }
