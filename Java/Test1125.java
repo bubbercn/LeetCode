@@ -24,7 +24,7 @@ public class Test1125 {
     public void Example2() {
         String[] req_skills = new String[] { "algorithms", "math", "java", "reactjs", "csharp", "aws" };
         List<List<String>> people = new ArrayList<>();
-        people.add(Arrays.asList(null, "algorithms","math","java"));
+        people.add(Arrays.asList("algorithms","math","java"));
         people.add(Arrays.asList("algorithms","math","reactjs"));
         people.add(Arrays.asList("java","csharp","aws"));
         people.add(Arrays.asList("reactjs","csharp"));
