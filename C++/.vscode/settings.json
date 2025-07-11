@@ -83,7 +83,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "__cxx_version": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "forward_list": "cpp"
     },
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.configureOnOpen": false,

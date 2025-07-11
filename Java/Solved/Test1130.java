@@ -7,14 +7,12 @@ public class Test1130 {
     @Test
     public void Example1() {
         int[] arr = new int[] { 6, 2, 4 };
-        int expected = 32;
-        assertEquals(expected, solution.mctFromLeafValues(arr));
+        assertEquals(32, solution.mctFromLeafValues(arr));
     }
 
     @Test
     public void Example2() {
         int[] arr = new int[] { 4, 11 };
-        int expected = 44;
-        assertEquals(expected, solution.mctFromLeafValues(arr));
+        assertEquals(44, solution.mctFromLeafValues(arr));
     }
 }
