@@ -14,4 +14,9 @@ public class Test1138 {
     public void Example2() {
         assertEquals("RR!DDRR!UUL!R!", solution.alphabetBoardPath("code"));
     }
+
+    @Test
+    public void Failure1() {
+        assertEquals("DDDDD!UUUUUR!", solution.alphabetBoardPath("zb"));
+    }
 }
