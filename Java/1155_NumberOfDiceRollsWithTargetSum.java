@@ -1,21 +1,29 @@
 class Solution1155 {
     public int numRollsToTarget(int n, int k, int target) {
-        if (n == 1) {
-            return target >= 1 && target <= k ? 1 : 0;
+        final int MOD = 1_000_000_007;
+        
+        // dp[sum] = number of ways to reach this sum
+        int[] dp = new int[target + 1];
+        dp[0] = 1; // base case: one way to get sum 0 with 0 dice
+        
+        // For each die
+        for (int die = 1; die <= n; die++) {
+            int[] newDp = new int[target + 1];
+            // For each possible sum we can currently reach
+            for (int sum = 0; sum <= target; sum++) {
+                if (dp[sum] > 0) {
+                    // Try each face value on this die
+                    for (int face = 1; face <= k; face++) {
+                        int newSum = sum + face;
+                        if (newSum <= target) {
+                            newDp[newSum] = (newDp[newSum] + dp[sum]) % MOD;
+                        }
+                    }
+                }
+            }
+            dp = newDp;
         }
-        if (cache[n][target] != 0) {
-            return cache[n][target];
-        }
-        int result = 0;
-        for (int i = 1; i <= k; i++) {
-            result += numRollsToTarget(n - 1, k, target - i);
-            result %= MOD;
-        }
-        cache[n][target] = result;
-        return result;
+        
+        return dp[target];
     }
-
-    final private int MOD = 1_000_000_007;
-
-    private int[][] cache = new int[31][1001];
 }
