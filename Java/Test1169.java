@@ -9,22 +9,22 @@ public class Test1169 {
 
     @Test
     public void Example1() {
-        String[] transactions = {"alice,20,800,mtv", "alice,50,100,beijing"};
+        String[] transactions = { "alice,20,800,mtv", "alice,50,100,beijing" };
         List<String> expected = List.of("alice,20,800,mtv", "alice,50,100,beijing");
         assertEquals(expected, solution.invalidTransactions(transactions));
     }
 
     @Test
     public void Example2() {
-        String[] transactions = {"bob,1200,1000,mtv"};
-        List<String> expected = List.of("bob,1200,1000,mtv");
+        String[] transactions = { "alice,20,800,mtv", "alice,50,1200,mtv" };
+        List<String> expected = List.of("alice,50,1200,mtv");
         assertEquals(expected, solution.invalidTransactions(transactions));
     }
 
     @Test
     public void Example3() {
-        String[] transactions = {"alex,676,260,bangkok","bob,656,350,bangkok","alex,676,261,bangkok"};
-        List<String> expected = List.of("alex,676,260,bangkok","bob,656,350,bangkok");
+        String[] transactions = { "alice,20,800,mtv", "bob,50,1200,mtv" };
+        List<String> expected = List.of("bob,50,1200,mtv");
         assertEquals(expected, solution.invalidTransactions(transactions));
     }
 }
