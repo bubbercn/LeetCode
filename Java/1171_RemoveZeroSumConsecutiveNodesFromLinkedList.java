@@ -10,6 +10,19 @@
  */
 class Solution1171 {
     public ListNode removeZeroSumSublists(ListNode head) {
-        return null;
+        int sum = 0;
+        ListNode node = head;
+        while (node != null) {
+            sum += node.val;
+            if (sum == 0) {
+                head = node.next; // remove from head to current node
+                sum = 0; // reset sum
+            }
+            node = node.next;
+        }
+        if (head == null) 
+            return null;
+        head.next = removeZeroSumSublists(head.next);
+        return head;
     }
 }
