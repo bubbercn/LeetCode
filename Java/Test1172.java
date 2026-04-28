@@ -15,7 +15,11 @@ public class Test1172 {
             obj.push(20);
             obj.push(21);
             assertEquals(20, obj.popAtStack(0));
-            assertEquals(21, obj.pop());
+            assertEquals(21, obj.popAtStack(2));
+            assertEquals(5, obj.pop());
             assertEquals(4, obj.pop());
+            assertEquals(3, obj.pop());
+            assertEquals(1, obj.pop());
+            assertEquals(-1, obj.pop());
         }
 }
