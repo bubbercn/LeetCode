@@ -24,5 +24,19 @@ public class Test1186 {
         int[] arr = { -1, -1, -1, -1 };
         int expected = -1;
         assertEquals(expected, solution.maximumSum(arr));
-    }    
+    }
+
+    @Test
+    public void Failure1() {
+        int[] arr = { 1, -4, -5, -2, 5, 0, -1, 2 };
+        int expected = 7;
+        assertEquals(expected, solution.maximumSum(arr));
+    }
+
+    @Test
+    public void Failure2() {
+        int[] arr = { 11, -10, -11, 8, 7, -6, 9, 4, 11, 6, 5, 0 };
+        int expected = 50;
+        assertEquals(expected, solution.maximumSum(arr));
+    }
 }
